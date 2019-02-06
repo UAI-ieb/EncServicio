@@ -1,6 +1,6 @@
 --- 
-title: "Escritura de libros con bookdown"
-author: "Fernández-Casal, R. y Cotos-Yáñez, T.R."
+title: "ENCUESTA DE SERVICOO IGS"
+author: "HERNAN MADRID"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -9,13 +9,13 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rubenfcasal/bookdown_intro
-description: "Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, ...)."
+description: "Este libro es una AUTOMATIZAICON."
 ---
 
 
 # Prólogo {-}
 
-Este libro es una pequeña guía sobre como emplear el paquete `bookdown` de R para la escritura de libros, incluyendo algunos detalles de configuración para la escritura en otros idiomas distintos del inglés (castellano, galego,...). 
+HOLA MUNDO 
 
 Este mismo libro ha sido escrito en [R-Markdown](http://rmarkdown.rstudio.com) empleando el paquete [`bookdown`](https://bookdown.org/yihui/bookdown/)  y está disponible en el repositorio Github: [rubenfcasal/bookdown_intro](https://github.com/rubenfcasal/bookdown_intro). 
 
