@@ -428,3 +428,27 @@ GrafCaf=ggplot(SedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCaf + facet_grid(. ~ Sede )
+
+
+# IEB VIRTUAL POR SEDE MÁS MEDICION
+
+SedeIEBV=aggregate(Data$NetoIEBVirtual ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeIEBV
+colnames(SedeIEBV)<-c("medicion","Sede","Valor")
+SedeIEBV=filter(SedeIEBV, Valor != -1)
+SedeIEBV=mutate(SedeIEBV, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeIEBV,file="Data/SedeIEBV.csv")
+
+GrafIEBV=ggplot(SedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeIEBV$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción con Cafetería por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafIEBV + facet_grid(. ~ Sede )
