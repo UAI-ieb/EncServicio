@@ -1,13 +1,179 @@
-# Archivos de configuración
+# Resultados 1
 
-Nos puede interesar modificar el encabezado de *index.Rmd* y 
-un par de archivos [YAML](https://en.wikipedia.org/wiki/YAML) de configuración
-(ver Sección \@ref(yaml) para más detalles sobre este formato). 
+A continuación, se muestran los resultados más relevantes de la encuesta. Existen dos indicadores claves para dar cuenta del grado de satisfacción/insatifacción de los estudiantes; la ***Satisfacción total*** y la ***Satisfacción neta***. La primera alude al porcentaje de alumnos que evalúan a cada servicio/espacio con nota 6 ó 7, en cambios la satisfacción neta, corresponde a la diferencia del porcentaje de estudiantesque evalúan con nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5, todo ello expresado en porcentaje. En general, será esta última el valor comparativo en la mayoría de los gráficos y tablas del informe.
 
-## Encabezado de *index.Rmd* y archivo *\_output.yml*
+## Evaluación Global Instituto Guillermo Subercaseaux
 
-La cabecera YAML del primer archivo *.Rmd* del libro se puede utilizar para configurar
-distintas opciones:
+**2.1.1) Evaluación  Global del Servicio entregado por IGS**
+
+El siguiente gráfico, señala los resultados en la presente medición (2018-2), respecto de las mediciones ateriores, tanto en lo que respecta a la Satisfacción Neta, como en la Satisfacción (nota 6 y 7). Se puede apreciar que en ambas se visualizan tendencias al alza, así la satisfacción neta en el 2018-2 alcanza un 51%, y la satifacción total, un 63%. Respecto de las mediciones anteriores, equivalente con lo registrado en la primera medición (2014-2). En ambos casos, los valores son cercanos a lo registrado en la medición 2014-2. 
+
+```{r echo=FALSE, include = FALSE}
+library(readxl)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(plyr)
+Data <- read_excel("Data/DataServicio.xlsx")
+load("Data/DataSatis.RData")
+```
+
+```{r echo=FALSE, warning=FALSE}
+graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(round(DataSatis$PorSerGen, 0), "%"))) +
+  geom_segment(aes(x = 0, y = medicion, xend = DataSatis$PorSerGen, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
+  geom_point(color = rgb(1, 0, 0, 0.6) , size = 13) +
+  geom_text(nudge_x = 0 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 2.1.1: Indicadores Globales de Satisfacción General",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf2aa + facet_grid(. ~ TipoSat)
+```
+
+**2.1.2) Evaluación con la Atención entregada por el IGS**
+
+Textxtxtxtxttxx
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(round(DataSatis$PorAtencion, 0), "%"))) +
+  geom_segment(aes(x = 0, y = medicion, xend = DataSatis$PorAtencion, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
+  geom_point(color = rgb(1, 0, 0, 0.6) , size = 11) +
+  geom_text(nudge_x = 0 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 2.1.2:Satisfacción con Atención del IGS, tanto Neta como Total",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf2ab + facet_grid(. ~ TipoSat)
+```
+
+**2.2.3) Disposición a Recomendar el IGS**
+
+fdhzfgdh
+
+
+
+```{r echo=FALSE, message=FALSE}
+DataRecom1 <- read_delim("Data/t.Recom1.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=true}
+GrafRecom1=ggplot(DataRecom1, aes(Valor, Var1, color = DataRecom1$colores, label = Valor2)) +
+  geom_segment(aes(x = 0.5, y = Var1, xend = Valor, yend = Var1), color = DataRecom1$colores, size=2) +
+  geom_point(color = DataRecom1$colores , size = 8.0) +
+  geom_text(nudge_x = 5, nudge_y = 0, color= "white", size=2.5) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.55)) +
+  scale_y_discrete(limit = c("Definitivamente NO","Probablemente NO","NO sé", "Probablemente SI","Definitivamente SI")) +
+    labs(
+    x = "Valores",
+    y = "Grupos",
+    title = "Gráfico 2.1.3:Disposición a Recomendar el Instituto por Medición",
+    subtitle = "Encuesta de Servicio",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafRecom1 + facet_grid(. ~ Var2 )
+```
+
+dgsdg<
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+DataRecom2 <- read_delim("Data/t.Recom2.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=TRUE}
+GrafRecom2= ggplot(DataRecom2, aes(Valor, medicion, label = paste(round(Valor*100, 0),sep="","%"))) +
+  geom_segment(aes(x = 0, y = medicion, xend = Valor, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
+  geom_point(color = rgb(1, 0, 0, 0.6) , size = 10) +
+  geom_text(nudge_x = 0 , color= "white",size=2.5) +
+  theme(legend.position = "right",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 2.1.4: Disposición a Recomendar el Instituto por Sede",
+    subtitle = "Suma de Definitivamnete Sí y Probablemente Sí recomendaría",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafRecom2 + facet_grid(.~  DataRecom2$Sede )
+```
+
+## Satisfacción con Actores, áreas o espacios específicos del IGS
+
+**2.2.1) Satisfacción con Docentes**
+
+
+
+```{r echo=FALSE, warning=FALSE}
+graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(round(DataSatis$PorDocente, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = DataSatis$medicion, xend = DataSatis$PorDocente, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
+  geom_point(color = rgb(1, 0, 0, 0.6) , size = 11) +
+  geom_text(nudge_x = 0 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 2.2.1: Satisfacción con Docentes del IGS, tanto Neta como Total",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf2ba + facet_grid(. ~ TipoSat)
+
+```
+## Satisfacción con Infraestructura y Otros Espacios Físicos Comunes del IGS
+
+**2.2.2) Satisfacción con la Infraestructura**
+
+```{r echo=FALSE, warning=FALSE}
+graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round(DataSatis$PorInfra, 0),sep="", "%"))) +
+  geom_segment(aes(x = 0, y = DataSatis$medicion, xend = DataSatis$PorInfra, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
+  geom_point(color = rgb(1, 0, 0, 0.6) , size = 10) +
+  geom_text(nudge_x = 0 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 2.2.2a:Satisfacción con Infraestructura del IGS, tanto Neta como Total",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf2bb + facet_grid(. ~ TipoSat)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```yaml
 --- 
