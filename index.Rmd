@@ -1,6 +1,6 @@
 --- 
-title: "ENCUESTA DE SERVICOO IGS"
-author: "HERNAN MADRID"
+title: "Encuesta de Servicio IGS"
+author: "Unidad de Análisis Institucional"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -9,24 +9,22 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rubenfcasal/bookdown_intro
-description: "Este libro es una AUTOMATIZAICON."
+description: "Este libro es una primera apromización en la Automatización del Área de Análisis Institucional"
 ---
-
-
-# Prólogo {-}
-
-HOLA MUNDO 
-
-Este mismo libro ha sido escrito en [R-Markdown](http://rmarkdown.rstudio.com) empleando el paquete [`bookdown`](https://bookdown.org/yihui/bookdown/)  y está disponible en el repositorio Github: [rubenfcasal/bookdown_intro](https://github.com/rubenfcasal/bookdown_intro). 
-
-Para generar el libro (compilar) puede ser recomendable instalar la última versión de [RStudio]((https://www.rstudio.com/products/rstudio/download/)) y la versión de desarrollo de `bookdown` disponible en [Github](https://github.com/rstudio/bookdown). 
-En la Sección \@ref(requisitos) se detallan los requisitos necesarios.
-
-```{r echo=FALSE, fig.align='left'}
-knitr::include_graphics("images/by-sa-88x31.png")
+# Estudio {-}
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics("images/logoieb.jpg")
 ```
 
-Esta obra está bajo una licencia de [Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
+# Presentación {-}
+
+La Encuesta de Servicios, es aplicada desde 2014 de manera periódica y sistemática a los estudiantes del Instituto Guillermo Subercaseaux. Esta encuesta, en cuanto su aplicación, tiene una periodicidad semestreal.El objetivo central es el identificar, desde la percepción de los estudiantes, el funcionamiento y desempeño de actores, áreas y espacios a través de los cuales el Instituto entrega su servicio. Para ello, se cuantifica el grado de satisfacción o insatisfacción de los estudiantes respecto del uso de dichos actores/servicios/espacios en cada una de las sedes. De esta manera, los datos permiten determinar cuáles son los servicios que impactan con mayor o menor intensidad en la satisfacción integral de los estudiantes.
+
+Este libro ha sido escrito en [R-Markdown](http://rmarkdown.rstudio.com) empleando el paquete [`bookdown`](https://bookdown.org/yihui/bookdown/)
+
+```{r echo=FALSE, fig.align='left'}
+knitr::include_graphics("images/IconoIGS.png")
+```
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
