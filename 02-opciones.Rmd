@@ -157,16 +157,92 @@ graf2bb + facet_grid(. ~ TipoSat)
 ```
 
 
++ Salas de Clases
++ Laboratorio
++ Cafetería
++ Biblioteca
++ Banos
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+GrafInfra1 <- read_delim("Data/Infra1.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE}
+ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, colour=Tipo, label = paste(round(GrafInfra1$Valor, 0),"%"))) + 
+  geom_line(size=0.9)  + 
+  geom_text(nudge_x = 0.3 , color= "black",size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme_minimal()+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 2.2.2b: Satisfacción Neta de Espacios Físicos",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+```
+
+**2.2.3) Satisfacción con Espacios o Servicos Digitales**
+
++ IEBVirtual
++ Biblioteca Digital (Ebook)
++ Wifi
+
+```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
+GrafDigit <- read_delim("Data/Digit.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = FALSE)
+```
+
+```{r echo=FALSE, warning=FALSE}
+graf5=ggplot(GrafDigit, aes(x=GrafDigit$medicion, y=GrafDigit$Valor, group = Tipo, colour=Tipo, label = paste(round(GrafDigit$Valor, 0),"%"))) + 
+  geom_line(size=1.0)  + 
+  geom_text(nudge_x = 0.9, color=GrafDigit$colores, size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 6: Satisfacción Neta con Espacios y Servicios Digitales",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf5 + facet_grid(. ~ Tipo )
+
+```
 
 
+**2.2.4) Satisfacción con Otros Servicios dl IGS**
 
 
++ Servicio de Solicitudes
++ Cajas
 
+```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 
+GrafOtros <- read_delim("Data/OtrosServ.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = FALSE)
+```
 
-
-
-
+```{r echo=FALSE, warning=FALSE}
+graf5=ggplot(GrafOtros, aes(x=medicion, y=Valor, group = Tipo, colour=Tipo, label = paste(round(Valor, 0),"%"))) + 
+  geom_line(size=1.0)  + 
+  geom_text(nudge_x = 0.9 , color= "blue" ,size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 7: Satisfacción Neta con Otros Servicios",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf5 + facet_grid(. ~ Tipo )
+```
 
 
 

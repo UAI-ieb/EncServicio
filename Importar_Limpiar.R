@@ -389,7 +389,7 @@ write.csv2(SedeCaf,file="Data/SedeCaf.csv")
 GrafCaf=ggplot(SedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
   geom_text(nudge_x = 0, nudge_y = 0.03 , color= SedeCaf$colores, size=3) +
-  geom_point( size=2, shape=21, fill="white") + 
+  geom_point(size=2, shape=21, fill="white") + 
   theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
