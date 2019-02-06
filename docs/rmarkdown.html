@@ -106,10 +106,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
 <li class="chapter" data-level="" data-path="presentacion.html"><a href="presentacion.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Marco Metodológico</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Diseño de la Muestra</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#diseno-del-instrumento"><i class="fa fa-check"></i><b>1.2</b> Diseño del Instrumento</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
 <li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
@@ -173,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">A.1</span> Introducción</h2>
 <p>Este documento se ha generado empleando Markdown y R. RMarkdown es recomendable para difundir análisis realizados con R en formato HTML, PDF y DOCX (Word), entre otros.</p>
 <p>Markdown se diseñó inicialmente para la creación de páginas web a partir de documentos de texto de forma sencilla y rápida. Es lo que se conoce como un lenguaje de marcado ligero, tiene unas reglas sintácticas muy simples y se busca principalmente la facilidad de lectura. Posteriormente se fueron añadiendo funcionalidades, por ejemplo para incluir opciones de publicación en muchos otros formatos. La implementación original de Markdown es de <a href="http://daringfireball.net/projects/markdown/">John Gruber</a>, pero actualmente están disponibles múltiples dialectos (sobre todo para publicar en gestores de contenido). RMarkdown utiliza las extensiones de la sintaxis proporcionada por <em>Pandoc</em> (ver Apendice <a href="pandoc.html#pandoc">B</a>), y adicionalmente permite la inclusión de código R.</p>
-<p>Al renderizar un fichero RMarkdown se generará un documento que incluye el código R y los resultados incrustados en el documento<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. En <em>RStudio</em> basta con hacer clic en el botón <em>Knit</em>. En R se puede emplear la funcion <code>render</code> del paquete <code>rmarkdown</code> (por ejemplo <code>render(&quot;Informe.Rmd&quot;)</code>). También se puede abrir directamente el informe generado:</p>
+<p>Al renderizar un fichero RMarkdown se generará un documento que incluye el código R y los resultados incrustados en el documento<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. En <em>RStudio</em> basta con hacer clic en el botón <em>Knit</em>. En R se puede emplear la funcion <code>render</code> del paquete <code>rmarkdown</code> (por ejemplo <code>render(&quot;Informe.Rmd&quot;)</code>). También se puede abrir directamente el informe generado:</p>
 <pre><code>library(rmarkdown)
 browseURL(url = render(&quot;Informe.Rmd&quot;))</code></pre>
 <p>A continuación se darán algunos detalles sobre RMarkdown (y las extensiones Markdown de Pandoc que admite: notas al pie de página, tablas, citas, ecuaciones LaTeX, …). Para más información (incluyendo introducciones a Markdown y RMarkdown), se recomienda consultar alguna de las numerosas fuentes disponibles, comenzando por la web oficial <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>.</p>
@@ -185,7 +184,7 @@ browseURL(url = render(&quot;Informe.Rmd&quot;))</code></pre>
 </ul>
 <p>Otras fuentes permiten obtener documentación más detallada, como por ejemplo:</p>
 <ul>
-<li><p>Web del paquete <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a><a href="#ref-R-knitr">b</a>)</span>: <a href="https://yihui.name/knitr" class="uri">https://yihui.name/knitr</a>.</p></li>
+<li><p>Web del paquete <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a>)</span>: <a href="https://yihui.name/knitr" class="uri">https://yihui.name/knitr</a>.</p></li>
 <li><p><span class="citation">Xie, Allaire, and Grolemund (<a href="#ref-xie2018r">2018</a>)</span> : R Markdown: The Definitive Guide, <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p></li>
 <li><p>Extensiones RMarkdown de Pandoc: <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a>.</p></li>
 </ul>
@@ -374,7 +373,7 @@ hist(mtcars$mpg)
 <li><code>fig.width, fig.height, fig.dim</code>: dimensiones del dispositivo gráfico de R (no confundir con el tamaño del resultado), e.g. <code>fig.width = 5</code>.</li>
 <li><code>out.width, out.heigh</code>: tamaño del gráfico, e.g. <code>='80%'</code>.</li>
 <li><code>fig.align</code>: <code>='left', 'center', 'right'</code>, establece la alineación.</li>
-<li><code>fig.cap</code>: leyenda de la figura<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</li>
+<li><code>fig.cap</code>: leyenda de la figura<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</li>
 <li><code>dev</code>: dispositivo gráfico de R, por defecto <code>='pdf'</code> para LaTeX y <code>'png'</code> para HTML. Otras opciones son <code>'svg'</code> o <code>'jpeg'</code>.</li>
 </ul>
 <p>Para establecer valores por defecto para todos los bloques de código se suele incluir uno de configuración al principio del documento, por ejemplo:</p>
@@ -586,7 +585,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
     <span class="fu">fig_height:</span><span class="at"> 6</span>
     <span class="fu">fig_caption:</span><span class="at"> true</span></code></pre></div>
 <p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver documentación en el Apéndice <a href="pandoc.html#pandoc">B</a>).</p>
-<p>Un ejemplo adicional<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>:</p>
+<p>Un ejemplo adicional<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
 <span class="fu">subtitle:</span><span class="at"> </span><span class="st">&quot;Curso de introducción a R&quot;</span>
@@ -677,7 +676,7 @@ y notas al pie con <code>^[texto]</code>.</p>
 <h3>Bibliografía</h3>
 <div id="refs" class="references">
 <div id="ref-R-knitr">
-<p>Xie, Yihui. 2018b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 <div id="ref-xie2018r">
 <p>Xie, Yihui, JJ Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. CRC Press. <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
@@ -685,10 +684,10 @@ y notas al pie con <code>^[texto]</code>.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>Se llama al paquete <code>knitr</code> para “tejer” el código de R y los resultados en un fichero Markdown, que posteriormente es procesado con <em>pandoc</em><a href="rmarkdown.html#fnref8">↩</a></p></li>
-<li id="fn9"><p>Si se genera un documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante y se puede ajustar la posición empleando la opción <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="rmarkdown.html#fnref9">↩</a></p></li>
-<li id="fn10"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref10">↩</a></p></li>
+<ol start="3">
+<li id="fn3"><p>Se llama al paquete <code>knitr</code> para “tejer” el código de R y los resultados en un fichero Markdown, que posteriormente es procesado con <em>pandoc</em><a href="rmarkdown.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Si se genera un documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante y se puede ajustar la posición empleando la opción <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="rmarkdown.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref5">↩</a></p></li>
 </ol>
 </div>
             </section>

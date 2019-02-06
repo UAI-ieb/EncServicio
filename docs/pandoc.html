@@ -106,10 +106,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
 <li class="chapter" data-level="" data-path="presentacion.html"><a href="presentacion.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Marco Metodológico</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Diseño de la Muestra</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#diseno-del-instrumento"><i class="fa fa-check"></i><b>1.2</b> Diseño del Instrumento</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
 <li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
@@ -203,7 +202,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="pandoc-y-rmarkdown" class="section level2">
 <h2><span class="header-section-number">B.3</span> Pandoc y RMarkdown</h2>
-<p>Como ya se comentó, el paquete <code>rmarkdown</code> llama a <em>pandoc</em> para renderizar un documento RMarkdown<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>, y esta llamada se muestra en la consola (o en la correspondiente pestaña de RStudio):</p>
+<p>Como ya se comentó, el paquete <code>rmarkdown</code> llama a <em>pandoc</em> para renderizar un documento RMarkdown<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, y esta llamada se muestra en la consola (o en la correspondiente pestaña de RStudio):</p>
 <pre><code>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS Informes.utf8.md --to html4 
 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash 
 --output Informes.html --smart --email-obfuscation none --self-contained --standalone 
@@ -233,8 +232,8 @@ Output created: Informes.html</code></pre>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>Desde la <a href="https://blog.rstudio.org/2014/06/18/r-markdown-v2/">versión 2</a>, antes se utilizaba <code>knitr</code> y <code>markdown</code>.<a href="pandoc.html#fnref11">↩</a></p></li>
+<ol start="6">
+<li id="fn6"><p>Desde la <a href="https://blog.rstudio.org/2014/06/18/r-markdown-v2/">versión 2</a>, antes se utilizaba <code>knitr</code> y <code>markdown</code>.<a href="pandoc.html#fnref6">↩</a></p></li>
 </ol>
 </div>
             </section>

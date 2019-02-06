@@ -106,10 +106,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
 <li class="chapter" data-level="" data-path="presentacion.html"><a href="presentacion.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Marco Metodológico</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Diseño de la Muestra</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#diseno-del-instrumento"><i class="fa fa-check"></i><b>1.2</b> Diseño del Instrumento</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
 <li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
@@ -188,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="figuras-y-tablas" class="section level2">
 <h2><span class="header-section-number">3.3</span> Figuras y tablas</h2>
-<p>En la Sección <a href="rmarkdown.html#opcodigo">A.3.2</a> se comentan algunas opciones de los bloques de código que pueden ser de utilidad para las figuras (algunas se pueden establecer en <em>_output.yml</em>, ver Sección <a href="rmarkdown.html#yaml">A.5</a>). Por ejemplo, se puede establecer la opción <code>fig.cap</code> para incluir una leyenda (sin incluir sintaxis Markdown, salvo que se utilicen referencias de texto). En ese caso la gráfica se colocará en un entorno de figura (flotante en PDF/LaTeX<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>), que se etiquetará y numerará automáticamente.</p>
+<p>En la Sección <a href="rmarkdown.html#opcodigo">A.3.2</a> se comentan algunas opciones de los bloques de código que pueden ser de utilidad para las figuras (algunas se pueden establecer en <em>_output.yml</em>, ver Sección <a href="rmarkdown.html#yaml">A.5</a>). Por ejemplo, se puede establecer la opción <code>fig.cap</code> para incluir una leyenda (sin incluir sintaxis Markdown, salvo que se utilicen referencias de texto). En ese caso la gráfica se colocará en un entorno de figura (flotante en PDF/LaTeX<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>), que se etiquetará y numerará automáticamente.</p>
 <p>Para referenciar una figura, habrá que añadir el prefijo <code>fig:</code> al nombre del bloque de código. Por ejemplo, la referencia a una figura en un bloque con nombre <code>foo</code> será <code>\@ref(fig:foo)</code>.</p>
 <p>Para incluir imágenes estáticas, en lugar de emplear la sintaxis habitual de markdown (e.g. <code>![](rmarkdown.png)</code>), se puede llamar a la función <code>knitr::include_graphics()</code> en un bloque de código para poder emplear las extensiones <code>bookdown</code>. Por ejemplo, la figura <a href="componentes.html#fig:rmarkdown">3.1</a> se incluyó con el siguiente código:</p>
 <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r rmarkdown, echo=FALSE, out.width=&#39;30%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;Logo de rmarkdown (desde archivo PNG).&#39;}
@@ -242,7 +241,7 @@ f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{3.1}
   <span class="dt">year</span>={2016},
   <span class="dt">publisher</span>={Chapman and Hall/CRC}
 }</code></pre></div>
-<p>Si se añade al fichero <em>book.bib</em> podemos referenciarla en el texto empleando<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> <code>@xie2016bookdown</code> o <code>[@xie2016bookdown]</code>, resultando <span class="citation">Xie (<a href="#ref-xie2016bookdown">2016</a>)</span> o <span class="citation">(Xie <a href="#ref-xie2016bookdown">2016</a>)</span>.</p>
+<p>Si se añade al fichero <em>book.bib</em> podemos referenciarla en el texto empleando<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <code>@xie2016bookdown</code> o <code>[@xie2016bookdown]</code>, resultando <span class="citation">Xie (<a href="#ref-xie2016bookdown">2016</a>)</span> o <span class="citation">(Xie <a href="#ref-xie2016bookdown">2016</a>)</span>.</p>
 <p>Además, en el fichero <em>index.Rmd</em> se incluye por defecto el siguiente código:</p>
 <pre><code># automatically create a bib database for R packages
 knitr::write_bib(c(.packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;), &#39;packages.bib&#39;)</code></pre>
@@ -331,9 +330,9 @@ Esto es un ejemplo.
 </div>
 <div class="footnotes">
 <hr />
-<ol start="6">
-<li id="fn6"><p>Se puede ajustar las posición empleando la opción de <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="componentes.html#fnref6">↩</a></p></li>
-<li id="fn7"><p>En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.<a href="componentes.html#fnref7">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Se puede ajustar las posición empleando la opción de <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="componentes.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.<a href="componentes.html#fnref2">↩</a></p></li>
 </ol>
 </div>
             </section>
