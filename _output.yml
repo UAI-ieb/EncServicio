@@ -5,13 +5,13 @@ bookdown::gitbook:
       before: |
         <li><a href="./">UAI</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
-    edit: https://github.com/rubenfcasal/bookdown_intro/edit/master/%s
-    sharing:
+        <li><a href="https://github.com/UAI-ieb/EncServicio/" target="blank">Publicado con bookdown</a></li>
+    edit: https://github.com/UAI-ieb/EncServicio//edit/master/%s
+      sharing:
       github: yes
       facebook: no
       twitter: no
-    download: "pdf"
+    download: ["pdf", "epub"]
 #    download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
