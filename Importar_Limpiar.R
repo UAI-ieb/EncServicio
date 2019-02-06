@@ -452,3 +452,92 @@ GrafIEBV=ggplot(SedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede, lab
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafIEBV + facet_grid(. ~ Sede )
+
+# ebook POR SEDE MÁS MEDICION
+
+SedeEbook=aggregate(Data$NetoEbook ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeEbook
+colnames(SedeEbook)<-c("medicion","Sede","Valor")
+SedeEbook=mutate(SedeEbook, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeEbook,file="Data/SedeEbook.csv")
+
+GrafEbook=ggplot(SedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeEbook$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción con Cafetería por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafEbook + facet_grid(. ~ Sede )
+
+# WIFI POR SEDE MÁS MEDICION
+
+SedeWifi=aggregate(Data$NetoWifi ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeWifi
+colnames(SedeWifi)<-c("medicion","Sede","Valor")
+SedeWifi=mutate(SedeWifi, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeWifi,file="Data/SedeWifi.csv")
+
+GrafWifi=ggplot(SedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeWifi$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción con Cafetería por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafWifi + facet_grid(. ~ Sede )
+
+# SERVICIO DE SOLICITUDES POR SEDE Y MEDICION
+
+SedeServSol=aggregate(Data$NetoServSolici ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeServSol
+colnames(SedeServSol)<-c("medicion","Sede","Valor")
+SedeServSol=mutate(SedeServSol, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeServSol,file="Data/SedeServSol.csv")
+
+GrafSolicit=ggplot(SedeServSol, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeServSol$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafSolicit + facet_grid(. ~ Sede )
+
+# CAJAS POR SEDE Y MEDICION
+
+SedeCajas=aggregate(Data$NetoCajas ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeCajas
+colnames(SedeCajas)<-c("medicion","Sede","Valor")
+SedeCajas=filter(SedeCajas, Valor != -1)
+SedeCajas=mutate(SedeCajas, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeCajas,file="Data/SedeCajas.csv")
+
+GrafCajas=ggplot(SedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeCajas$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafCajas + facet_grid(. ~ Sede )

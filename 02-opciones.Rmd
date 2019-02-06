@@ -245,7 +245,7 @@ GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Infraestructura por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Infraestructura por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -296,7 +296,7 @@ GrafSClases=ggplot(SedeSClases2, aes(x=medicion, y=Valor,group = Sede, colour=Se
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Sala de Clases por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Sala de Clases por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -319,7 +319,7 @@ GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=S
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Biblioteca por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Biblioteca por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -342,7 +342,7 @@ GrafBanos=ggplot(DataSedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Baños por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Baños por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -364,7 +364,7 @@ GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Laboratorio por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Laboratorio por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -387,12 +387,13 @@ GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Cafetería por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Cafetería por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCaf + facet_grid(. ~ Sede )
 ```
+
 
 **2.2.3) Satisfacción con Espacios o Servicos Digitales**
 
@@ -422,6 +423,59 @@ graf5=ggplot(GrafDigit, aes(x=GrafDigit$medicion, y=GrafDigit$Valor, group = Tip
 graf5 + facet_grid(. ~ Tipo )
 
 ```
+
+Por sede Ebook
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+DataSedeEbook <- read_delim("Data/SedeEbook.csv",";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafEbook=ggplot(DataSedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= DataSedeEbook$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Ebook por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafEbook + facet_grid(. ~ Sede )
+```
+
+
+Por sede WIFI
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+DataSedeWifi <- read_delim("Data/SedeWifi.csv",";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafWifi=ggplot(DataSedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= DataSedeWifi$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción con Wifi por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafWifi + facet_grid(. ~ Sede )
+```
+
+Por sede IEB Virtual
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeIEBV <- read_delim("Data/SedeIEBV.csv", ";", escape_double = FALSE, 
@@ -472,6 +526,53 @@ graf5=ggplot(GrafOtros, aes(x=medicion, y=Valor, group = Tipo, colour=Tipo, labe
     caption = "\nUnidad de Análisis Institucional"
   )
 graf5 + facet_grid(. ~ Tipo )
+```
+
+Serv. de Solicitudes por sede 
+
+```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
+DataSedeServSol <- read_delim("Data/SedeServSol.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = FALSE)
+```
+
+```{r echo=FALSE, warning=FALSE}
+GrafSolicit=ggplot(SedeServSol, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeServSol$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafSolicit + facet_grid(. ~ Sede )
+```
+Cajas por sede 
+
+```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
+DataSedeCajas<- read_delim("Data/SedeCajas.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = FALSE)
+```
+
+```{r echo=FALSE, warning=FALSE}
+GrafCajas=ggplot(DataSedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0.1, nudge_y = 0.04 , color= DataSedeCajas$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafCajas + facet_grid(. ~ Sede )
 ```
 
 
