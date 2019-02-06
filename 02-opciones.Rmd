@@ -190,7 +190,7 @@ DataSedeDocente <- read_delim("Data/SedeDocente.csv", ";", escape_double = FALSE
 ```
 
 ```{r echo=FALSE, warning=FALSE}
-GrafDocente=ggplot(SedeDocente, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
+GrafDocente=ggplot(DataSedeDocente, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
   geom_line(size=1.0)  + 
   geom_text(nudge_x = 0, nudge_y = 0.03 , color= "black" ,size=3) +
   geom_point( size=2, shape=21, fill="white") + 
@@ -239,7 +239,7 @@ DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE,
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= SedeInfra$colores, size=3) +
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeInfra$colores, size=3) +
   geom_point( size=2, shape=21, fill="white") + 
   theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
@@ -288,9 +288,9 @@ DataSedeSClases <- read_delim("Data/SedeSClases.csv", ";", escape_double = FALSE
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafSClases=ggplot(SedeSClases2, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeSClases2$colores, size=3) +
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeSClases$colores, size=3) +
   geom_point( size=2, shape=21, fill="white") + 
   theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
@@ -537,9 +537,9 @@ DataSedeServSol <- read_delim("Data/SedeServSol.csv", ";", escape_double = FALSE
 ```
 
 ```{r echo=FALSE, warning=FALSE}
-GrafSolicit=ggplot(SedeServSol, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.01 , color= SedeServSol$colores, size=3) +
+  geom_text(nudge_x = 0, nudge_y = 0.01 , color= DataSedeServSol$colores, size=3) +
   geom_point(size=2, shape=21, fill="white") + 
   theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(

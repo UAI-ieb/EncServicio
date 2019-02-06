@@ -257,210 +257,158 @@ la plataforma web SurveyMonkey. El proceso implica hacer una invitación
 a la muestra seleccinada via correo electrónico, el palzo para responder
 fue desde el 10 de Noviembre hasta el 23 de octubre de 2018.
 
-\chapter{Archivos de configuración}\label{archivos-de-configuracion}
+\chapter{Resultados 1}\label{resultados-1}
 
-Nos puede interesar modificar el encabezado de \emph{index.Rmd} y un par
-de archivos \href{https://en.wikipedia.org/wiki/YAML}{YAML} de
-configuración (ver Sección \ref{yaml} para más detalles sobre este
-formato).
+A continuación, se muestran los resultados más relevantes de la
+encuesta. Existen dos indicadores claves para dar cuenta del grado de
+satisfacción/insatifacción de los estudiantes; la
+\textbf{\emph{Satisfacción total}} y la \textbf{\emph{Satisfacción
+neta}}. La primera alude al porcentaje de alumnos que evalúan a cada
+servicio/espacio con nota 6 ó 7, en cambios la satisfacción neta,
+corresponde a la diferencia del porcentaje de estudiantesque evalúan con
+nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5, todo ello
+expresado en porcentaje. En general, será esta última el valor
+comparativo en la mayoría de los gráficos y tablas del informe.
 
-\section{\texorpdfstring{Encabezado de \emph{index.Rmd} y archivo
-\emph{\_output.yml}}{Encabezado de index.Rmd y archivo \_output.yml}}\label{encabezado-de-index.rmd-y-archivo-_output.yml}
+\section{Evaluación Global Instituto Guillermo
+Subercaseaux}\label{evaluacion-global-instituto-guillermo-subercaseaux}
 
-La cabecera YAML del primer archivo \emph{.Rmd} del libro se puede
-utilizar para configurar distintas opciones:
+\textbf{2.1.1) Evaluación Global del Servicio entregado por IGS}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{--- }
-\FunctionTok{title:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
-\FunctionTok{author:}\AttributeTok{ }\StringTok{"Yihui Xie"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2019-02-06"}
-\FunctionTok{site:}\AttributeTok{ bookdown::bookdown_site}
-\FunctionTok{output:}\AttributeTok{ bookdown::gitbook}
-\FunctionTok{documentclass:}\AttributeTok{ book}
-\FunctionTok{bibliography:}\AttributeTok{ }\KeywordTok{[}\NormalTok{book.bib}\KeywordTok{,}\NormalTok{ packages.bib}\KeywordTok{]}
-\FunctionTok{biblio-style:}\AttributeTok{ apalike}
-\FunctionTok{link-citations:}\AttributeTok{ yes}
-\FunctionTok{github-repo:}\AttributeTok{ rstudio/bookdown-demo}
-\FunctionTok{description:}\AttributeTok{ }\StringTok{"This is a minimal example of using the bookdown package to write a book.}
-\StringTok{The output format for this example is bookdown::gitbook."}
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
+El siguiente gráfico, señala los resultados en la presente medición
+(2018-2), respecto de las mediciones ateriores, tanto en lo que respecta
+a la Satisfacción Neta, como en la Satisfacción (nota 6 y 7). Se puede
+apreciar que en ambas se visualizan tendencias al alza, así la
+satisfacción neta en el 2018-2 alcanza un 51\%, y la satifacción total,
+un 63\%. Respecto de las mediciones anteriores, equivalente con lo
+registrado en la primera medición (2014-2). En ambos casos, los valores
+son cercanos a lo registrado en la medición 2014-2.
 
-Obviamente cambiaremos el título, el nombre del autor y la descripción
-(también nos podrá interesar cambiar las opciones de bibliografía, ver
-Sección \ref{biblio}, o las del repositorio GitHub, ver Sección
-\ref{github}). Por ejemplo, se puede acceder al fichero \emph{index.Rmd}
-de este libro
-\href{https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd}{aquí}
-.
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-5-1.pdf}
 
-Aunque se pueden especificar en esta cabecera otras opciones
-relacionadas con Pandoc, como por ejemplo opciones del formato de
-salida:
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X1' [1]
+\end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{output:}
-  \FunctionTok{bookdown:}\AttributeTok{:gitbook:}
-    \FunctionTok{split_by:}\AttributeTok{ }\StringTok{"section"}\ErrorTok{       # Páginas por secciones (en lugar de capítulos)}
-    \FunctionTok{split_bib:}\AttributeTok{ no             }\CommentTok{# No se muestra bibliografía al final de cada página}
-    \FunctionTok{lib_dir:}\AttributeTok{ }\StringTok{"book_assets"}
-  \FunctionTok{bookdown:}\AttributeTok{:pdf_book:}
-    \FunctionTok{keep_tex:}\AttributeTok{ yes}
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-7-1.pdf}
 
-Normalmente estableceremos las opciones del formato de salida en el
-archivo de configuración YAML \emph{\_output.yml}. Por defecto se generá
-el libro en formato HTML (con las opciones de
-\texttt{bookdown::gitbook()}), en formato PDF a través de LaTeX
-(\texttt{bookdown::pdf\_book()}) y en formato EPUB
-(\texttt{bookdown::epub\_book()}). En este archivo también nos
-interesará cambiar algunas de las opciones por defecto:
+\textbf{2.1.2) Evaluación con la Atención entregada por el IGS}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{bookdown:}\AttributeTok{:gitbook:}
-  \FunctionTok{css:}\AttributeTok{ style.css}
-  \FunctionTok{config:}
-    \FunctionTok{toc:}
-      \FunctionTok{before:}\AttributeTok{ |}
-\NormalTok{        <li><a href=}\StringTok{"./"}\NormalTok{>A Minimal Book Example</a></li>}
-      \FunctionTok{after:}\AttributeTok{ |}
-        \FunctionTok{<li><a href="https:}\AttributeTok{//github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>}
-    \FunctionTok{edit:}\AttributeTok{ https://github.com/rstudio/bookdown-demo/edit/master/%s}
-    \FunctionTok{download:}\AttributeTok{ }\KeywordTok{[}\StringTok{"pdf"}\KeywordTok{,} \StringTok{"epub"}\KeywordTok{]}
-\FunctionTok{bookdown:}\AttributeTok{:pdf_book:}
-  \FunctionTok{includes:}
-    \FunctionTok{in_header:}\AttributeTok{ preamble.tex}
-  \FunctionTok{latex_engine:}\AttributeTok{ xelatex}
-  \FunctionTok{citation_package:}\AttributeTok{ natbib}
-  \FunctionTok{keep_tex:}\AttributeTok{ yes}
-\FunctionTok{bookdown:}\AttributeTok{:epub_book: default}
-\end{Highlighting}
-\end{Shaded}
+Textxtxtxtxttxx
 
-Por lo menos en el formato HTML \texttt{bookdown::gitbook}, el título
-del documento en la parte superior de la tabla de contenido. El fichero
-\href{https://github.com/rubenfcasal/bookdown_intro/blob/master/_output.yml}{\emph{\_output.yml}}
-de este libro es:
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-8-1.pdf}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{bookdown:}\AttributeTok{:gitbook:}
-  \FunctionTok{css:}\AttributeTok{ style.css}
-  \FunctionTok{config:}
-    \FunctionTok{toc:}
-      \FunctionTok{before:}\AttributeTok{ |}
-\NormalTok{        <li><a href=}\StringTok{"./"}\NormalTok{>Escritura de libros con bookdown</a></li>}
-      \FunctionTok{after:}\AttributeTok{ |}
-        \FunctionTok{<li><a href="https:}\AttributeTok{//github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>}
-    \FunctionTok{edit:}\AttributeTok{ https://github.com/rubenfcasal/bookdown_intro/edit/master/%s      }\CommentTok{# Si se publica con GitHub Pages...}
-    \FunctionTok{download:}\AttributeTok{ }\StringTok{"pdf"}\ErrorTok{                                                         # Link de descarga en pdf}
-\FunctionTok{bookdown:}\AttributeTok{:pdf_book:}
-  \FunctionTok{includes:}
-    \FunctionTok{in_header:}\AttributeTok{ preamble.tex}
-  \FunctionTok{latex_engine:}\AttributeTok{ xelatex}
-  \FunctionTok{citation_package:}\AttributeTok{ natbib}
-  \FunctionTok{keep_tex:}\AttributeTok{ yes}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X1' [1]
+\end{verbatim}
 
-Más detalles sobre las opciones de salida en el
-\href{https://bookdown.org/yihui/bookdown/output-formats.html}{libro de
-bookdown}. Otros ejemplos en castellano de
-\href{https://github.com/rubenfcasal/simbook/raw/master/index.Rmd}{\emph{index.Rmd}}
-y
-\href{https://github.com/rubenfcasal/simbook/blob/master/_output.yml}{\emph{\_output.yml}}.
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-10-1.pdf}
 
-\section{\texorpdfstring{Archivo
-\emph{\_bookdown.yml}}{Archivo \_bookdown.yml}}\label{archivo-_bookdown.yml}
+\textbf{2.2.3) Disposición a Recomendar el IGS}
 
-El fichero de configuración por defecto es:
+fdhzfgdh
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{book_filename:}\AttributeTok{ }\StringTok{"bookdown-demo"}
-\FunctionTok{language:}
-  \FunctionTok{ui:}
-    \FunctionTok{chapter_name:}\AttributeTok{ }\StringTok{"Chapter "}
-\FunctionTok{delete_merged_file:}\AttributeTok{ true    }
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X1' [1]
+\end{verbatim}
 
-Por ejemplo, nos interesará cambiar el nombre del fichero y, si se trata
-de un libro en castellano (galego, \ldots{}), el encabezado de los
-títulos de los capítulos. Además nos puede interesar cambiar los
-encabezados de algunos componentes como figuras y tablas, siguiendo las
-instrucciones de la
-\href{https://bookdown.org/yihui/bookdown/internationalization.html}{Sección
-4.5} del libro de bookdown. Por ejemplo en este libro se emplea:
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-12-1.pdf}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{book_filename:}\AttributeTok{ }\StringTok{'bookdown_intro'}
-\FunctionTok{output_dir:}\AttributeTok{ docs}
-\FunctionTok{new_session:}\AttributeTok{ no}
-\FunctionTok{language:}
-  \FunctionTok{label:}
-    \FunctionTok{fig:}\AttributeTok{ }\StringTok{'Figura '}
-    \FunctionTok{tab:}\AttributeTok{ }\StringTok{'Tabla '}
-    \FunctionTok{eq:}\AttributeTok{ }\StringTok{'Ecuación '}
-    \FunctionTok{thm:}\AttributeTok{ }\StringTok{'Teorema '}
-    \FunctionTok{lem:}\AttributeTok{ }\StringTok{'Lema '}
-    \FunctionTok{def:}\AttributeTok{ }\StringTok{'Definición '}
-    \FunctionTok{cor:}\AttributeTok{ }\StringTok{'Corolario '}
-    \FunctionTok{prp:}\AttributeTok{ }\StringTok{'Proposición '}
-    \FunctionTok{exm:}\AttributeTok{ }\StringTok{'Ejemplo '}
-    \FunctionTok{exr:}\AttributeTok{ }\StringTok{'Ejercicio '}
-    \FunctionTok{proof:}\AttributeTok{ }\StringTok{'Demostración. '}
-    \FunctionTok{remark:}\AttributeTok{ }\StringTok{'Nota: '}
-    \FunctionTok{solution:}\AttributeTok{ }\StringTok{'Solución. '}
-  \FunctionTok{ui:}
-    \FunctionTok{chapter_name:}\AttributeTok{ }\StringTok{'Capítulo '}
-\FunctionTok{delete_merged_file:}\AttributeTok{ yes}
-\end{Highlighting}
-\end{Shaded}
+dgsdg\textless{}
 
-y puede ser descargado
-\href{https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml}{aquí}.
-Además se modificó \emph{preamble.tex} para configurar LaTeX para
-castellano, añadiendo:
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-14-1.pdf}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{\textbackslash{}ifxetex}
-  \BuiltInTok{\textbackslash{}usepackage}\NormalTok{\{}\ExtensionTok{polyglossia}\NormalTok{\}}
-  \FunctionTok{\textbackslash{}setmainlanguage}\NormalTok{\{spanish\}}
-  \CommentTok{% Tabla en lugar de cuadro}
-  \FunctionTok{\textbackslash{}gappto\textbackslash{}captionsspanish}\NormalTok{\{}\FunctionTok{\textbackslash{}renewcommand}\NormalTok{\{}\ExtensionTok{\textbackslash{}tablename}\NormalTok{\}\{Tabla\}  }
-          \FunctionTok{\textbackslash{}renewcommand}\NormalTok{\{}\ExtensionTok{\textbackslash{}listtablename}\NormalTok{\}\{Índice de tablas\}\}}
-\FunctionTok{\textbackslash{}else}
-  \BuiltInTok{\textbackslash{}usepackage}\NormalTok{[spanish,es-tabla]\{}\ExtensionTok{babel}\NormalTok{\}}
-\FunctionTok{\textbackslash{}fi}
-\end{Highlighting}
-\end{Shaded}
+\section{Satisfacción con Actores, áreas o espacios específicos del
+IGS}\label{satisfaccion-con-actores-areas-o-espacios-especificos-del-igs}
 
-Otras opciones permitirían cambiar el orden de los ficheros \emph{.Rmd}
-(\texttt{rmd\_files:}) , o establecer y configurar la sesión de R donde
-se evalúa el código. Por ejemplo:
+\textbf{2.2.1) Satisfacción con Docentes}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{new_session:}\AttributeTok{ yes                                    }\CommentTok{# Cada capítulo en una nueva sesión}
-\FunctionTok{before_chapter_script:}\AttributeTok{ }\KeywordTok{[}\StringTok{"script1.R"}\KeywordTok{,} \StringTok{"script2.R"}\KeywordTok{]}\AttributeTok{   }\CommentTok{# Ejecutar código antes de los capítulos}
-\FunctionTok{after_chapter_script:}\AttributeTok{ }\StringTok{"script3.R"}\ErrorTok{                   # y después.}
-\end{Highlighting}
-\end{Shaded}
+sdgsdfgafvfadgvfdagfdagadgfsd
 
-Más detalles de las opciones de configuración en el
-\href{https://bookdown.org/yihui/bookdown/configuration.html\#configuration}{libro
-de bookdown}.
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\section{Satisfacción con Infraestructura y Otros Espacios Físicos
+Comunes del
+IGS}\label{satisfaccion-con-infraestructura-y-otros-espacios-fisicos-comunes-del-igs}
+
+\textbf{2.2.2) Satisfacción con la Infraestructura}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  Salas de Clases
+\item
+  Laboratorio
+\item
+  Cafetería
+\item
+  Biblioteca
+\item
+  Banos
+\end{itemize}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-28-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+\textbf{2.2.3) Satisfacción con Espacios o Servicos Digitales}
+
+\begin{itemize}
+\tightlist
+\item
+  IEBVirtual
+\item
+  Biblioteca Digital (Ebook)
+\item
+  Wifi
+\end{itemize}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-34-1.pdf}
+
+Por sede Ebook
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-36-1.pdf}
+
+Por sede WIFI
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-38-1.pdf}
+
+Por sede IEB Virtual
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-40-1.pdf}
+
+\textbf{2.2.4) Satisfacción con Otros Servicios del IGS}
+
+\begin{itemize}
+\tightlist
+\item
+  Servicio de Solicitudes
+\item
+  Cajas
+\end{itemize}
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-42-1.pdf}
+
+Serv. de Solicitudes por sede
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-44-1.pdf}
+Cajas por sede
+
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 \chapter{Componentes}\label{componentes}
 
