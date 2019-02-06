@@ -8,7 +8,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rubenfcasal/bookdown_intro   https://github.com/UAI-ieb/EncServicio.git
+github-repo: https://github.com/UAI-ieb/
 description: "Este libro es una primera apromización en la Automatización del Área de Análisis Institucional"
 ---
 #  {-}
