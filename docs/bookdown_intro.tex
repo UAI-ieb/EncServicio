@@ -24,8 +24,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={Escritura de libros con bookdown},
-            pdfauthor={Fernández-Casal, R. y Cotos-Yáñez, T.R.},
+            pdftitle={Encuesta de Servicio IGS},
+            pdfauthor={Unidad de Análisis Institucional},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -117,29 +117,27 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{Escritura de libros con bookdown}
+  \title{Encuesta de Servicio IGS}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{Fernández-Casal, R. y Cotos-Yáñez, T.R.}
+    \author{Unidad de Análisis Institucional}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-28}
+    \date{2019-02-06}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
 \ifxetex
   \usepackage{polyglossia}
   \setmainlanguage{spanish}
-
   % Tabla en lugar de cuadro
   \gappto\captionsspanish{\renewcommand{\tablename}{Tabla}  
           \renewcommand{\listtablename}{Índice de tablas}}
 
 \else
   \usepackage[spanish,es-tabla]{babel}
-  % Para los acentos (xelatex no lo necesita)
 \fi
 \makeatletter
 \def\thm@space@setup{%
@@ -151,10 +149,11 @@
 \usepackage{amsthm}
 \newtheorem{theorem}{Teorema}[chapter]
 \newtheorem{lemma}{Lema}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definición}[chapter]
 \newtheorem{corollary}{Corolario}[chapter]
 \newtheorem{proposition}{Proposición}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Ejemplo}[chapter]
 \theoremstyle{definition}
@@ -170,32 +169,31 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter*{Prólogo}\label{prologo}
-\addcontentsline{toc}{chapter}{Prólogo}
+\chapter*{}\label{section}
+\addcontentsline{toc}{chapter}{}
 
-Este libro es una pequeña guía sobre como emplear el paquete
-\texttt{bookdown} de R para la escritura de libros, incluyendo algunos
-detalles de configuración para la escritura en otros idiomas distintos
-del inglés (castellano, galego,\ldots{}).
+\begin{center}\includegraphics{images/logoieb} \end{center}
 
-Este mismo libro ha sido escrito en
+\chapter*{Presentación}\label{presentacion}
+\addcontentsline{toc}{chapter}{Presentación}
+
+La Encuesta de Servicios, es aplicada desde 2014 de manera periódica y
+sistemática a los estudiantes del Instituto Guillermo Subercaseaux. Esta
+encuesta, en cuanto su aplicación, tiene una periodicidad semestreal.El
+objetivo central es el identificar, desde la percepción de los
+estudiantes, el funcionamiento y desempeño de actores, áreas y espacios
+a través de los cuales el Instituto entrega su servicio. Para ello, se
+cuantifica el grado de satisfacción o insatisfacción de los estudiantes
+respecto del uso de dichos actores/servicios/espacios en cada una de las
+sedes. De esta manera, los datos permiten determinar cuáles son los
+servicios que impactan con mayor o menor intensidad en la satisfacción
+integral de los estudiantes.
+
+Este libro ha sido escrito en
 \href{http://rmarkdown.rstudio.com}{R-Markdown} empleando el paquete
-\href{https://bookdown.org/yihui/bookdown/}{\texttt{bookdown}} y está
-disponible en el repositorio Github:
-\href{https://github.com/rubenfcasal/bookdown_intro}{rubenfcasal/bookdown\_intro}.
+\href{https://bookdown.org/yihui/bookdown/}{\texttt{bookdown}}
 
-Para generar el libro (compilar) puede ser recomendable instalar la
-última versión de
-\href{(https://www.rstudio.com/products/rstudio/download/)}{RStudio} y
-la versión de desarrollo de \texttt{bookdown} disponible en
-\href{https://github.com/rstudio/bookdown}{Github}. En la Sección
-\ref{requisitos} se detallan los requisitos necesarios.
-
-\begin{flushleft}\includegraphics{images/by-sa-88x31} \end{flushleft}
-
-Esta obra está bajo una licencia de
-\href{https://creativecommons.org/licenses/by-sa/4.0/deed.es}{Creative
-Commons Reconocimiento-CompartirIgual 4.0 Internacional}.
+\begin{flushleft}\includegraphics{images/IconoIGS} \end{flushleft}
 
 \chapter{Introducción}\label{intro}
 
@@ -370,7 +368,7 @@ utilizar para configurar distintas opciones:
 \OtherTok{--- }
 \FunctionTok{title:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author:}\AttributeTok{ }\StringTok{"Yihui Xie"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-28"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2019-02-06"}
 \FunctionTok{site:}\AttributeTok{ bookdown::bookdown_site}
 \FunctionTok{output:}\AttributeTok{ bookdown::gitbook}
 \FunctionTok{documentclass:}\AttributeTok{ book}
@@ -807,20 +805,21 @@ opción en el fichero \emph{\_bookdown.yml}).
 
 
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:theorem-envs}Entornos en \texttt{bookdown}.}
 \centering
-\begin{tabular}[t]{lll}
+\begin{tabular}{lll}
 \toprule
 Entorno & Nombre mostrado & Prefijo referencia\\
 \midrule
 theorem & Theorem & thm\\
 lemma & Lemma & lem\\
-definition & Definition & def\\
 corollary & Corollary & cor\\
 proposition & Proposition & prp\\
+conjecture & Conjecture & cnj\\
 \addlinespace
+definition & Definition & def\\
 example & Example & exm\\
 exercise & Exercise & exr\\
 \bottomrule
@@ -1415,11 +1414,11 @@ la Tabla \ref{tab:kable} se obtuvo mediante el siguiente código:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:kable}Una kable knitr}
 \centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r|r}
+\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r|r}
 \hline
   & mpg & cyl & disp & hp & drat & wt & qsec & vs & am & gear & carb\\
 \hline
@@ -1532,7 +1531,7 @@ Un ejemplo adicional\footnote{Puede ser interesante ejecutar
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade da Coruña"}
 \KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Tomás R. Cotos Yáñez (tcotos@uvigo.es)"}
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade de Vigo"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-28"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2019-02-06"}
 \FunctionTok{logo:}\AttributeTok{ rmarkdown.png}
 \FunctionTok{output:}
   \FunctionTok{html_document:}
