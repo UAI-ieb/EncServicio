@@ -35,6 +35,16 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
 graf2aa + facet_grid(. ~ TipoSat)
 ```
 
+```{r echo=FALSE, message=FALSE}
+DataSedeGlobal <- read_delim("Data/SedeGlobal.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+
+
+
+
 **2.1.2) Evaluación con la Atención entregada por el IGS**
 
 Textxtxtxtxttxx
