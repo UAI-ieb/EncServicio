@@ -115,7 +115,8 @@ SatisNeta2 <- select (SatisNeta, -c(neto_SerGen:NetoServSolici))
 #rm(Sergen)
 
 DataSatis=rbind(SatisNeta2,SatisTot2)
-save(DataSatis, file = "DataSatis.RData")
+save(DataSatis, file = "Data/DataSatis.RData")
+
 
 #contar NA por Variable
 #sapply(DataSatis, function(x) sum(is.na(x)))
@@ -132,7 +133,7 @@ DF.Infra2=DF.Infra %>%
 #DF.Infra2$valor [DF.Infra2$valor == 0] <-NA
 DF.Infra3=DF.Infra2[!is.na(DF.Infra2$Valor),]
 
-write.csv2(DF.Infra3,file="Infra1.csv")
+write.csv2(DF.Infra3,file="Data/Infra1.csv")
 
 DF.Digit=select(SatisNeta2,medicion,PorIEBVirtual,PorEbook,PorWifi)
 colnames(DF.Digit)<-c("medicion","IEBVirtual","Ebook","Wifi")
@@ -142,7 +143,7 @@ DF.Digit2=DF.Digit %>%
 
 DF.Digit3=DF.Digit2[!is.na(DF.Digit2$Valor),]
 DF.Digit3=mutate(DF.Digit3, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(DF.Digit3,file="Digit.csv")
+write.csv2(DF.Digit3,file="Data/Digit.csv")
 
 
 DF.OtrosServ=select(SatisNeta2,medicion,PorCajas,PorSolicitudes)
@@ -150,11 +151,9 @@ colnames(DF.OtrosServ)<-c("medicion","Cajas","Serv.Solicitudes")
 DF.OtrosServ2=DF.OtrosServ %>%
   gather(Tipo, Valor, Cajas:Serv.Solicitudes)
 DF.OtrosServ3=DF.OtrosServ2[!is.na(DF.OtrosServ2$Valor),]
-write.csv2(DF.OtrosServ3,file="OtrosServ.csv")
+write.csv2(DF.OtrosServ3,file="Data/OtrosServ.csv")
 
-View(Grafico5)
-
-# VARIABLE DISPOSICION DE RECOMENDAR
+# VARIABLE DISPOSICIÓN DE RECOMENDAR
 
 # GRÁFICO 1
 Data2=subset(Data, Recomendar_IGS > 0)
@@ -163,7 +162,6 @@ DataRecom=Data[!is.na(Data$Recomendar_IGS),]
 table(DataRecom$Recomendar_IGS)
 
 t.Recom = data.frame (DataRecom)
-
 
 t.Recom1= table (t.Recom$Recomendar_IGS ,t.Recom$medicion )
 
@@ -186,7 +184,7 @@ t.Recom3=mutate(t.Recom3, Var1 = ifelse(Var1 %in% "Probablemente SI lo recomenda
 
 head(t.Recom3)
 
-write.csv2(t.Recom3,file="t.Recom1.csv")
+write.csv2(t.Recom3,file="Data/t.Recom1.csv")
 
 # GRÁFICO 2 de RECOMENDACION
 
@@ -206,7 +204,7 @@ colnames(t.Recom3d)<-c("medicion","Sede","Valor")
 
 #t.Recom3d=mutate(t.Recom3d,t.Recom3d$CatRecom=NetoServSolici*100)
 t.Recom2=t.Recom3d %>% filter(t.Recom3d$Valor > 0)
-write.csv2(t.Recom2,file="t.Recom2.csv")
+write.csv2(t.Recom2,file="Data/t.Recom2.csv")
 
 GrafRecom2= ggplot(t.Recom2, aes(t.Recom2$Valor, t.Recom2$medicion, label = paste(round(t.Recom2$Valor*100, 0), "%"))) +
   geom_segment(aes(x = 0, y = t.Recom2$medicion, xend = t.Recom2$Valor, yend = t.Recom2$medicion), color = rgb(1, 0, 0, 0.4), size=3) +
@@ -230,7 +228,7 @@ GrafRecom2 + facet_grid( .~ t.Recom2$Sede )
 SedeAtencion=aggregate(Data$NetoAtencion ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
 SedeAtencion
 colnames(SedeAtencion)<-c("medicion","Sede","Valor")
-write.csv2(SedeAtencion,file="SedeAtencion.csv")
+write.csv2(SedeAtencion,file="Data/SedeAtencion.csv")
 
 ggplot(SedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1.0)  + 
@@ -250,7 +248,7 @@ ggplot(SedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label =
 SedeGlobal=aggregate(Data$neto_SerGen ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
 SedeGlobal
 colnames(SedeGlobal)<-c("medicion","Sede","Valor")
-write.csv2(SedeGlobal,file="SedeGlobal.csv")
+write.csv2(SedeGlobal,file="Data/SedeGlobal.csv")
 
 GrafGlobal=ggplot(SedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1.0)  + 
@@ -271,7 +269,7 @@ GrafGlobal + facet_grid(. ~ Sede )
 SedeDocente=aggregate(Data$NetoDocente ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
 SedeDocente
 colnames(SedeDocente)<-c("medicion","Sede","Valor")
-write.csv2(SedeDocente,file="SedeDocente.csv")
+write.csv2(SedeDocente,file="Data/SedeDocente.csv")
 
 GrafDocente=ggplot(SedeDocente, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1.0)  + 
@@ -294,7 +292,7 @@ SedeSClases
 colnames(SedeSClases)<-c("medicion","Sede","Valor")
 SedeSClases2=filter(SedeSClases, Valor != -1)
 SedeSClases2=mutate(SedeSClases2, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(SedeSClases2,file="SedeSClases.csv")
+write.csv2(SedeSClases2,file="Data/SedeSClases.csv")
 
 GrafSClases=ggplot(SedeSClases2, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
@@ -317,7 +315,7 @@ SedeBiblio
 colnames(SedeBiblio)<-c("medicion","Sede","Valor")
 SedeBiblio=filter(SedeBiblio, Valor != 0)
 SedeBiblio=mutate(SedeBiblio, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(SedeBiblio,file="SedeBiblio.csv")
+write.csv2(SedeBiblio,file="Data/SedeBiblio.csv")
 
 GrafBiblio=ggplot(SedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
@@ -340,7 +338,7 @@ SedeBanos
 colnames(SedeBanos)<-c("medicion","Sede","Valor")
 SedeBanos=filter(SedeBanos, Valor != -1)
 SedeBanos=mutate(SedeBanos, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(SedeBanos,file="SedeBanos.csv")
+write.csv2(SedeBanos,file="Data/SedeBanos.csv")
 
 GrafBanos=ggplot(SedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
@@ -363,7 +361,7 @@ SedeLab
 colnames(SedeLab)<-c("medicion","Sede","Valor")
 SedeLab=filter(SedeLab, Valor != -1)
 SedeLab=mutate(SedeLab, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(SedeLab,file="SedeLab.csv")
+write.csv2(SedeLab,file="Data/SedeLab.csv")
 
 GrafLab=ggplot(SedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
@@ -386,7 +384,7 @@ SedeCaf
 colnames(SedeCaf)<-c("medicion","Sede","Valor")
 SedeCaf=filter(SedeCaf, Valor != -1)
 SedeCaf=mutate(SedeCaf, colores = ifelse(Valor < 0, "Red","Black"))
-write.csv2(SedeCaf,file="SedeCaf.csv")
+write.csv2(SedeCaf,file="Data/SedeCaf.csv")
 
 GrafCaf=ggplot(SedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1)  + 
