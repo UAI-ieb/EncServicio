@@ -230,7 +230,7 @@ SedeAtencion
 colnames(SedeAtencion)<-c("medicion","Sede","Valor")
 write.csv2(SedeAtencion,file="Data/SedeAtencion.csv")
 
-ggplot(SedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+GrafAtencion=ggplot(SedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1.0)  + 
   geom_text(nudge_x = 0 , color= "black" ,size=3) +
   geom_point( size=2, shape=21, fill="white") + 
@@ -242,6 +242,7 @@ ggplot(SedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label =
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
+GrafAtencion + facet_grid(. ~ Sede )
 
 # SERVICIO DE GLOBAL POR SEDE MÁS MEDICION 
 
@@ -284,6 +285,34 @@ GrafDocente=ggplot(SedeDocente, aes(x=medicion, y=Valor, group = Sede, colour=Se
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafDocente + facet_grid(. ~ Sede )
+
+# INFRAESTRUCTURA POR SEDE MÁS MEDICION
+
+SedeInfra=aggregate(Data$NetoInfra ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
+SedeInfra
+colnames(SedeInfra)<-c("medicion","Sede","Valor")
+SedeInfra=mutate(SedeInfra, colores = ifelse(Valor < 0, "Red","Black"))
+write.csv2(SedeInfra,file="Data/SedeInfra.csv")
+
+GrafSClases=ggplot(SedeSClases2, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= SedeSClases2$colores, size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción con Sala de Clases por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafSClases + facet_grid(. ~ Sede )
+
+
+
+
+
+
 
 # SALAS DE CLASES POR SEDE MÁS MEDICION
 

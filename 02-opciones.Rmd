@@ -41,7 +41,22 @@ DataSedeGlobal <- read_delim("Data/SedeGlobal.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1.0)  + 
+  geom_text(nudge_x = 1,nudge_y = 0.01 , color= "black", size=3) +
+  geom_point( size=0.5, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Sede-Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Evaluación Global del IGS por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafGlobal + facet_grid(. ~ Sede )
 
+```
 
 
 
@@ -64,6 +79,28 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
     caption = "\nUnidad de Análisis Institucional"
   )
 graf2ab + facet_grid(. ~ TipoSat)
+```
+
+```{r echo=FALSE, message=FALSE}
+DataSedeAtencion <- read_delim("Data/SedeAtencion.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1.0)  + 
+  geom_text(nudge_x = 0,nudge_y = 0.04, color= "black" ,size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Sede-Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Atención por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafAtencion + facet_grid(. ~ Sede )
 ```
 
 **2.2.3) Disposición a Recomendar el IGS**
@@ -126,7 +163,7 @@ GrafRecom2 + facet_grid(.~  DataRecom2$Sede )
 
 **2.2.1) Satisfacción con Docentes**
 
-
+sdgsdfgafvfadgvfdagfdagadgfsd
 
 ```{r echo=FALSE, warning=FALSE}
 graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(round(DataSatis$PorDocente, 0), sep="","%"))) +
@@ -145,6 +182,32 @@ graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(rou
 graf2ba + facet_grid(. ~ TipoSat)
 
 ```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+DataSedeDocente <- read_delim("Data/SedeDocente.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE}
+GrafDocente=ggplot(SedeDocente, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
+  geom_line(size=1.0)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= "black" ,size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico XX: Satisfacción Neta con Docentes por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafDocente + facet_grid(. ~ Sede )
+
+```
+
+
+
 ## Satisfacción con Infraestructura y Otros Espacios Físicos Comunes del IGS
 
 **2.2.2) Satisfacción con la Infraestructura**
