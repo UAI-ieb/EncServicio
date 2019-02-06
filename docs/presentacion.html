@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Capítulo 4 Publicación | Encuesta de Servicio IGS</title>
+  <title>Presentación | Encuesta de Servicio IGS</title>
   <meta name="description" content="Este libro es una primera apromización en la Automatización del Área de Análisis Institucional">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 4 Publicación | Encuesta de Servicio IGS" />
+  <meta property="og:title" content="Presentación | Encuesta de Servicio IGS" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="https://github.com/UAI-ieb/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Publicación | Encuesta de Servicio IGS" />
+  <meta name="twitter:title" content="Presentación | Encuesta de Servicio IGS" />
   
   <meta name="twitter:description" content="Este libro es una primera apromización en la Automatización del Área de Análisis Institucional" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="componentes.html">
-<link rel="next" href="rmarkdown.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -167,34 +167,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="publicacion" class="section level1">
-<h1><span class="header-section-number">Capítulo 4</span> Publicación</h1>
-<p>La “publicación” del libro web puede ser tan simple como subirlo a <a href="https://help.github.com">GitHub</a> (estableciendo antes las opciones que se describen a continuación), aunque también bastaría con subir el contenido de la carpeta de salida <em>_book</em> a cualquier servidor web.</p>
-<div id="github" class="section level2">
-<h2><span class="header-section-number">4.1</span> GitHub Pages</h2>
-<p>Para poder emplear <a href="https://pages.github.com">GitHub Pages</a> habría que cambiar el directorio de salida en el archivo <em>_bookdown.yml</em>:</p>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">output_dir:</span><span class="at"> </span><span class="st">&quot;docs&quot;</span></code></pre></div>
-<p>Después de generar el libro, crear un fichero <em>.nojekyll</em> (vacio) en el nuevo directorio <em>docs</em> (GitHub procesa los sitios web con Jekyll; e.g. <a href="https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages">enlace</a> ), para lo que bastaría con ejecutar en la consola <code>file.create('docs/.nojekyll')</code>. Finalmente crear el correspondiente repositorio en GitHub, estableciendo en la configuración de “GitHub Pages” la opción de “Source” como “master branch /docs folder” (p.e. siguiendo estos <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages">pasos</a>).</p>
-<p>Para ir añadiendo contenido a un sitio en GitHub, se puede emplear por ejemplo RStudio (e.g. <a href="http://r-pkgs.had.co.nz/git.html">R packages</a> by <a href="http://hadley.nz/#code">Hadley Wickham</a>) o instalar <a href="https://desktop.github.com">GitHub Desktop</a> (lo que recomendaría en Windows…).</p>
-<p>Más información y alternativas en el <a href="https://bookdown.org/yihui/bookdown/publishing.html">libro de bookdown</a>.</p>
-</div>
-<div id="licencia" class="section level2">
-<h2><span class="header-section-number">4.2</span> Licencia</h2>
-<p>Es recomendable incluir una licencia, por ejemplo, este libro está bajo una licencia de <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>. Sin embargo en el libro de <a href="https://rubenfcasal.github.io/simbook">Prácticas de Simulación</a> se consideró una licencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es_ES">Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>, de forma preliminar.</p>
-<p>Se puede incluir la licencia en formato texto en un archivo <em>LICENSE</em> en la raíz del proyecto.</p>
+<div id="presentacion" class="section level1 unnumbered">
+<h1>Presentación</h1>
+<p>La Encuesta de Servicios, es aplicada desde 2014 de manera periódica y sistemática a los estudiantes del Instituto Guillermo Subercaseaux. Esta encuesta, en cuanto su aplicación, tiene una periodicidad semestreal.El objetivo central es el identificar, desde la percepción de los estudiantes, el funcionamiento y desempeño de actores, áreas y espacios a través de los cuales el Instituto entrega su servicio. Para ello, se cuantifica el grado de satisfacción o insatisfacción de los estudiantes respecto del uso de dichos actores/servicios/espacios en cada una de las sedes. De esta manera, los datos permiten determinar cuáles son los servicios que impactan con mayor o menor intensidad en la satisfacción integral de los estudiantes.</p>
+<p>Este libro ha sido escrito en <a href="http://rmarkdown.rstudio.com">R-Markdown</a> empleando el paquete <a href="https://bookdown.org/yihui/bookdown/"><code>bookdown</code></a></p>
+<p><img src="images/IconoIGS.png" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
-</div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="componentes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rmarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -224,7 +210,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rubenfcasal/bookdown_intro/edit/master/04-publicacion.Rmd",
+"link": "https://github.com/rubenfcasal/bookdown_intro/edit/master/index.Rmd",
 "text": "Edit"
 },
 "history": {
