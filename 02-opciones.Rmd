@@ -33,8 +33,9 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
   )
 graf2aa + facet_grid(. ~ TipoSat)
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeGlobal <- read_delim("Data/SedeGlobal.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
@@ -49,7 +50,7 @@ GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Calidad del Servicio por Sede y Medición",
+    title = "Gráfico 2.1.2: Satisfacción Neta con Calidad del Servicio por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -61,7 +62,7 @@ GrafGlobal + facet_grid(. ~ Sede )
 
 **2.1.2) Evaluación con la Atención entregada por el IGS**
 
-Textxtxtxtxttxx
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(round(DataSatis$PorAtencion, 0), "%"))) +
@@ -73,7 +74,7 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
   labs(
     x = "% de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.2:Satisfacción con la Atención, tanto Neta como Total",
+    title = "Gráfico 2.1.3:Satisfacción con la Atención, tanto Neta como Total",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -95,7 +96,7 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.1.3: Satisfacción Neta con la Atención por Sede y Medición",
+    title = "Gráfico 2.1.4: Satisfacción Neta con la Atención por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -104,7 +105,7 @@ GrafAtencion + facet_grid(. ~ Sede )
 
 **2.2.3) Disposición a Recomendar el IGS**
 
-fdhzfgdh
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 
 

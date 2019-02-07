@@ -541,3 +541,54 @@ GrafCajas=ggplot(SedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCajas + facet_grid(. ~ Sede )
+
+
+#Mejora docente 2018
+
+MejDocente=select(Data, medicion, Sede, MejDocente_Metodologia, MejDocente_Vocacion, MejDocente_Comunicacion, 
+                  MejDocente_Empatia, MejDocente_Contenidos)
+MejDocente2=filter(MejDocente, medicion == "2018-2")
+MejDocente3=MejDocente2 %>%
+  gather(Aspecto, Valor, MejDocente_Metodologia:MejDocente_Contenidos)
+MejDocente3=filter(MejDocente3, Valor != "N/A")
+
+
+
+mejdoc=ggplot(MejDocente3, aes(Valor, fill=Sede)) + geom_bar(position="dodge")
+mejdoc + facet_grid(. ~ Aspecto )
+
+library(scales)
+test <- ggplot(MejDocente3, aes(x = Valor, fill = Valor, position = "fill")) +
+  geom_bar() +
+  scale_y_continuous(labels = percent_format()) +
+  stat_bin(aes(label = paste("n = ", scales::percent((..count..)/sum(..count..)))), vjust=1, geom="text")
+test
+
+
+
+#Nube de Tag
+
+Nube1=select(Data,medicion,MejServGen)
+Nube1=filter(Nube1, medicion == "2018-2")
+head(Nube1)
+Nube2=select(Nube1, MejServGen)
+head(Nube2)
+Nube2 = gsub("0", "", Nube2)
+Nube2 = gsub("\"\"", "", Nube2)
+Nube2 = gsub(" \\\ ", "", Nube2)
+Nube2 = gsub("[[:digit:]]", "", Nube2)
+
+m
+m <- as.matrix(Nube2)
+v <- sort(rowSums(m), decreasing=TRUE)
+d <- data.frame(word = names(v), freq=v)
+head(d, 10)
+
+wordcloud(Words = Nube2$MejServGen , min.freq = 1,
+          max.words=100, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+
+
+library(wordcloud)
+wordcloud(names(v),v, min.freq = 5000, 
+          colors=brewer.pal(6,"Dark2"),random.order=FALSE)
