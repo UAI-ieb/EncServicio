@@ -1,4 +1,4 @@
-# Resultados 1
+# Resultados
 
 A continuación, se muestran los resultados más relevantes de la encuesta. Existen dos indicadores claves para dar cuenta del grado de satisfacción/insatifacción de los estudiantes; la ***Satisfacción total*** y la ***Satisfacción neta***. La primera alude al porcentaje de alumnos que evalúan a cada servicio/espacio con nota 6 ó 7, en cambios la satisfacción neta, corresponde a la diferencia del porcentaje de estudiantesque evalúan con nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5, todo ello expresado en porcentaje. En general, será esta última el valor comparativo en la mayoría de los gráficos y tablas del informe.
 
@@ -14,7 +14,6 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(plyr)
-Data <- read_excel("Data/DataServicio.xlsx")
 load("Data/DataSatis.RData")
 ```
 
@@ -26,9 +25,9 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
   labs(
-    x = "Porcentaje de Satisfacción",
+    x = "% de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.1: Indicadores Globales de Satisfacción General",
+    title = "Gráfico 2.1.1: Satisfacción con Calidad del Servicio",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -50,7 +49,7 @@ GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Evaluación Global del IGS por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Calidad del Servicio por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -72,9 +71,9 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
   labs(
-    x = "Porcentaje de Satisfacción",
+    x = "% de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.2:Satisfacción con Atención del IGS, tanto Neta como Total",
+    title = "Gráfico 2.1.2:Satisfacción con la Atención, tanto Neta como Total",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -96,7 +95,7 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Atención por Sede y Medición",
+    title = "Gráfico 2.1.3: Satisfacción Neta con la Atención por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -126,17 +125,16 @@ GrafRecom1=ggplot(DataRecom1, aes(Valor, Var1, color = DataRecom1$colores, label
     labs(
     x = "Valores",
     y = "Grupos",
-    title = "Gráfico 2.1.3:Disposición a Recomendar el Instituto por Medición",
+    title = "Gráfico 2.1.4:Disposición a Recomendar el Instituto por Medición",
     subtitle = "Encuesta de Servicio",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafRecom1 + facet_grid(. ~ Var2 )
 ```
 
-dgsdg<
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-
 DataRecom2 <- read_delim("Data/t.Recom2.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
@@ -163,7 +161,7 @@ GrafRecom2 + facet_grid(.~  DataRecom2$Sede )
 
 **2.2.1) Satisfacción con Docentes**
 
-sdgsdfgafvfadgvfdagfdagadgfsd
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, warning=FALSE}
 graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(round(DataSatis$PorDocente, 0), sep="","%"))) +
@@ -182,6 +180,7 @@ graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(rou
 graf2ba + facet_grid(. ~ TipoSat)
 
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeDocente <- read_delim("Data/SedeDocente.csv", ";", escape_double = FALSE, 
@@ -212,6 +211,8 @@ GrafDocente + facet_grid(. ~ Sede )
 
 **2.2.2) Satisfacción con la Infraestructura**
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE}
 graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round(DataSatis$PorInfra, 0),sep="", "%"))) +
   geom_segment(aes(x = 0, y = DataSatis$medicion, xend = DataSatis$PorInfra, yend = medicion), color = rgb(1, 0, 0, 0.4), size=3) +
@@ -229,6 +230,7 @@ graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round
 graf2bb + facet_grid(. ~ TipoSat)
 ```
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE, 
@@ -258,6 +260,8 @@ GrafInfra + facet_grid(. ~ Sede )
 + Biblioteca
 + Banos
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 GrafInfra1 <- read_delim("Data/Infra1.csv", ";", escape_double = FALSE, 
@@ -279,6 +283,7 @@ ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, 
     caption = "\nUnidad de Análisis Institucional"
   )
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -303,6 +308,8 @@ GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour
 GrafSClases + facet_grid(. ~ Sede )
 
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 DataSedeBiblio <- read_delim("Data/SedeBiblio.csv", ";", escape_double = FALSE, 
@@ -325,6 +332,7 @@ GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=S
   )
 GrafBiblio + facet_grid(. ~ Sede )
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -348,6 +356,8 @@ GrafBanos=ggplot(DataSedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   )
 GrafBanos + facet_grid(. ~ Sede )
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 DataSedeLab <- read_delim("Data/SedeLab.csv", ";", escape_double = FALSE, 
@@ -371,6 +381,9 @@ GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
 GrafLab + facet_grid(. ~ Sede )
 
 ```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 DataSedeCaf <- read_delim("Data/SedeCaf.csv",";", escape_double = FALSE, 
@@ -396,6 +409,8 @@ GrafCaf + facet_grid(. ~ Sede )
 
 
 **2.2.3) Satisfacción con Espacios o Servicos Digitales**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 + IEBVirtual
 + Biblioteca Digital (Ebook)
@@ -426,6 +441,8 @@ graf5 + facet_grid(. ~ Tipo )
 
 Por sede Ebook
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 DataSedeEbook <- read_delim("Data/SedeEbook.csv",";", escape_double = FALSE, 
@@ -452,6 +469,8 @@ GrafEbook + facet_grid(. ~ Sede )
 
 Por sede WIFI
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
 DataSedeWifi <- read_delim("Data/SedeWifi.csv",";", escape_double = FALSE, 
@@ -477,6 +496,8 @@ GrafWifi + facet_grid(. ~ Sede )
 
 Por sede IEB Virtual
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeIEBV <- read_delim("Data/SedeIEBV.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
@@ -492,7 +513,7 @@ GrafIEBV=ggplot(DataSedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Cafetería por Sede y Medición",
+    title = "Gráfico XX: Satisfacción con IEB Virtual por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -504,6 +525,8 @@ GrafIEBV + facet_grid(. ~ Sede )
 
 + Servicio de Solicitudes
 + Cajas
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 
@@ -530,6 +553,8 @@ graf5 + facet_grid(. ~ Tipo )
 
 Serv. de Solicitudes por sede 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeServSol <- read_delim("Data/SedeServSol.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
@@ -551,7 +576,10 @@ GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour
   )
 GrafSolicit + facet_grid(. ~ Sede )
 ```
+
 Cajas por sede 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeCajas<- read_delim("Data/SedeCajas.csv", ";", escape_double = FALSE, 
