@@ -308,12 +308,6 @@ GrafInfra=ggplot(SedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   )
 GrafInfra + facet_grid(. ~ Sede )
 
-
-
-
-
-
-
 # SALAS DE CLASES POR SEDE MÁS MEDICION
 
 SedeSClases=aggregate(Data$NetoSClases ~ medicion+Sede, data=Data, mean, na.rm=TRUE)
@@ -536,59 +530,455 @@ GrafCajas=ggplot(SedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    title = "Gráfico XX: Satisfacción Neta con Cajas por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCajas + facet_grid(. ~ Sede )
 
 
-#Mejora docente 2018
+#Mejora docente 2018-2
 
 MejDocente=select(Data, medicion, Sede, MejDocente_Metodologia, MejDocente_Vocacion, MejDocente_Comunicacion, 
                   MejDocente_Empatia, MejDocente_Contenidos)
+colnames(MejDocente)<-c("medicion","Sede", "Metodología", "Vocación", "Comunicación", 
+                        "Empatía", "Contenidos")
+
 MejDocente2=filter(MejDocente, medicion == "2018-2")
 MejDocente3=MejDocente2 %>%
-  gather(Aspecto, Valor, MejDocente_Metodologia:MejDocente_Contenidos)
+  gather(Aspecto, Valor, Metodología:Contenidos)
 MejDocente3=filter(MejDocente3, Valor != "N/A")
 
+MejDocente3=mutate(MejDocente3, Valor2 =ifelse(MejDocente3$Valor %in% "Sí", 1,0))                                      
+colnames(MejDocente3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejDocente4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejDocente3, mean, na.rm=TRUE)
+colnames(MejDocente4)<-c("medicion","Sede","Aspecto","Valor")
+MejDocente4
+
+GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, label = paste(round(MejDocente4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejDocente4$Aspecto, xend = MejDocente4$Valor, yend = MejDocente4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en desempeño docente",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejDoc + facet_grid( .~ MejDocente4$Sede )
 
 
-mejdoc=ggplot(MejDocente3, aes(Valor, fill=Sede)) + geom_bar(position="dodge")
-mejdoc + facet_grid(. ~ Aspecto )
+#Mejora INARESTRUCTURA 2018-2
 
-library(scales)
-test <- ggplot(MejDocente3, aes(x = Valor, fill = Valor, position = "fill")) +
-  geom_bar() +
-  scale_y_continuous(labels = percent_format()) +
-  stat_bin(aes(label = paste("n = ", scales::percent((..count..)/sum(..count..)))), vjust=1, geom="text")
-test
+MejInfra=select(Data, medicion, Sede, MejInfra_Banos,MejInfra_AseoBanos,MejInfra_SalaClases,MejInfra_Ascensores,MejInfra_Cafeteria, MejInfra_EspComunes)
+colnames(MejInfra)<-c("medicion","Sede", "Baños","AseoBaños","SalaClases","Ascensores","Cafetería", "EspaciosComunes")
+
+MejInfra2=filter(MejInfra, medicion == "2018-2")
+MejInfra3=MejInfra2 %>%
+  gather(Aspecto, Valor, Baños:EspaciosComunes)
+MejInfra3=filter(MejInfra3, Valor != "N/A")
+
+MejInfra3=mutate(MejInfra3, Valor2 =ifelse(MejInfra3$Valor %in% "Sí", 1,0))                                      
+colnames(MejInfra3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejInfra4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejInfra3, mean, na.rm=TRUE)
+colnames(MejInfra4)<-c("medicion","Sede","Aspecto","Valor")
+MejInfra4
+  
+
+GrafMejInfra= ggplot(MejInfra4, aes(MejInfra4$Valor, MejInfra4$Aspecto, label = paste(round(MejInfra4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejInfra4$Aspecto, xend = MejInfra4$Valor, yend = MejInfra4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Infraestructura",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejInfra + facet_grid( .~ MejInfra4$Sede )
+
+
+#Mejora BIBLIOTECA 2018-2
+
+MejBiblio=select(Data, medicion, Sede, MejBiblio_MasVariedad,MejBiblio_Infraestructura,MejBiblio_Horarios)
+colnames(MejBiblio)<-c("medicion","Sede", "MásVariedad","Infraestructura","Horarios")
+
+MejBiblio2=filter(MejBiblio, medicion == "2018-2")
+MejBiblio3=MejBiblio2 %>%
+  gather(Aspecto, Valor, MásVariedad:Horarios)
+MejBiblio3=filter(MejBiblio3, Valor != "N/A")
+
+MejBiblio3=mutate(MejBiblio3, Valor2 =ifelse(MejBiblio3$Valor %in% "Sí", 1,0))                                      
+colnames(MejBiblio3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejBiblio4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejBiblio3, mean, na.rm=TRUE)
+colnames(MejBiblio4)<-c("medicion","Sede","Aspecto","Valor")
+MejBiblio4
+
+GrafMejBiblio= ggplot(MejBiblio4, aes(MejBiblio4$Valor, MejBiblio4$Aspecto, label = paste(round(MejBiblio4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejBiblio4$Aspecto, xend = MejBiblio4$Valor, yend = MejBiblio4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejBiblio + facet_grid( .~ MejBiblio4$Sede )
+
+#Mejora BIBLIOTECA VIRTUAL (EBOOK)2018-2
+
+MejEbook=select(Data, medicion, Sede, MejEbook_VariedadTxT, MejEbook_Usabilidad, MejEbook_MasDescargas)
+colnames(MejEbook)<-c("medicion","Sede", "MásVariedad","Usabilidad","MásMaterialDescargable")
+
+MejEbook2=filter(MejEbook, medicion == "2018-2")
+
+MejEbook3=MejEbook2 %>%
+  gather(Aspecto, Valor, MásVariedad:MásMaterialDescargable)
+
+MejEbook3=filter(MejEbook3, Valor != "N/A")
+
+MejEbook3=mutate(MejEbook3, Valor2 =ifelse(MejEbook3$Valor %in% "Sí", 1,0))                                      
+colnames(MejEbook3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejEbook4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejEbook3, mean, na.rm=TRUE)
+colnames(MejEbook4)<-c("medicion","Sede","Aspecto","Valor")
+MejEbook4
+
+GrafMejEbook= ggplot(MejEbook4, aes(MejEbook4$Valor, MejEbook4$Aspecto, label = paste(round(MejEbook4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejEbook4$Aspecto, xend = MejEbook4$Valor, yend = MejEbook4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejEbook + facet_grid( .~ MejEbook4$Sede)
+
+#Mejora BIBLIOTECA VIRTUAL (EBOOK)2018-2
+
+MejEbook=select(Data, medicion, Sede, MejEbook_VariedadTxT, MejEbook_Usabilidad, MejEbook_MasDescargas)
+colnames(MejEbook)<-c("medicion","Sede", "MásVariedad","Usabilidad","MásMaterialDescargable")
+
+MejEbook2=filter(MejEbook, medicion == "2018-2")
+
+MejEbook3=MejEbook2 %>%
+  gather(Aspecto, Valor, MásVariedad:MásMaterialDescargable)
+
+MejEbook3=filter(MejEbook3, Valor != "N/A")
+
+MejEbook3=mutate(MejEbook3, Valor2 =ifelse(MejEbook3$Valor %in% "Sí", 1,0))                                      
+colnames(MejEbook3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejEbook4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejEbook3, mean, na.rm=TRUE)
+colnames(MejEbook4)<-c("medicion","Sede","Aspecto","Valor")
+MejEbook4
+
+GrafMejEbook= ggplot(MejEbook4, aes(MejEbook4$Valor, MejEbook4$Aspecto, label = paste(round(MejEbook4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejEbook4$Aspecto, xend = MejEbook4$Valor, yend = MejEbook4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejEbook + facet_grid( .~ MejEbook4$Sede )
+
+
+#Mejora LABORATORIO 2018-2
+
+MejLab=select(Data, medicion, Sede, MejLabo_EstadoPCs, MejLabo_NumPCs, MejLab_Espacio, MejLab_MasProgramas, MejLab_Amabilidad)
+colnames(MejLab)<-c("medicion","Sede", "EstadoPCs","NúmeroPCs","MásEspacio","MásProgramas","MásAmabilidad")
+
+MejLab2=filter(MejLab, medicion == "2018-2")
+
+MejLab3=MejLab2 %>%
+  gather(Aspecto, Valor, EstadoPCs:MásAmabilidad)
+
+MejLab3=filter(MejLab3, Valor != "N/A")
+
+MejLab3=mutate(MejLab3, Valor2 =ifelse(MejLab3$Valor %in% "Sí", 1,0))                                      
+colnames(MejLab3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejLab4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejLab3, mean, na.rm=TRUE)
+colnames(MejLab4)<-c("medicion","Sede","Aspecto","Valor")
+MejLab4
+
+GrafMejLab= ggplot(MejLab4, aes(MejLab4$Valor, MejLab4$Aspecto, label = paste(round(MejLab4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejLab4$Aspecto, xend = MejLab4$Valor, yend = MejLab4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejLab + facet_grid( .~ MejLab4$Sede )
+
+#Mejora SALA DE CLASES 2018-2
+
+MejSClases=select(Data, medicion, Sede, MejSalas_AireAcond, MejSalas_Espacio, MejSalas_Sillas, MejSalas_Mesas, MejSalas_Insumos, MejSalas_Pizarra)
+colnames(MejSClases)<-c("medicion","Sede", "AireAcondicionado","MásEspacio","Sillas","Mesas","Insumos","Pizarras")
+
+MejSClases2=filter(MejSClases, medicion == "2018-2")
+
+MejSClases3=MejSClases2 %>%
+  gather(Aspecto, Valor, AireAcondicionado:Pizarras)
+
+MejSClases3=filter(MejSClases3, Valor != "N/A")
+
+MejSClases3=mutate(MejSClases3, Valor2 =ifelse(MejSClases3$Valor %in% "Sí", 1,0))                                      
+colnames(MejSClases3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejSClases4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejSClases3, mean, na.rm=TRUE)
+colnames(MejSClases4)<-c("medicion","Sede","Aspecto","Valor")
+MejSClases4
+
+GrafMejSClases= ggplot(MejSClases4, aes(MejSClases4$Valor, MejSClases4$Aspecto, label = paste(round(MejSClases4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejSClases4$Aspecto, xend = MejSClases4$Valor, yend = MejSClases4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Salas de Clases",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejSClases + facet_grid( .~ MejSClases4$Sede )
+
+
+#Mejora BAÑOS 2018-2
+
+MejBanos=select(Data, medicion, Sede, MejBanos_Espacio, MejBanos_Aseo, MejBanos_Cantidad, MejBanos_Insumos, MejBanos_Cerraduras, MejBanos_Ventilacion, 
+                MejBanos_iluminacion)
+colnames(MejBanos)<-c("medicion","Sede", "MásEspacio","AseoBaños","Cantidad","Insumos","Cerraduras","Ventilación","Iluminación")
+
+MejBanos2=filter(MejBanos, medicion == "2018-2")
+
+MejBanos3=MejBanos2 %>%
+  gather(Aspecto, Valor, MásEspacio:Iluminación)
+
+MejBanos3=filter(MejBanos3, Valor != "N/A")
+
+MejBanos3=mutate(MejBanos3, Valor2 =ifelse(MejBanos3$Valor %in% "Sí", 1,0))                                      
+colnames(MejBanos3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejBanos4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejBanos3, mean, na.rm=TRUE)
+colnames(MejBanos4)<-c("medicion","Sede","Aspecto","Valor")
+MejBanos4
+
+GrafMejBanos= ggplot(MejBanos4, aes(MejBanos4$Valor, MejBanos4$Aspecto, label = paste(round(MejBanos4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejBanos4$Aspecto, xend = MejBanos4$Valor, yend = MejBanos4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Baños",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejBanos + facet_grid( .~ MejBanos4$Sede )
+
+
+#Mejora CAFETERÍA 2018-2
+
+MejCaf=select(Data, medicion, Sede, MejCafet_Variedad, MejCafet_Precios, MejCafet_Amplitud, MejCafet_Temperatura, MejCafet_Disponibilidad)
+colnames(MejCaf)<-c("medicion","Sede", "MásVariedad","MejoresPrecios","Amplitud","Temperatura","StockProductos")
+
+MejCaf2=filter(MejCaf, medicion == "2018-2")
+
+MejCaf3=MejCaf2 %>%
+  gather(Aspecto, Valor, MásVariedad:StockProductos)
+
+MejCaf3=filter(MejCaf3, Valor != "N/A")
+
+MejCaf3=mutate(MejCaf3, Valor2 =ifelse(MejCaf3$Valor %in% "Sí", 1,0))                                      
+colnames(MejCaf3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejCaf4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejCaf3, mean, na.rm=TRUE)
+colnames(MejCaf4)<-c("medicion","Sede","Aspecto","Valor")
+MejCaf4
+
+GrafMejCaf= ggplot(MejCaf4, aes(MejCaf4$Valor, MejCaf4$Aspecto, label = paste(round(MejCaf4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejCaf4$Aspecto, xend = MejCaf4$Valor, yend = MejCaf4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "Porcentaje de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas en Cafetería",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejCaf + facet_grid( .~ MejCaf4$Sede )
+
+
+#Mejora WIFI 2018-2
+
+MejWifi=select(Data, medicion, Sede, MejWIFI_EstaSenal, MejWIFI_Velocidad, MejWIFI_Cobertura)
+colnames(MejWifi)<-c("medicion","Sede", "MejorSeñal","MejorVelocidad","MayorCobertura")
+
+MejWifi2=filter(MejWifi, medicion == "2018-2")
+
+MejWifi3=MejWifi2 %>%
+  gather(Aspecto, Valor, MejorSeñal:MayorCobertura)
+
+MejWifi3=filter(MejWifi3, Valor != "N/A")
+
+MejWifi3=mutate(MejWifi3, Valor2 =ifelse(MejWifi3$Valor %in% "Sí", 1,0))                                      
+colnames(MejWifi3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejWifi4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejWifi3, mean, na.rm=TRUE)
+colnames(MejWifi4)<-c("medicion","Sede","Aspecto","Valor")
+MejWifi4
+
+GrafMejWifi= ggplot(MejWifi4, aes(MejWifi4$Valor, MejWifi4$Aspecto, label = paste(round(MejWifi4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejWifi4$Aspecto, xend = MejWifi4$Valor, yend = MejWifi4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "% de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas sobre servicio WIFI",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejWifi + facet_grid( .~ MejWifi4$Sede )
+
+#Mejora CAJAS 2018-2
+
+MejCaja=select(Data, medicion, Sede, MejCaja_TiempoEspera,MejCaja_TiempoAtencion,MejCaja_Amabilidad,MejCaja_Informacion,
+               MejCaja_InfodePagos,MejCaja_Horarios,MejCaja_PagosInternet)
+colnames(MejCaja)<-c("medicion","Sede","TiempoEspera","TiempoAtención","MayorAmabilidad","MásInformación","InfoSobrePagos","Horarios","PagosporInternet")
+
+MejCaja2=filter(MejCaja, medicion == "2018-2")
+
+MejCaja3=MejCaja2 %>%
+  gather(Aspecto, Valor, TiempoEspera:PagosporInternet)
+
+MejCaja3=filter(MejCaja3, Valor != "N/A")
+
+MejCaja3=mutate(MejCaja3, Valor2 =ifelse(MejCaja3$Valor %in% "Sí", 1,0))                                      
+colnames(MejCaja3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejCaja4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejCaja3, mean, na.rm=TRUE)
+colnames(MejCaja4)<-c("medicion","Sede","Aspecto","Valor")
+MejCaja4
+
+GrafMejCaja= ggplot(MejCaja4, aes(MejCaja4$Valor, MejCaja4$Aspecto, label = paste(round(MejCaja4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejCaja4$Aspecto, xend = MejCaja4$Valor, yend = MejCaja4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "% de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas sobre Cajas",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejCaja + facet_grid( .~ MejCaja4$Sede )
+
+
+#Mejora SERVICIO DE SOLICITUDES 2018-2
+
+MejServSolic=select(Data, medicion, Sede,MejServ_Rapidez, MejServ_Usabilidad, MejServ_MasInfo, MejServ_CalidadRespuestas)
+colnames(MejServSolic)<-c("medicion","Sede","MayorRapidez","Usabilidad","MayorInformación","CalidadRespuestas")
+
+MejServSolic2=filter(MejServSolic, medicion == "2018-2")
+
+MejServSolic3=MejServSolic2 %>%
+  gather(Aspecto, Valor, MayorRapidez:CalidadRespuestas)
+
+MejServSolic3=filter(MejServSolic3, Valor != "N/A")
+
+MejServSolic3=mutate(MejServSolic3, Valor2 =ifelse(MejServSolic3$Valor %in% "Sí", 1,0))                                      
+colnames(MejServSolic3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
+
+MejServSolic4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejServSolic3, mean, na.rm=TRUE)
+colnames(MejServSolic4)<-c("medicion","Sede","Aspecto","Valor")
+MejServSolic4
+
+GrafMejServSolic= ggplot(MejServSolic4, aes(MejServSolic4$Valor, MejServSolic4$Aspecto, label = paste(round(MejServSolic4$Valor*100, 0), sep="","%"))) +
+  geom_segment(aes(x = 0, y = MejServSolic4$Aspecto, xend = MejServSolic4$Valor, yend = MejServSolic4$Aspecto), color = "SkyBlue", size=3) +
+  geom_point(color = "RoyalBlue4" , size = 10) +
+  geom_text(nudge_x = 0.02 , color= "white",size=3) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
+  labs(
+    x = "% de Satisfacción",
+    y = "Mediciones",
+    title = "Gráfico 1: Mejoras sugeridas sobre Cajas",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafMejServSolic + facet_grid( .~ MejServSolic4$Sede )
 
 
 
-#Nube de Tag
-
-Nube1=select(Data,medicion,MejServGen)
-Nube1=filter(Nube1, medicion == "2018-2")
-head(Nube1)
-Nube2=select(Nube1, MejServGen)
-head(Nube2)
-Nube2 = gsub("0", "", Nube2)
-Nube2 = gsub("\"\"", "", Nube2)
-Nube2 = gsub(" \\\ ", "", Nube2)
-Nube2 = gsub("[[:digit:]]", "", Nube2)
-
-m
-m <- as.matrix(Nube2)
-v <- sort(rowSums(m), decreasing=TRUE)
-d <- data.frame(word = names(v), freq=v)
-head(d, 10)
-
-wordcloud(Words = Nube2$MejServGen , min.freq = 1,
-          max.words=100, random.order=FALSE, rot.per=0.35, 
-          colors=brewer.pal(8, "Dark2"))
 
 
-library(wordcloud)
-wordcloud(names(v),v, min.freq = 5000, 
-          colors=brewer.pal(6,"Dark2"),random.order=FALSE)
+GrafMejInfra=ggplot() +
+  geom_point(data = MejInfra4, aes(x = Por_Valor2, y=Aspecto,color = Aspecto), size = 0) +
+  geom_text(label = MejInfra4$Por_Valor2, nudge_x = 0.5, nudge_y = 0 ,size=3) +
+  geom_segment(aes(x = 0, y = MejInfra4$Aspecto, xend = MejInfra4$Por_Valor2, yend = MejInfra4$Aspecto, color = MejInfra4$Aspecto), size=5 ) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.5)) +
+  labs(
+    x = "Valores",
+    y = "Aspectos",
+    title = "Aspectos que deben mejorar Docentes",
+    subtitle = "Respuesta Múltiple (% de Sí)",
+    caption = "\nPie de linea, para explicar lo que se vea conveniente"
+  )
+GrafMejInfra + facet_grid( MejInfra4$Sede ~.)
+
+
+
+
+
+y=paste(round(MejDocente4$Valor*100, 0),"%")                                   
+mejdoc=ggplot(MejDocente4, aes(Valor, fill=Sede)) + geom_bar(position="dodge")
+mejdoc + facet_grid(. ~ MejDocente4$Aspecto )
+
+
+
+
+

@@ -42,7 +42,7 @@ DataSedeGlobal <- read_delim("Data/SedeGlobal.csv", ";", escape_double = FALSE,
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=Sede,label = paste(round(Valor*100, 0),"%"))) +
   geom_line(size=1.0)  + 
   geom_text(nudge_x = 1,nudge_y = 0.01 , color= "black", size=3) +
   geom_point( size=0.5, shape=21, fill="white") + 
