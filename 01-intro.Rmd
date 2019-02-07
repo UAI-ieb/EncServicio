@@ -20,7 +20,7 @@ Para el cálculo del tamaño de la muestra se ha hecho uso de la fórmula de mue
 | Concepción   | 299  | 150  |
 | Temuco   | 418     |  213  |
 | **Total**   | **3.191**  | **1.243**|
-
+g
 La base de datos utilizada para el cálculo de las muestras incorpora, como datos de contacto, el correo electrónico de los alumnos. Mediante este correo se hará el contacto con ellos(as) para que accedan al formulario online y así entreguen la información solicitada. Además, y para asegurar la eficacia de la estrategia, se considera la colaboración de las direcciones de las sedes del IGS que participen del estudio. 
 
 ## Diseño del Instrumento
