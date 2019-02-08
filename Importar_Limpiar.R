@@ -174,7 +174,7 @@ t.Recom3=mutate(t.Recom3,Valor2 = paste(round(Valor,digits=0),sep ="","%"))
 t.Recom3=mutate(t.Recom3, colores = ifelse(Var1 %in% "Probablemente SI lo recomendaría", "olivedrab3",
                                            ifelse(Var1 %in% "Probablemente NO lo recomendaría", "orangered1",
                                                   ifelse(Var1 %in% "Definitivamente SI lo recomendaría", "olivedrab4",
-                                                         ifelse(Var1 %in% "Definitivamente NO lo recomendaría", "orangered3", "yellow2")))))
+                                                         ifelse(Var1 %in% "Definitivamente NO lo recomendaría", "orangered3", "SkyBlue")))))
 
 t.Recom3$colores <- factor(t.Recom3$colores)
 t.Recom3=mutate(t.Recom3, Var1 = ifelse(Var1 %in% "Probablemente SI lo recomendaría", "Probablemente SI",
@@ -536,7 +536,7 @@ GrafCajas=ggplot(SedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   )
 GrafCajas + facet_grid(. ~ Sede )
 
-
+#_________________________________________________________________________________________________
 #Mejora docente 2018-2
 
 MejDocente=select(Data, medicion, Sede, MejDocente_Metodologia, MejDocente_Vocacion, MejDocente_Comunicacion, 
@@ -555,6 +555,7 @@ colnames(MejDocente3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejDocente4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejDocente3, mean, na.rm=TRUE)
 colnames(MejDocente4)<-c("medicion","Sede","Aspecto","Valor")
 MejDocente4
+write.csv2(MejDocente4,file="Data/MejDocente4.csv")
 
 GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, label = paste(round(MejDocente4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejDocente4$Aspecto, xend = MejDocente4$Valor, yend = MejDocente4$Aspecto), color = "SkyBlue", size=3) +
@@ -588,7 +589,7 @@ colnames(MejInfra3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejInfra4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejInfra3, mean, na.rm=TRUE)
 colnames(MejInfra4)<-c("medicion","Sede","Aspecto","Valor")
 MejInfra4
-  
+write.csv2(MejInfra4,file="Data/MejInfra4.csv")  
 
 GrafMejInfra= ggplot(MejInfra4, aes(MejInfra4$Valor, MejInfra4$Aspecto, label = paste(round(MejInfra4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejInfra4$Aspecto, xend = MejInfra4$Valor, yend = MejInfra4$Aspecto), color = "SkyBlue", size=3) +
@@ -622,6 +623,7 @@ colnames(MejBiblio3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejBiblio4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejBiblio3, mean, na.rm=TRUE)
 colnames(MejBiblio4)<-c("medicion","Sede","Aspecto","Valor")
 MejBiblio4
+write.csv2(MejBiblio4,file="Data/MejBiblio4.csv") 
 
 GrafMejBiblio= ggplot(MejBiblio4, aes(MejBiblio4$Valor, MejBiblio4$Aspecto, label = paste(round(MejBiblio4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejBiblio4$Aspecto, xend = MejBiblio4$Valor, yend = MejBiblio4$Aspecto), color = "SkyBlue", size=3) +
@@ -656,6 +658,7 @@ colnames(MejEbook3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejEbook4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejEbook3, mean, na.rm=TRUE)
 colnames(MejEbook4)<-c("medicion","Sede","Aspecto","Valor")
 MejEbook4
+write.csv2(MejEbook4,file="Data/MejEbook4.csv") 
 
 GrafMejEbook= ggplot(MejEbook4, aes(MejEbook4$Valor, MejEbook4$Aspecto, label = paste(round(MejEbook4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejEbook4$Aspecto, xend = MejEbook4$Valor, yend = MejEbook4$Aspecto), color = "SkyBlue", size=3) +
@@ -671,40 +674,6 @@ GrafMejEbook= ggplot(MejEbook4, aes(MejEbook4$Valor, MejEbook4$Aspecto, label = 
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejEbook + facet_grid( .~ MejEbook4$Sede)
-
-#Mejora BIBLIOTECA VIRTUAL (EBOOK)2018-2
-
-MejEbook=select(Data, medicion, Sede, MejEbook_VariedadTxT, MejEbook_Usabilidad, MejEbook_MasDescargas)
-colnames(MejEbook)<-c("medicion","Sede", "MásVariedad","Usabilidad","MásMaterialDescargable")
-
-MejEbook2=filter(MejEbook, medicion == "2018-2")
-
-MejEbook3=MejEbook2 %>%
-  gather(Aspecto, Valor, MásVariedad:MásMaterialDescargable)
-
-MejEbook3=filter(MejEbook3, Valor != "N/A")
-
-MejEbook3=mutate(MejEbook3, Valor2 =ifelse(MejEbook3$Valor %in% "Sí", 1,0))                                      
-colnames(MejEbook3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
-
-MejEbook4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejEbook3, mean, na.rm=TRUE)
-colnames(MejEbook4)<-c("medicion","Sede","Aspecto","Valor")
-MejEbook4
-
-GrafMejEbook= ggplot(MejEbook4, aes(MejEbook4$Valor, MejEbook4$Aspecto, label = paste(round(MejEbook4$Valor*100, 0), sep="","%"))) +
-  geom_segment(aes(x = 0, y = MejEbook4$Aspecto, xend = MejEbook4$Valor, yend = MejEbook4$Aspecto), color = "SkyBlue", size=3) +
-  geom_point(color = "RoyalBlue4" , size = 10) +
-  geom_text(nudge_x = 0.02 , color= "white",size=3) +
-  theme(legend.position = "none",
-        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.3)) +
-  labs(
-    x = "Porcentaje de Satisfacción",
-    y = "Mediciones",
-    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
-    subtitle = "Encuesta de Servicios IGS",
-    caption = "\nUnidad de Análisis Institucional"
-  )
-GrafMejEbook + facet_grid( .~ MejEbook4$Sede )
 
 
 #Mejora LABORATORIO 2018-2
@@ -725,6 +694,7 @@ colnames(MejLab3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejLab4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejLab3, mean, na.rm=TRUE)
 colnames(MejLab4)<-c("medicion","Sede","Aspecto","Valor")
 MejLab4
+write.csv2(MejLab4,file="Data/MejLab4.csv") 
 
 GrafMejLab= ggplot(MejLab4, aes(MejLab4$Valor, MejLab4$Aspecto, label = paste(round(MejLab4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejLab4$Aspecto, xend = MejLab4$Valor, yend = MejLab4$Aspecto), color = "SkyBlue", size=3) +
@@ -759,6 +729,7 @@ colnames(MejSClases3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejSClases4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejSClases3, mean, na.rm=TRUE)
 colnames(MejSClases4)<-c("medicion","Sede","Aspecto","Valor")
 MejSClases4
+write.csv2(MejSClases4,file="Data/MejSClases4.csv") 
 
 GrafMejSClases= ggplot(MejSClases4, aes(MejSClases4$Valor, MejSClases4$Aspecto, label = paste(round(MejSClases4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejSClases4$Aspecto, xend = MejSClases4$Valor, yend = MejSClases4$Aspecto), color = "SkyBlue", size=3) +
@@ -795,6 +766,7 @@ colnames(MejBanos3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejBanos4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejBanos3, mean, na.rm=TRUE)
 colnames(MejBanos4)<-c("medicion","Sede","Aspecto","Valor")
 MejBanos4
+write.csv2(MejBanos4,file="Data/MejBanos4.csv") 
 
 GrafMejBanos= ggplot(MejBanos4, aes(MejBanos4$Valor, MejBanos4$Aspecto, label = paste(round(MejBanos4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejBanos4$Aspecto, xend = MejBanos4$Valor, yend = MejBanos4$Aspecto), color = "SkyBlue", size=3) +
@@ -830,6 +802,7 @@ colnames(MejCaf3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejCaf4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejCaf3, mean, na.rm=TRUE)
 colnames(MejCaf4)<-c("medicion","Sede","Aspecto","Valor")
 MejCaf4
+write.csv2(MejCaf4,file="Data/MejCaf4.csv")
 
 GrafMejCaf= ggplot(MejCaf4, aes(MejCaf4$Valor, MejCaf4$Aspecto, label = paste(round(MejCaf4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejCaf4$Aspecto, xend = MejCaf4$Valor, yend = MejCaf4$Aspecto), color = "SkyBlue", size=3) +
@@ -865,6 +838,7 @@ colnames(MejWifi3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejWifi4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejWifi3, mean, na.rm=TRUE)
 colnames(MejWifi4)<-c("medicion","Sede","Aspecto","Valor")
 MejWifi4
+write.csv2(MejWifi4,file="Data/MejWifi4.csv")
 
 GrafMejWifi= ggplot(MejWifi4, aes(MejWifi4$Valor, MejWifi4$Aspecto, label = paste(round(MejWifi4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejWifi4$Aspecto, xend = MejWifi4$Valor, yend = MejWifi4$Aspecto), color = "SkyBlue", size=3) +
@@ -900,6 +874,7 @@ colnames(MejCaja3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejCaja4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejCaja3, mean, na.rm=TRUE)
 colnames(MejCaja4)<-c("medicion","Sede","Aspecto","Valor")
 MejCaja4
+write.csv2(MejCaja4,file="Data/MejCaja4.csv")
 
 GrafMejCaja= ggplot(MejCaja4, aes(MejCaja4$Valor, MejCaja4$Aspecto, label = paste(round(MejCaja4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejCaja4$Aspecto, xend = MejCaja4$Valor, yend = MejCaja4$Aspecto), color = "SkyBlue", size=3) +
@@ -935,6 +910,7 @@ colnames(MejServSolic3)<-c("medicion","Sede","Aspecto","Respuesta","Valor")
 MejServSolic4=aggregate(Valor ~ medicion+Sede+Aspecto, data=MejServSolic3, mean, na.rm=TRUE)
 colnames(MejServSolic4)<-c("medicion","Sede","Aspecto","Valor")
 MejServSolic4
+write.csv2(MejServSolic4,file="Data/MejServSolic4.csv")
 
 GrafMejServSolic= ggplot(MejServSolic4, aes(MejServSolic4$Valor, MejServSolic4$Aspecto, label = paste(round(MejServSolic4$Valor*100, 0), sep="","%"))) +
   geom_segment(aes(x = 0, y = MejServSolic4$Aspecto, xend = MejServSolic4$Valor, yend = MejServSolic4$Aspecto), color = "SkyBlue", size=3) +
