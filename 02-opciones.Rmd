@@ -96,7 +96,7 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.1.4: Satisfacción Neta con la Atención por Sede y Medición",
+    title = "Gráfico 2.1.4: Satisfacción Neta con la Atención Recibida por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -124,7 +124,7 @@ GrafRecom1=ggplot(DataRecom1, aes(Valor, Var1, color = DataRecom1$colores, label
     labs(
     x = "Valores",
     y = "Grupos",
-    title = "Gráfico 2.1.4:Disposición a Recomendar el Instituto por Medición",
+    title = "Gráfico 2.1.5:Disposición a Recomendar el Instituto por Medición",
     subtitle = "Encuesta de Servicio",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -149,7 +149,7 @@ GrafRecom2= ggplot(DataRecom2, aes(Valor, medicion, label = paste(round(Valor*10
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.4: Disposición a Recomendar el Instituto por Sede",
+    title = "Gráfico 2.1.6: Disposición a Recomendar el Instituto por Sede",
     subtitle = "Suma de Definitivamente y Probablemente Sí recomendaría",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -194,7 +194,7 @@ GrafDocente=ggplot(DataSedeDocente, aes(x=medicion, y=Valor, group = Sede, colou
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Docentes por Sede y Medición",
+    title = "Gráfico 2.2.2: Satisfacción Neta con Docentes por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -221,7 +221,7 @@ GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, labe
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico : Mejoras sugeridas en desempeño docente",
+    title = "Gráfico 2.2.3: Mejoras sugeridas en desempeño docente",
     subtitle = "% de Sí según cada Aspecto",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -230,7 +230,7 @@ GrafMejDoc + facet_grid( .~ MejDocente4$Sede )
 
 ## Satisfacción con Infraestructura y Otros Espacios Físicos del IGS
 
-**2.2.2) Satisfacción con la Infraestructura**
+**2.3.1. Satisfacción con la Infraestructura**
 
 En el siguiente gráfico, se aprecia la satisfacción neta y total en las últimas 3 mediciones. Se aprecia que ha existido un alza sistemática, aunque leve. Los valores indican que la satisfacción neta está en torno al 50% y la satisfacción total en torno al 65%.
 
@@ -244,7 +244,7 @@ graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.2.2a:Satisfacción con Infraestructura del IGS, tanto Neta como Total",
+    title = "Gráfico 2.3.1a:Satisfacción con Infraestructura del IGS, tanto Neta como Total",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -268,10 +268,33 @@ ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, 
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2b: Satisfacción Neta de Espacios Físicos",
+    title = "Gráfico 2.3.1b: Satisfacción Neta de Espacios Físicos",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
+```
+La satisfacción con la infraestructura a nivel de sede se registra en el siguiente gráfico. Es posible apreciar que *Rancagua* registró en la medición 2017-2 el valor más alto de satisfacción neta, aunque después descendió entorno al 60%. Se les asimila la dinámica que muestran las sedes de *Temuco* y *Viña del Mar*. La sede de *Santiago* registra una satisfacción neta históricamente baja, no superando el 50%. No obstante, aún más bajo es la satisfacción en la sede de *Concepción*, donde el valor es incluso negativo (-16%). Además, en esta última sede, el valor más alto se registró en 2017-2, pero sólo alcanzó 11%, luego bajo al 7% y llegó en esta última medición a la cifra antes indicada.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeInfra$colores, size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 2.3.1c: Satisfacción Neta con Infraestructura por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafInfra + facet_grid(. ~ Sede )
 ```
 
 Se les preguntó a los estudiantes que evaluaron con nota inferior a 7 a la infraestructura de la sede, *¿qué mejoras debiesen ocurrir para lograr un óptimo de satisfacción en este ámbito?*. En infraestructura, lo que se sugiere es diferente según la realidad de cada sede. Por ejemplo, en *Rancagua* y *Viña del Mar* se solicita de forma clara mejorar la **Cafetería**. En tanto en *Concepción* y *Temuco* hay una petición clara por mejorar los **Espacios comunes**. 
@@ -292,38 +315,14 @@ GrafMejInfra= ggplot(MejInfra4, aes(MejInfra4$Valor, MejInfra4$Aspecto, label = 
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 1: Mejoras sugeridas en Infraestructura",
+    title = "Gráfico 2.3.1d: Mejoras sugeridas en Infraestructura",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejInfra + facet_grid( .~ MejInfra4$Sede )
 ```
 
-La satisfacción con la infraestructura a nivel de sede se registra en el siguiente gráfico. Es posible apreciar que *Rancagua* registró en la medición 2017-2 el valor más alto de satisfacción neta, aunque después descendió entorno al 60%. Se les asimila la dinámica que muestran las sedes de *Temuco* y *Viña del Mar*. La sede de *Santiago* registra una satisfacción neta históricamente baja, no superando el 50%. No obstante, aún más bajo es la satisfacción en la sede de *Concepción*, donde el valor es incluso negativo (-16%). Además, en esta última sede, el valor más alto se registró en 2017-2, pero sólo alcanzó 11%, luego bajo al 7% y llegó en esta última medición a la cifra antes indicada.
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE, 
-    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
-    trim_ws = TRUE)
-```
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
-  geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeInfra$colores, size=3) +
-  geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2c: Satisfacción Neta con Infraestructura por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
-    caption = "\nUnidad de Análisis Institucional"
-  )
-GrafInfra + facet_grid(. ~ Sede )
-```
-
-** a) Salas de Clases**
+** 2.3.2. Salas de Clases**
 
 La satisfacción neta relacionada con la *Sala de Clases* registra en 2018-2 un 61%, 11 puntos más respecto de la medición anterior (2017-2). Al observar cómo se comporta este valor por sede, la tendencia indica que la satisfacción neta en esta ámbito ha aumentado desde una caída importante en el año 2015, estabilizándose en tres sedes (*Rancagua*, *Temuco* y *Viña del Mar*). En el caso de esta última, llegó a registrar valores negativos en los años 2015 y 2016, mejorando de forma significativa los últmos dos años. Por otra parte, tanto *Concepción*, como *Santiago*, registran valores comparativamente más bajos en este ámbito.
 
@@ -343,15 +342,95 @@ GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2d: Satisfacción Neta con Sala de Clases por Sede y Medición",
+    title = "Gráfico 2.3.2: Satisfacción Neta con Sala de Clases por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafSClases + facet_grid(. ~ Sede )
 
 ```
+** 2.3.3. Baños**
 
-** b) Bilioteca**
+Según se señaló en el acápite referido a infraestructura-Baños, en 2018-2 se registra un 61% de satisfacción neta, casi el doble del valor registrado en 2017-2 (36%). En las sedes *Viña del Mar* y *Rancagua* se registraron caídas significativas en los años 2015 y 2016. Lo mismo ocurre en las otras sedes, pero de forma menos acentuada. Todas las sedes, desde que experimentan una caída tienen un alza más o menos acentuada, aunque sí constante. En este ámbito, es *Temuco* la sede con mejor desempeño a nivel histórico y *Santiago* aquella con los valores más bajos. 
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+DataSedeBanos <- read_delim("Data/SedeBanos.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafBanos=ggplot(DataSedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = -0.4, nudge_y = 0.03, color= DataSedeBanos$colores, size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 2.3.3: Satisfacción Neta con Baños por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafBanos + facet_grid(. ~ Sede )
+```
+** 2.3.4. Laboratorios**
+
+En relación con los laboratorios, se aprecia tendencias a la baja hasta el año 2017-2 en los casos de *Concepción* y *Santiago*, después de dicho año existe un repunte en la medición actual (2018-2). En el caso de la primera sede este repunte alcanza al 44%, en cuanto a la segunda sede, llega al 52%. En el caso de *Rancagua* y *Viña del Mar*, estas caídas ocurren en los años 2015-2 y 2016-2, respectivamente. No obstante, ambas sedes hoy (2018-2) alcanzan valores de satisfacción neta en torno al 73%. Es muy relevante poner atención al descenso sistemático que experimenta la satisfacción neta la sede de *Temuco*, como es posible ver en el gráfico, estos valores tienen una tendencia negativa sostenida.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+DataSedeLab <- read_delim("Data/SedeLab.csv", ";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeLab$colores, size=3) +
+  geom_point( size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 2.3.4: Satisfacción Neta con Laboratorio por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafLab + facet_grid(. ~ Sede )
+
+```
+
+** 2.3.5. Cafetería**
+
+En un acápite anterior se observó que el espacio del Cafetería era aquella que registraba una satisfacción neta más baja. El siguiente gráfico permite adentrarse en dicha tendencia a nivel de cada una de las sedes. El gráfico coincide con la sede con mejor desempeño histórico hasta aquella con peor desempeño. Se puede apreciar que sólo *Temuco* no registra una tendencia a la baja desde el año 2017-2, incluso en el caso de *Viña del Mar* se llega a valores negativos (-26%). Sólo en el caso de *Temuco* se aprecia una tendencia al alza débil, registrando un valor menos malo (21%) en la medición actual (2018-2).
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+DataSedeCaf <- read_delim("Data/SedeCaf.csv",";", escape_double = FALSE, 
+    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
+  geom_line(size=1)  + 
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeCaf$colores, size=3) +
+  geom_point(size=2, shape=21, fill="white") + 
+  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  labs(
+    x = "Mediciones",
+    y = "% de Satisfaccion Neta",
+    title = "Gráfico 2.3.5: Satisfacción Neta con Cafetería por Sede y Medición",
+    subtitle = "Encuesta de Servicios IGS",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+GrafCaf + facet_grid(. ~ Sede )
+```
+
+## Satisfacción Neta con Bilioteca
 
 Anteriormente, se apreció que la *Biblioteca* registra una alta satisfacción neta en la presente medición (2018-2), en el gráfico siguiente es posible apreciar cómo es esta tendencia en cada una de las sedes. Se puede visualizar que existen caídas muy importantes en la satisfación neta en años puntuales según cada sede, exceptuando la sede de *Santiago* y *Viña del Mar*. Más allá de estas caídas, ya desde las mediciones del año 2017 existen incrementos que se han mantenido en el tiempo, alcanzando en el caso de las sedes de *Rancagua*, *Santiago* y *Temuco*, valores en torno al 80%.
 
@@ -371,7 +450,7 @@ GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=S
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2e: Satisfacción Neta con Biblioteca por Sede y Medición",
+    title = "Gráfico 2.4.1: Satisfacción Neta con Biblioteca por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -395,95 +474,14 @@ GrafMejBiblio= ggplot(MejBiblio4, aes(MejBiblio4$Valor, MejBiblio4$Aspecto, labe
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 1: Mejoras sugeridas en Biblioteca",
+    title = "Gráfico 2.4.2: Mejoras sugeridas en Biblioteca",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejBiblio + facet_grid( .~ MejBiblio4$Sede )
 ```
 
-** c) Baños**
-
-Según se señaló en el acápite referido a infraestructura-Baños, en 2018-2 se registra un 61% de satisfacción neta, casi el doble del valor registrado en 2017-2 (36%). En las sedes *Viña del Mar* y *Rancagua* se registraron caídas significativas en los años 2015 y 2016. Lo mismo ocurre en las otras sedes, pero de forma menos acentuada. Todas las sedes, desde que experimentan una caída tienen un alza más o menos acentuada, aunque sí constante. En este ámbito, es *Temuco* la sede con mejor desempeño a nivel histórico y *Santiago* aquella con los valores más bajos. 
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(readr)
-DataSedeBanos <- read_delim("Data/SedeBanos.csv", ";", escape_double = FALSE, 
-    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
-    trim_ws = TRUE)
-```
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafBanos=ggplot(DataSedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
-  geom_line(size=1)  + 
-  geom_text(nudge_x = -0.4, nudge_y = 0.03, color= DataSedeBanos$colores, size=3) +
-  geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2f: Satisfacción Neta con Baños por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
-    caption = "\nUnidad de Análisis Institucional"
-  )
-GrafBanos + facet_grid(. ~ Sede )
-```
-** d) Laboratorios**
-
-En relación con los laboratorios, se aprecia tendencias a la baja hasta el año 2017-2 en los casos de *Concepción* y *Santiago*, después de dicho año existe un repunte en la medición actual (2018-2). En el caso de la primera sede este repunte alcanza al 44%, en cuanto a la segunda sede, llega al 52%. En el caso de *Rancagua* y *Viña del Mar*, estas caídas ocurren en los años 2015-2 y 2016-2, respectivamente. No obstante, ambas sedes hoy (2018-2) alcanzan valores de satisfacción neta en torno al 73%. Es muy relevante poner atención al descenso sistemático que experimenta la satisfacción neta la sede de *Temuco*, como es posible ver en el gráfico, estos valores tienen una tendencia negativa sostenida.
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(readr)
-DataSedeLab <- read_delim("Data/SedeLab.csv", ";", escape_double = FALSE, 
-    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
-    trim_ws = TRUE)
-```
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
-  geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeLab$colores, size=3) +
-  geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Laboratorio por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
-    caption = "\nUnidad de Análisis Institucional"
-  )
-GrafLab + facet_grid(. ~ Sede )
-
-```
-
-** e) Cafetería**
-
-En un acápite anterior se observó que el espacio del Cafetería era aquella que registraba una satisfacción neta más baja. El siguiente gráfico permite adentrarse en dicha tendencia a nivel de cada una de las sedes. El gráfico coincide con la sede con mejor desempeño histórico hasta aquella con peor desempeño. Se puede apreciar que sólo *Temuco* no registra una tendencia a la baja desde el año 2017-2, incluso en el caso de *Viña del Mar* se llega a valores negativos (-26%). Sólo en el caso de *Temuco* se aprecia una tendencia al alza débil, registrando un valor menos malo (21%) en la medición actual (2018-2).
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(readr)
-DataSedeCaf <- read_delim("Data/SedeCaf.csv",";", escape_double = FALSE, 
-    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
-    trim_ws = TRUE)
-```
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%"))) +
-  geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeCaf$colores, size=3) +
-  geom_point(size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Cafetería por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
-    caption = "\nUnidad de Análisis Institucional"
-  )
-GrafCaf + facet_grid(. ~ Sede )
-```
-
-**2.2.3) Satisfacción con Espacios o Servicos Digitales**
+## Satisfacción Neta con Espacios o Servicos Digitales
 
 Tres son los servicios o espacios que se han clasificado dentro de este acápite: Plataforma IEB Virtual, Biblioteca Digital (Ebook) y Servicio Wifi. El siguiente gráfico muestra los resultados obtenidos a nivel histórico. Comparativamente se aprecia una mayor satisfacción respecto de plataforma IEB Virtual, con valores que se mueven dentro de un mínimo de 71% y un máximo de 81%. En segundo lugar, se puede apreciar la valoración del Ebook (Biblioteca Digital), que en un inicio (2015-2) alcanzaba los 36%, en cmabio ahora (2018-2) llega al 74%. El servicio Wifi genera una baja satisfacción neta, si bien ha remontado desde una caída brusca en el año 2017-1, no supera en la medición actual el 54%.
 
@@ -502,7 +500,7 @@ graf5=ggplot(GrafDigit, aes(x=GrafDigit$medicion, y=GrafDigit$Valor, group = Tip
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 6: Satisfacción Neta con Espacios y Servicios Digitales",
+    title = "Gráfico 2.5.1: Satisfacción Neta con Espacios y Servicios Digitales",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -531,7 +529,7 @@ GrafEbook=ggplot(DataSedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Ebook por Sede y Medición",
+    title = "Gráfico 2.5.2: Satisfacción Neta con Ebook por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -559,7 +557,7 @@ GrafWifi=ggplot(DataSedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con Wifi por Sede y Medición",
+    title = "Gráfico 2.5.3: Satisfacción con Wifi por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -585,14 +583,14 @@ GrafIEBV=ggplot(DataSedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción con IEB Virtual por Sede y Medición",
+    title = "Gráfico 2.5.4: Satisfacción con IEB Virtual por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafIEBV + facet_grid(. ~ Sede )
 ```
 
-**2.2.4) Satisfacción con Otros Servicios del IGS**
+## Satisfacción con Otros Servicios del IGS
 
 En este acápite por *"otros servicios"* se alude a Cajas y Servicios de Solicitudes. En el primer caso, se ve una tendencia clara hacia el alza desde el año 2015, llegando en el año 2018 a una satisfacción neta de 71%. En cuanto al servicio de solicitudes, su tendencia es fluctuante, desde un valor inicial (2014-2) de 66%, bajando a un 22% en el año 2016. En el año actual este servicio registra un 61% de satisfacción neta.
 
@@ -612,7 +610,7 @@ graf5=ggplot(GrafOtros, aes(x=medicion, y=Valor, group = Tipo, colour=Tipo, labe
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 7: Satisfacción Neta con Otros Servicios",
+    title = "Gráfico 2.5.5: Satisfacción Neta con Otros Servicios",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -637,7 +635,7 @@ GrafCajas=ggplot(DataSedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    title = "Gráfico 2.5.6: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -663,7 +661,7 @@ GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico XX: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
+    title = "Gráfico 2.5.7: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
     subtitle = "Encuesta de Servicios IGS",
     caption = "\nUnidad de Análisis Institucional"
   )

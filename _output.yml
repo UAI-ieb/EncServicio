@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">UAI</a></li>
       after: |
-        <li><a href="https://github.com/UAI-ieb/EncServicio/" target="blank">Publicado con bookdown</a></li>
+        <li><a href="https://bookdown.org/home/" target="blank">Publicado con bookdown</a></li>
     edit: https://github.com/UAI-ieb/EncServicio/edit/master/%s
     sharing:
       github: yes
