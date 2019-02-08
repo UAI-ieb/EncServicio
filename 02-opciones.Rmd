@@ -33,9 +33,10 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
   )
 graf2aa + facet_grid(. ~ TipoSat)
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+En el gráfico N° 10 se presenta la atención entregada por el Instituto, por sede y a nivel institucional. A nivel global se obtiene un 39% de satisfacción neta, en tanto que las sedes Rancagua y Viña del Mar, obtienen las mejores evaluaciones con un 80% y 70% de satisfacción neta.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
 DataSedeGlobal <- read_delim("Data/SedeGlobal.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
@@ -58,8 +59,6 @@ GrafGlobal + facet_grid(. ~ Sede )
 
 ```
 
-
-
 **2.1.2) Evaluación con la Atención entregada por el IGS**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
@@ -80,6 +79,7 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
   )
 graf2ab + facet_grid(. ~ TipoSat)
 ```
+De acuerdo al gráfico Nº9, los docentes a nivel global obtienen un 53% de satisfacción a nivel nacional. En tanto los resultados por sede muestran a Rancagua con un 80% de satisfacción neta con sus docentes, seguido de Temuco con un 75% y Viña del Mar con un 74%.
 
 ```{r echo=FALSE, message=FALSE}
 DataSedeAtencion <- read_delim("Data/SedeAtencion.csv", ";", escape_double = FALSE, 
@@ -105,11 +105,9 @@ GrafAtencion + facet_grid(. ~ Sede )
 
 **2.2.3) Disposición a Recomendar el IGS**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+La disposición a recomendar al Instituto Subercaseaux a un amigo o familiar alcanza un 78%, bajando un 1 punto con respecto a la medición anterior La sede con mejor recomendación es Rancagua que obtiene un 90%.
 
-
-
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataRecom1 <- read_delim("Data/t.Recom1.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
@@ -181,7 +179,7 @@ graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(rou
 graf2ba + facet_grid(. ~ TipoSat)
 
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+La sede de Concepción es la que presenta la evaluación más baja, obteniendo un 3% de satisfacción neta. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeDocente <- read_delim("Data/SedeDocente.csv", ";", escape_double = FALSE, 
@@ -231,7 +229,7 @@ graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round
 graf2bb + facet_grid(. ~ TipoSat)
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+A los encuestados se les preguntó por la infraestructura del Instituto, obteniéndose a nivel global una satisfacción neta de 36%. A nivel de sede, es Rancagua quien obtiene un 83% de satisfacción neta, ubicándose como la sede con mejor evaluación de la infraestructura. Se observa que estos resultados guardan directa relación con el nuevo edificio de la sede Rancagua, el cual opera a partir de agosto de 2017. Situación similar a la sede Viña del Mar, que también cuenta con un edificio nuevo, lo cual impacta directamente en la satisfacción con la infraestructura.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE, 
@@ -284,7 +282,7 @@ ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, 
     caption = "\nUnidad de Análisis Institucional"
   )
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+La Sala de Clases obtiene un 50% de satisfacción neta a nivel nacional, en tanto que la sede Viña del Mar un 84% para este concepto, seguida de la sede Temuco con un 76% y la de Rancagua con un 75%. 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -309,7 +307,7 @@ GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour
 GrafSClases + facet_grid(. ~ Sede )
 
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Los resultados de la encuesta indican que los estudiantes del Instituto Guillermo Subercaseaux otorgan un 49% de satisfacción neta a la Biblioteca. La sede Rancagua obtiene la mejor satisfacción con un 60%, en contraposición a Concepción que obtiene un 38%.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -333,7 +331,7 @@ GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=S
   )
 GrafBiblio + facet_grid(. ~ Sede )
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Para el servicio de baños se obtiene una satisfacción neta de 36%, en donde la sede Viña del Mar presenta la mejor evaluación con un 73%, seguida de la sede Temuco y la de Rancagua que alcanzan un 72% de neta en la presente evaluación.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -383,7 +381,7 @@ GrafLab + facet_grid(. ~ Sede )
 
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+El aspecto de Casino presenta una evaluación de 25% de satisfacción neta mientras que la sede con menor nivel de satisfacción neta es Temuco con un 6%. La sede Viña del Mar obtiene 11% y la de Concepción 19% de satisfacción neta.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -442,7 +440,9 @@ graf5 + facet_grid(. ~ Tipo )
 
 Por sede Ebook
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Del total de los entrevistados, un 17% indica haber utilizado el servicio de E-Books, 13% no lo recuerda y 70% declara no haber utilizado el sistema.
+
+Del total de los entrevistados que señalan ocupar el sistema E-Books, se obtiene a nivel global un 53% de satisfacción neta, siendo la sede Viña del Mar la que mejor satisfacción alcanza con un 68%, seguida de la sede Rancagua con un 67%.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -470,7 +470,7 @@ GrafEbook + facet_grid(. ~ Sede )
 
 Por sede WIFI
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Los resultados para el servicio de WiFi a nivel global alcanzan un 22% de satisfacción neta. La sede Rancagua es la mejor evaluada con un 45% de satisfacción neta mientras que Concepción obtiene la evaluación más baja para este concepto (13%)
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -497,7 +497,7 @@ GrafWifi + facet_grid(. ~ Sede )
 
 Por sede IEB Virtual
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+La satisfacción neta del IEB Virtual presenta la mejor evaluación dentro de los servicios evaluados, obteniendo 69% a nivel global. La sede Temuco registró un 84% de satisfacción neta, seguida de la sede Viña del Mar con un 81% y la de Rancagua con un 80%. 
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeIEBV <- read_delim("Data/SedeIEBV.csv", ";", escape_double = FALSE, 
@@ -523,11 +523,7 @@ GrafIEBV + facet_grid(. ~ Sede )
 
 **2.2.4) Satisfacción con Otros Servicios del IGS**
 
-
-+ Servicio de Solicitudes
-+ Cajas
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Según el gráfico Nº31, el Servicio de Solicitudes obtiene un 50% de satisfacción neta, siendo la sede Rancagua la mejor evaluada con un 76% de satisfacción neta seguida de la sede Viña del Mar con un 73%. La sede que presenta el más bajo nivel es Santiago con un 41% de satisfacción neta.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 
@@ -580,7 +576,7 @@ GrafSolicit + facet_grid(. ~ Sede )
 
 Cajas por sede 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
+Para el servicio de Caja los encuestados entregaron un 57% de satisfacción neta con el servicio, en donde destacan las sedes Rancagua con un 82% y la sede Temuco con un 74%. La sede con más baja evaluación es Santiago con un 46% de satisfacción neta.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeCajas<- read_delim("Data/SedeCajas.csv", ";", escape_double = FALSE, 
