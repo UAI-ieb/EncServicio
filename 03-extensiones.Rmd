@@ -2,10 +2,12 @@
 
 ## Regresión Logística
 
+PENDIENTE
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 ## Análisis de Componentes Principales
 
+PENDIENTE
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
 
 
