@@ -25,7 +25,7 @@
 <meta name="author" content="Unidad de Análisis Institucional">
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -83,7 +83,7 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="analisis-multivariable.html"><a href="analisis-multivariable.html"><i class="fa fa-check"></i><b>3</b> Análisis Multivariable</a><ul>
 <li class="chapter" data-level="3.1" data-path="analisis-multivariable.html"><a href="analisis-multivariable.html#regresion-logistica"><i class="fa fa-check"></i><b>3.1</b> Regresión Logística</a></li>
-<li class="chapter" data-level="3.2" data-path="analisis-multivariable.html"><a href="analisis-multivariable.html#analisis-de-componentes-principales"><i class="fa fa-check"></i><b>3.2</b> Análisis de Componentes Principales</a></li>
+<li class="chapter" data-level="3.2" data-path="analisis-multivariable.html"><a href="analisis-multivariable.html#analisis-factorial"><i class="fa fa-check"></i><b>3.2</b> Análisis Factorial</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>4</b> Conclusiones</a></li>
 <li class="appendix"><span><b>Apéndices</b></span></li>
@@ -113,10 +113,40 @@
 <h1><span class="header-section-number">Capítulo 3</span> Análisis Multivariable</h1>
 <div id="regresion-logistica" class="section level2">
 <h2><span class="header-section-number">3.1</span> Regresión Logística</h2>
-<p>PENDIENTE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.</p>
+<p>Con la finalidad de profundizar en los resultados obtenidos en la encuesta de servicio 2018-2, se ha formulado dos modelos, uno donde la variable dependiente corresponda a averiguar qué variables hacen más probable el hecho de recomendar -o No- el instituto a algún familiar o amigo; por otro lado, se formula un segundo modelo para detectar qué variables son significativas en cuanto hacer probable evaluar positivamente (nota 6 ó 7) el servicio entregado por el Instituto.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Modelo 1: Probabilidad de recomendar el Instituto</li>
+</ol>
+<p>La disposición a recomendar el Instituto representa, en su base, es una actitud condicionada por la experiencia que el estudiante ha tenido en su rol de tal en un ciclo determinado. Por ende, se hace necesario conocer cuáles, de las variables observadas, son factores que aumentan o reducen la probabilidad de que el evento ocurra: el evento aquí es el hecho de recomendar el Instituto.</p>
+<p>Para responder al objetivo anterior, se ha hecho uso de la técnica estadística de regresión logistica multivariable. En el cuadro siguiente se muetsran alguno coeficientes que permiten aludir al modelo.</p>
+<p>Resumen del Modelo Nº1</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Log.de la verosimilitud -2</th>
+<th align="center">R<sup>2</sup> de Cox y Snell</th>
+<th align="center">R<sup>2</sup> de Negelkerke</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">342,305</td>
+<td align="center">0,191</td>
+<td align="center">0,345</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>-2 log de la verosimilitud (-2LL)</strong> mide hasta qué punto un modelo se ajusta bien a los datos. El resultado de esta medición recibe también el nombre de “desviación”. El valor es moderado, lo ideal es que sea lo más bajo posible, por ello sólo se alude a un ajuste sólo aceptable.</p></li>
+<li><p><strong>La R cuadradro de Cox y Snell</strong> se utiliza para estimar la proporción de varianza de la variable dependiente explicada por las variables predictoras (independientes). La R cuadrado de Cox y Snell se basa en la comparación del log de la verosimilitud (LL) para el modelo respecto al log de la verosimilitud (LL) para un modelo de línea base. Sus valores oscilan entre 0 y 1. En nuestro caso es un valor moderado (0,191) que indica que sólo el 19% de la variación de la variable dependiente es explicada por las variables incluida en el modelo.</p></li>
+<li><p><strong>La R cuadrado de Nagelkerke</strong> es una versión corregida de la R cuadrado de Cox y Snell. La R cuadrado de Cox y Snell tiene un valor máximo inferior a 1, incluso para un modelo “perfecto”. La R cuadrado de Nagelkerke corrige la escala del estadístico para cubrir el rango completo de 0 a 1. Aquí el valor alude a un modelo aceptable.</p></li>
+</ul>
+<p>El siguiente cuadro muestra las variables significativas que son parte del modelo.</p>
+<p><img src="images/Modelo1.PNG" style="display: block; margin: auto;" /></p>
+<p>La información del cuadro anterior, permite esbozar lo siguiente: + Cada una de las variables contenidas en el cuadro han resultado ser significativas en términos estadístico, por ende, desempeñan un rol en relación a la ocurrencia del evento (recomendar). + Los valores de la columna b son positivos, lo que indica que cada unas de la variables, al incrementarse en una unidad (en este caso de notas de 1 a 7), aumentan la probabilidad de ocurrencia del evento. Si el signo fuese negativo, indicaría que dicha variable desempeña un <em>rol protector</em>, osea, evita que ocurra el evento (recomendar el IGS). + El valor de la columna Exp(b) indica cuál de las variable seleccionadas tiene un mayor poder para explicar el evento de recomendar. En este contexto, este rol lo posee la variable nota a los docentes puesto que el valor de Exp(b) es el que más se aleja de 1, llegando a 2,314. +</p>
 </div>
-<div id="analisis-de-componentes-principales" class="section level2">
-<h2><span class="header-section-number">3.2</span> Análisis de Componentes Principales</h2>
+<div id="analisis-factorial" class="section level2">
+<h2><span class="header-section-number">3.2</span> Análisis Factorial</h2>
 <p>PENDIENTE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.</p>
 
 </div>
