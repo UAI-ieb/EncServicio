@@ -31,8 +31,11 @@ knitr::include_graphics("images/Modelo1.png")
 
 La información del cuadro anterior, permite esbozar lo siguiente:
 + Cada una de las variables contenidas en el cuadro han resultado ser significativas en términos estadístico, por ende, desempeñan un rol en relación a la ocurrencia del evento (recomendar).
+
 + Los valores de la columna b son positivos, lo que indica que cada unas de las variables, al incrementarse en una unidad (en este caso de notas de 1 a 7), aumentan la probabilidad de ocurrencia del evento. Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento (recomendar el IGS).
+
 + El valor de la columna Exp(b) indica cuál de las variable seleccionadas tiene un mayor poder para explicar el evento de recomendar. En este contexto, este rol lo posee la variable nota a los docentes puesto que el valor de Exp(b) es el que más se aleja de 1, llegando a 2,314.
+
 + Si bien, como deja en claro el punto anterior, la evaluación de los docentes resulta ser clave en el hecho de recomendar o no el Instituto, están las otras variables las cuales aluden a espacios físicos de uso cotidiano para los alumnos, especialmente el área de servicios higiénicos y laboratorios. A su vez, aparece la evaluación de servicios de pago o cajas.
 
 b) Modelo Nº2: Probabilidad de Evaluar Servicios con Nota 6 o 7
