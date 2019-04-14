@@ -30,6 +30,8 @@ knitr::include_graphics("images/Modelo1.png")
 ```
 
 La información del cuadro anterior, permite esbozar lo siguiente:
+
+
 + Cada una de las variables contenidas en el cuadro han resultado ser significativas en términos estadístico, por ende, desempeñan un rol en relación a la ocurrencia del evento (recomendar).
 
 + Los valores de la columna b son positivos, lo que indica que cada unas de las variables, al incrementarse en una unidad (en este caso de notas de 1 a 7), aumentan la probabilidad de ocurrencia del evento. Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento (recomendar el IGS).
