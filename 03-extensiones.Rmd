@@ -68,7 +68,7 @@ La información del cuadro anterior, permite esbozar lo siguiente:
 
 + Cada una de las variables contenidas en el cuadro desempeñan un rol estadístico en relación a la ocurrencia del evento (recomendar).
 
-+ Los valores de la columna b son positivos, lo que indica que al aumentar cada unas de las variables independientes aumenta también la probabilidad de ocurrencia del evento (calificar con nota 6 y 7 el servicio prestado por el Instituto). Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento.
++ Los valores de la columna b son positivos, lo que indica que al aumentar cada unas de las variables independientes aumenta también la probabilidad de ocurrencia del evento (calificar con nota 6 y 7 el servicio prestado por el Instituto). Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento.hh
 
 + El valor de la columna Exp(b) indica cuál de las variable seleccionadas tiene un mayor poder para explicar el evento de recomendar. En este contexto, al igual como ocurre en el modelo nº1, este rol lo posee la variable "NotaDocentes", donde el valor de Exp(b) es el más alto, llegando a 2,190.
 

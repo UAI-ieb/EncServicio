@@ -430,7 +430,7 @@ GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
 GrafCaf + facet_grid(. ~ Sede )
 ```
 
-## Satisfacción Neta con Bilioteca
+## Satisfacción Neta con Biblioteca
 
 Anteriormente, se apreció que la *Biblioteca* registra una alta satisfacción neta en la presente medición (2018-2), en el gráfico siguiente es posible apreciar cómo es esta tendencia en cada una de las sedes. Se puede visualizar que existen caídas muy importantes en la satisfación neta en años puntuales según cada sede, exceptuando la sede de *Santiago* y *Viña del Mar*. Más allá de estas caídas, ya desde las mediciones del año 2017 existen incrementos que se han mantenido en el tiempo, alcanzando en el caso de las sedes de *Rancagua*, *Santiago* y *Temuco*, valores en torno al 80%.
 
