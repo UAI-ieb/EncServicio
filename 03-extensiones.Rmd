@@ -2,7 +2,7 @@
 
 ## Regresión Logística
 
-Con la finalidad de profundizar en los resultados obtenidos en la encuesta de servicio 2018-2, se ha formulado dos modelos, uno donde la variable dependiente corresponda a averiguar qué variables hacen más probable el hecho de recomendar -o No- el instituto a algún familiar o amigo; por otro lado, se formula un segundo modelo para detectar qué variables son significativas en cuanto hacer probable evaluar positivamente (nota 6 ó 7) el servicio entregado por el Instituto.  
+Con la finalidad de profundizar en los resultados obtenidos en la encuesta de servicio 2018-2, se ha formulado dos modelos. El primer modelo asume como variable dependiente la probabilidad de recomendar -o no- el instituto a algún familiar o amigo; por otro lado, el segundo modelo busca conocer cuáles son las variables significativas que hacen más probable (o improbable) la evaluación con nota 6 ó 7 el servicio entregado por el Instituto.  
 
 a) Modelo Nº1: Probabilidad de recomendar el Instituto
 
@@ -30,7 +30,6 @@ knitr::include_graphics("images/Modelo1.png")
 ```
 
 La información del cuadro anterior, permite esbozar lo siguiente:
-
 
 * Cada una de las variables contenidas en el cuadro han resultado ser significativas en términos estadístico, por ende, desempeñan un rol en relación a la ocurrencia del evento (recomendar).
 
@@ -63,24 +62,17 @@ El siguiente cuadro muestra las variables significativas que son parte del model
 
 ```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics("images/Modelo2.png")
-
 ```
 
 La información del cuadro anterior, permite esbozar lo siguiente:
 
 + Cada una de las variables contenidas en el cuadro desempeñan un rol estadístico en relación a la ocurrencia del evento (recomendar).
 
-+ Los valores de la columna b son positivos, lo que indica que al aumentar cada unas de las variables independientes aumenta también la probabilidad de ocurrencia del evento (calificar con nota 6 y 7 el servicio prestado por el Instituto). Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento.
++ Los valores de la columna b son positivos, lo que indica que al aumentar cada unas de las variables aumenta también la probabilidad de ocurrencia del evento (calificar con nota 6 y 7 el servicio entregado por el Instituto). Si el signo fuese negativo, indicaría que dicha variable desempeña un *rol protector*, osea, evita que ocurra el evento.
 
 + El valor de la columna Exp(b) indica cuál de las variable seleccionadas tiene un mayor poder para explicar el evento de recomendar. En este contexto, al igual como ocurre en el modelo nº1, este rol lo posee la variable "NotaDocentes", donde el valor de Exp(b) es el más alto, llegando a 2,190.
 
 + En este modelo, aparecen relevantes 3 variables relacionadas con el aspecto material-espacial del Instituto (Infraestructura, Biblioteca y Cafetería), una de espacio virtual (IEB-Virtual). Estas variables indican que a medida que aumenta en una unidad la calificación (de nota 1 a 7), aumenta la probabilidad que el estudiante evalúe con nota 6 ó 7 el servicio entregado por el Instituto. Una última variable se relaciona con el perfil del estudiante (técnico versus profesional); en este caso cuando el estudiante pasa de técnico a profesional aumenta la probabilidad de evaluar con nota 6 ó 7 al Instituto en cuanto al servico que entrega. 
-
-## Análisis Factorial
-
-PENDIENTE
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eu nibh eget elementum. Suspendisse ante elit, egestas non malesuada vel, maximus eu dolor. Aenean consectetur lacus in faucibus elementum. Integer laoreet sollicitudin nibh, id malesuada est porta quis. Curabitur vitae ligula odio. Nullam ac lacinia velit. Sed quam enim, fringilla consequat laoreet vitae, malesuada vel nisl. Nunc consequat mauris non posuere suscipit. Pellentesque viverra lorem vel massa tincidunt iaculis. Morbi augue velit, convallis at eros non, auctor pharetra justo. Nullam non congue ligula, nec placerat neque. In ullamcorper est eget nibh bibendum consectetur.
-
 
 
 

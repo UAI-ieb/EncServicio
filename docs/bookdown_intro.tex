@@ -31,46 +31,6 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -125,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-06}
+    \date{2019-05-06}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -146,22 +106,6 @@
 }
 \makeatother
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Teorema}[chapter]
-\newtheorem{lemma}{Lema}[chapter]
-\newtheorem{corollary}{Corolario}[chapter]
-\newtheorem{proposition}{Proposición}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definición}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Ejemplo}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Ejercicio}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Nota: }
-\newtheorem*{solution}{Solución}
-\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
 
@@ -257,46 +201,70 @@ la plataforma web SurveyMonkey. El proceso implica hacer una invitación
 a la muestra seleccinada via correo electrónico, el palzo para responder
 fue desde el 10 de Noviembre hasta el 23 de octubre de 2018.
 
-\chapter{Resultados 1}\label{resultados-1}
+\chapter{Resultados}\label{resultados}
 
 A continuación, se muestran los resultados más relevantes de la
 encuesta. Existen dos indicadores claves para dar cuenta del grado de
-satisfacción/insatifacción de los estudiantes; la
-\textbf{\emph{Satisfacción total}} y la \textbf{\emph{Satisfacción
-neta}}. La primera alude al porcentaje de alumnos que evalúan a cada
-servicio/espacio con nota 6 ó 7, en cambios la satisfacción neta,
-corresponde a la diferencia del porcentaje de estudiantesque evalúan con
-nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5, todo ello
-expresado en porcentaje. En general, será esta última el valor
-comparativo en la mayoría de los gráficos y tablas del informe.
+satisfacción/insatisfacción de los estudiantes; la \textbf{Satisfacción
+total} y la \textbf{Satisfacción neta}. La primera alude al porcentaje
+de alumnos que evalúan a cada servicio, área o espacio con nota 6 ó 7,
+en cambios, la satisfacción neta corresponde a la diferencia del
+porcentaje de estudiantes que evalúan con nota 6 ó 7, menos aquellos que
+evalúan con nota inferior a 5; este valor es expresado en porcentaje. A
+nivel tranversal dentro del informe, será este último el valor-indicador
+que dará cuenta de la percpeción evaluativa de los estudiantes.
 
 \section{Evaluación Global Instituto Guillermo
 Subercaseaux}\label{evaluacion-global-instituto-guillermo-subercaseaux}
 
 \textbf{2.1.1) Evaluación Global del Servicio entregado por IGS}
 
-El siguiente gráfico, señala los resultados en la presente medición
-(2018-2), respecto de las mediciones ateriores, tanto en lo que respecta
-a la Satisfacción Neta, como en la Satisfacción (nota 6 y 7). Se puede
-apreciar que en ambas se visualizan tendencias al alza, así la
-satisfacción neta en el 2018-2 alcanza un 51\%, y la satifacción total,
-un 63\%. Respecto de las mediciones anteriores, equivalente con lo
-registrado en la primera medición (2014-2). En ambos casos, los valores
-son cercanos a lo registrado en la medición 2014-2.
+El siguiente gráfico, señala los resultados histórico del ítem que alude
+a la \emph{calidad de los servicios entregados por el Instituto}. Los
+datos permiten visualizar una tendencia, en ambas satisfacciones, al
+alza. De esta manera, la \emph{satisfacción neta} en la medición actual
+(2018-2), alcanza un 51\%, en tanto la \emph{satifacción total} alcanza
+un 63\%. Estos valores, al compararse con las mediciones anteriores, son
+altos, evidenciándose un retorno a valores registrados en la medición de
+2014-2.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-5-1.pdf}
-
-\begin{verbatim}
-## Warning: Missing column names filled in: 'X1' [1]
-\end{verbatim}
+En el siguiente gráfico, se evalúa sólo el valor de la
+\emph{satisfacción neta} a nivel de cada una de las sede del Instituto.
+Este dato permite apreciar las fluctuaciones que expresa la satisfacción
+neta, una fluctuación cuyos valles y peak son más acentuados en la sede
+de \textbf{Concepción} y \textbf{Viña del Mar}. Por el contrario, estos
+valores fluctúan con menos intensidad y dentro de un espectro de valores
+más altos en la sedes de \textbf{Temuco} y \textbf{Rancagua}. Se puede
+apreciar que \textbf{Santiago} manifiesta valores históricamente más
+bajos, alcanzando en la medición 2018-2 tan sólo 36\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-7-1.pdf}
 
-\textbf{2.1.2) Evaluación con la Atención entregada por el IGS}
+\textbf{2.1.2) Percepción de la Calidad de la Atención del IGS}
 
-Textxtxtxtxttxx
+Otro de los indicadores globales, hace referencia a la \emph{calidad de
+la atención que recibe el estudiante}. Esta variable debe ser analizada
+en mutua complementación con la variable anterior, puesto que expresa
+una alta correlación concepctual, y a su vez, estadística. Es una
+variable ``nueva'', en cuanto que sólo ha sido medida en las últimas 3
+ocasiones (desde 2017-2). Se puede apreciar, que tal como la variable
+anterior, esta variable expresa un alza relevante, específicamente de 22
+puntos porcentuales en cuanto a la \emph{satisfacción neta} y en más de
+13 puntos en cuanto la \emph{satisfacción total (6-7)}. Por ende, esta
+tendencia avala y consolida lo registrado en la variable revisada en el
+acápite anterior.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-8-1.pdf}
+Al inspeccionar el comportamiento de la variable comparativamente por
+sede, se aprecia un comportamiento de alza-descenso-alza en las sedes de
+\emph{Rancagua} y \emph{Viña del Mar}, aunque en la primera de ellas es
+más estable en torno a un rango de valores más altos. Se puede apreciar
+que las sedes de \emph{Concepción} y \emph{Temuco} registran un repunte
+significativo de respecto de la medición anterior, en este mismo aspecto
+se debe incluir a \emph{Viña del Mar}. Por último \emph{Santiago},
+refleja una tendencia al alza, aunque sus valores son más bajos respecto
+de las otras cuatro sedes.
 
 \begin{verbatim}
 ## Warning: Missing column names filled in: 'X1' [1]
@@ -306,1406 +274,485 @@ Textxtxtxtxttxx
 
 \textbf{2.2.3) Disposición a Recomendar el IGS}
 
-fdhzfgdh
-
-\begin{verbatim}
-## Warning: Missing column names filled in: 'X1' [1]
-\end{verbatim}
+La disposición a recomendar un servicio a otro individuo, especialmente
+si esta es una persona significativa (familiar o amigo/a), expresa en sí
+mismo una experiencia positiva respecto de uso de aquel servicio. Al
+observar las cifras en este ámbito, se aprecia que la disposición a
+recomendar el Instituto Subercaseaux alcanza un 86\%, sumando aquellos
+estudiantes que lo dicen con toda claridad (``Definitivamente = 40\%''),
+con aquellos que lo indican como una probabilidad cierta
+(``probablemente = 46\%''). Esta cifra expresa un alza de 6 puntos
+respecto del dato registrado en la medición anterios (2018-1).
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-12-1.pdf}
 
-dgsdg\textless{}
+El gráfico siguiente muestra el porcentaje de estudiantes que tiene una
+disposición positiva frente a la posibilidad de recomendar el Instituto.
+Los valores en este dato son más altos, tanto en la actual medición como
+en las anteriores, tendencia que se repite en cada una de la sedes. En
+este sentido, se constata un desacoplamiento de este dato respecto de
+las últimas dos variables generales revisadas; al parecer, el dato y su
+tendencia expresa una satisfacción de base donde convergen otros
+elementos y aspectos conectados con la trayectoria como estudiantes.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-14-1.pdf}
 
-\section{Satisfacción con Actores, áreas o espacios específicos del
-IGS}\label{satisfaccion-con-actores-areas-o-espacios-especificos-del-igs}
+\section{Satisfacción con Docentes}\label{satisfaccion-con-docentes}
 
-\textbf{2.2.1) Satisfacción con Docentes}
-
-sdgsdfgafvfadgvfdagfdagadgfsd
+Dentro de los actores del Instituto, los docentes ocupan un puesto
+estratégico dado que son ellos/as quienes interactúan de forma cotidiana
+con los estudiantes, una interacción que es fruto de la función
+pedagógica propia del Instituto. En este sentido, sus desempeños -en
+términos amplio- es parte de ese conjunto de elementos intangible que
+los estudiantes tienen presente al momento de generar una opinión. En el
+siguiente gráfico, se aprecia la satisfacción neta y total,
+registrándose en ambas un incremento de 9 y de 6 puntos,
+respectivamente.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-15-1.pdf}
+A nivel de cada una de las sedes, la satisfacción neta de los
+estudiantes con los docentes muestra diferencias relevantes. La
+satisfacción neta es más alta (en las últimas 3 mediciones), en las
+sedes de \emph{Rancagua} y \emph{Temuco}, en ese orden; esto más allá de
+que en ambas se registre un descenso en la medición 2018-1. La sede de
+\emph{Concepción} tiene un descenso en la medición de 2018-1, pero se
+recupera en la medición (2018-2). La sede de \emph{Viña del Mar} es
+bastante estable en las tres mediciónes, en torno al 68\% de
+satisfacción neta. Por último, en la sede de \emph{Santiago} la
+satisfacción neta es baja, y aunque ha venido al alza aún no supera el
+umbral del 50\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-17-1.pdf}
 
-\section{Satisfacción con Infraestructura y Otros Espacios Físicos
-Comunes del
-IGS}\label{satisfaccion-con-infraestructura-y-otros-espacios-fisicos-comunes-del-igs}
+Aquellos estudiantes que evalúan con nota inferior a 7 a los docentes,
+se les consulta cuáles -desde su perspectiva- son las mejoras que
+debiesen ocurrir para lograr un óptimo de satisfacción con respecto al
+desempeño docente. En el siguiente gráfico se ha desglosado el dato por
+cada sede para acercarnos a fenómenos más localizados. Es poisble
+apreciar que en cada una de las sedes lo que se sugiere es mejorar la
+``metodología'' de enseñanza, junto con ello aparece como sugerencia el
+hecho de mejorar la ``comunicación o claridad expositiva en clases''.
 
-\textbf{2.2.2) Satisfacción con la Infraestructura}
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-19-1.pdf}
 
-\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-18-1.pdf}
+\section{Satisfacción con Infraestructura y Otros Espacios Físicos del
+IGS}\label{satisfaccion-con-infraestructura-y-otros-espacios-fisicos-del-igs}
+
+\textbf{2.3.1. Satisfacción con la Infraestructura}
+
+En el siguiente gráfico, se aprecia la satisfacción neta y total en las
+últimas 3 mediciones. Se aprecia que ha existido un alza sistemática,
+aunque leve. Los valores indican que la satisfacción neta está en torno
+al 50\% y la satisfacción total en torno al 65\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-20-1.pdf}
-
-\begin{itemize}
-\tightlist
-\item
-  Salas de Clases
-\item
-  Laboratorio
-\item
-  Cafetería
-\item
-  Biblioteca
-\item
-  Banos
-\end{itemize}
+El siguiente gráfico permite analizar la satisfacción con la
+infraestructura, pero a su vez aquellos espacios que específican de
+mejor forma, aunque no completamente, su ámbito. Revisando el gráfico
+siguiente, es posible apreciar que el espacio de
+\emph{Cafetería/Casino}, corresponde a aquél que genera un menor grado
+de satisfacción neta.Por otro lado, ya desde 2017-2, el espacio de
+\emph{Biblioteca} registra un alza en la satisfacción neta que alcanza
+en la medición actual un 78\%. Otro servicio que ha tenido un repunte
+consistente corresponde a \emph{Baños}, alcanzando un 61\% en la última
+medición. Partiendo de un piso algo más alto, el espacio de \emph{salas
+de clases} también registra un alza sostenida. Por último, laboratorios
+es el espacio que manifiesta mayor estabilidad en la diferentes
+mediciones.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-22-1.pdf}
+La satisfacción con la infraestructura a nivel de sede se registra en el
+siguiente gráfico. Es posible apreciar que \emph{Rancagua} registró en
+la medición 2017-2 el valor más alto de satisfacción neta, aunque
+después descendió entorno al 60\%. Se les asimila la dinámica que
+muestran las sedes de \emph{Temuco} y \emph{Viña del Mar}. La sede de
+\emph{Santiago} registra una satisfacción neta históricamente baja, no
+superando el 50\%. No obstante, aún más bajo es la satisfacción en la
+sede de \emph{Concepción}, donde el valor es incluso negativo (-16\%).
+Además, en esta última sede, el valor más alto se registró en 2017-2,
+pero sólo alcanzó 11\%, luego bajo al 7\% y llegó en esta última
+medición a la cifra antes indicada.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-24-1.pdf}
 
+Se les preguntó a los estudiantes que evaluaron con nota inferior a 7 a
+la infraestructura de la sede, \emph{¿qué mejoras debiesen ocurrir para
+lograr un óptimo de satisfacción en este ámbito?}. En infraestructura,
+lo que se sugiere es diferente según la realidad de cada sede. Por
+ejemplo, en \emph{Rancagua} y \emph{Viña del Mar} se solicita de forma
+clara mejorar la \textbf{Cafetería}. En tanto en \emph{Concepción} y
+\emph{Temuco} hay una petición clara por mejorar los \textbf{Espacios
+comunes}.
+
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-26-1.pdf}
 
+** 2.3.2. Salas de Clases**
+
+La satisfacción neta relacionada con la \emph{Sala de Clases} registra
+en 2018-2 un 61\%, 11 puntos más respecto de la medición anterior
+(2017-2). Al observar cómo se comporta este valor por sede, la tendencia
+indica que la satisfacción neta en esta ámbito ha aumentado desde una
+caída importante en el año 2015, estabilizándose en tres sedes
+(\emph{Rancagua}, \emph{Temuco} y \emph{Viña del Mar}). En el caso de
+esta última, llegó a registrar valores negativos en los años 2015 y
+2016, mejorando de forma significativa los últmos dos años. Por otra
+parte, tanto \emph{Concepción}, como \emph{Santiago}, registran valores
+comparativamente más bajos en este ámbito.
+
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-28-1.pdf}
+** 2.3.3. Baños**
+
+Según se señaló en el acápite referido a infraestructura-Baños, en
+2018-2 se registra un 61\% de satisfacción neta, casi el doble del valor
+registrado en 2017-2 (36\%). En las sedes \emph{Viña del Mar} y
+\emph{Rancagua} se registraron caídas significativas en los años 2015 y
+2016. Lo mismo ocurre en las otras sedes, pero de forma menos acentuada.
+Todas las sedes, desde que experimentan una caída tienen un alza más o
+menos acentuada, aunque sí constante. En este ámbito, es \emph{Temuco}
+la sede con mejor desempeño a nivel histórico y \emph{Santiago} aquella
+con los valores más bajos.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-30-1.pdf}
+** 2.3.4. Laboratorios**
+
+En relación con los laboratorios, se aprecia tendencias a la baja hasta
+el año 2017-2 en los casos de \emph{Concepción} y \emph{Santiago},
+después de dicho año existe un repunte en la medición actual (2018-2).
+En el caso de la primera sede este repunte alcanza al 44\%, en cuanto a
+la segunda sede, llega al 52\%. En el caso de \emph{Rancagua} y
+\emph{Viña del Mar}, estas caídas ocurren en los años 2015-2 y 2016-2,
+respectivamente. No obstante, ambas sedes hoy (2018-2) alcanzan valores
+de satisfacción neta en torno al 73\%. Es muy relevante poner atención
+al descenso sistemático que experimenta la satisfacción neta la sede de
+\emph{Temuco}, como es posible ver en el gráfico, estos valores tienen
+una tendencia negativa sostenida.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-32-1.pdf}
 
-\textbf{2.2.3) Satisfacción con Espacios o Servicos Digitales}
+** 2.3.5. Cafetería**
 
-\begin{itemize}
-\tightlist
-\item
-  IEBVirtual
-\item
-  Biblioteca Digital (Ebook)
-\item
-  Wifi
-\end{itemize}
+En un acápite anterior se observó que el espacio del Cafetería era
+aquella que registraba una satisfacción neta más baja. El siguiente
+gráfico permite adentrarse en dicha tendencia a nivel de cada una de las
+sedes. El gráfico coincide con la sede con mejor desempeño histórico
+hasta aquella con peor desempeño. Se puede apreciar que sólo
+\emph{Temuco} no registra una tendencia a la baja desde el año 2017-2,
+incluso en el caso de \emph{Viña del Mar} se llega a valores negativos
+(-26\%). Sólo en el caso de \emph{Temuco} se aprecia una tendencia al
+alza débil, registrando un valor menos malo (21\%) en la medición actual
+(2018-2).
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-34-1.pdf}
 
-Por sede Ebook
+\section{Satisfacción Neta con
+Biblioteca}\label{satisfaccion-neta-con-biblioteca}
+
+Anteriormente, se apreció que la \emph{Biblioteca} registra una alta
+satisfacción neta en la presente medición (2018-2), en el gráfico
+siguiente es posible apreciar cómo es esta tendencia en cada una de las
+sedes. Se puede visualizar que existen caídas muy importantes en la
+satisfación neta en años puntuales según cada sede, exceptuando la sede
+de \emph{Santiago} y \emph{Viña del Mar}. Más allá de estas caídas, ya
+desde las mediciones del año 2017 existen incrementos que se han
+mantenido en el tiempo, alcanzando en el caso de las sedes de
+\emph{Rancagua}, \emph{Santiago} y \emph{Temuco}, valores en torno al
+80\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-36-1.pdf}
-
-Por sede WIFI
+En relación con la biblioteca, las sugerencias de mejoras de los
+estudiantes corresponden principalmente a mejorar su
+\textbf{Infraestructura}, esto queda reflejado de forma muy nítida en la
+sede de \emph{Concepción} y \emph{Temuco}. A su vez, en la sede de
+\emph{Rancagua} la petición se orienta a mejorar los \textbf{Horarios}
+de funcionamiento.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-38-1.pdf}
 
-Por sede IEB Virtual
+\section{Satisfacción Neta con Espacios o Servicos
+Digitales}\label{satisfaccion-neta-con-espacios-o-servicos-digitales}
+
+Tres son los servicios o espacios que se han clasificado dentro de este
+acápite: Plataforma IEB Virtual, Biblioteca Digital (Ebook) y Servicio
+Wifi. El siguiente gráfico muestra los resultados obtenidos a nivel
+histórico. Comparativamente se aprecia una mayor satisfacción respecto
+de plataforma IEB Virtual, con valores que se mueven dentro de un mínimo
+de 71\% y un máximo de 81\%. En segundo lugar, se puede apreciar la
+valoración del Ebook (Biblioteca Digital), que en un inicio (2015-2)
+alcanzaba los 36\%, en cmabio ahora (2018-2) llega al 74\%. El servicio
+Wifi genera una baja satisfacción neta, si bien ha remontado desde una
+caída brusca en el año 2017-1, no supera en la medición actual el 54\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-40-1.pdf}
 
-\textbf{2.2.4) Satisfacción con Otros Servicios del IGS}
+** a) Ebook o Biblioteca Digital**
 
-\begin{itemize}
-\tightlist
-\item
-  Servicio de Solicitudes
-\item
-  Cajas
-\end{itemize}
+En la medición actual (2018-2), un \textbf{64\%} de los estudiantes
+entrevistados indica haber utilizado el servicio de E-Books. A nivel de
+cada sede, se visualiza que en \emph{Viña del Mar} y \emph{Concepción}
+se regisra una satisfacción menor. Por el contrario, la satisfacción, al
+menos en 2018-2, es mayor en la sede de \emph{Rancagua} (83\%).
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-42-1.pdf}
 
-Serv. de Solicitudes por sede
+** b) Servicio de Wifi**
+
+EL servicio se Wifi, o sea la posibilidad de los alumnos de acceder a
+internet desde su laptop o celular en el espacio de las sedes del
+Instituto, refleja una alta valoración en sus usarios en la sede de
+\emph{Temuco} (80\%), no obtante en el resto de las sedes esta
+satisfacción no supera el 55\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-44-1.pdf}
-Cajas por sede
+
+** c) Plataforma IEB Virtual**
+
+La satisfacción neta del IEB Virtual presentó la mejor evaluación dentro
+de los servicios digitales evaluados. A nivel de cada sede, 4 de las 5
+sedes alcanzan una satisfacción neta cercana al 80\%, mientras que en
+\emph{santiago} la satisfacción neta alcanza un 74\%.
 
 \includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-46-1.pdf}
 
-\chapter{Componentes}\label{componentes}
+\section{Satisfacción con Otros Servicios del
+IGS}\label{satisfaccion-con-otros-servicios-del-igs}
 
-\section{Introducción}\label{introduccion}
+En este acápite por \emph{``otros servicios''} se alude a Cajas y
+Servicios de Solicitudes. En el primer caso, se ve una tendencia clara
+hacia el alza desde el año 2015, llegando en el año 2018 a una
+satisfacción neta de 71\%. En cuanto al servicio de solicitudes, su
+tendencia es fluctuante, desde un valor inicial (2014-2) de 66\%,
+bajando a un 22\% en el año 2016. En el año actual este servicio
+registra un 61\% de satisfacción neta.
 
-Para la elaboración de contenido se pueden emplear las componentes de
-RMarkdown descritas en el Apéndice \ref{rmarkdown}, incluyendo la
-sintaxis de Markdown (Sección \ref{markdown}) y la inclusión de bloques
-de código en R (Sección \ref{codigormd}). Pero como se comenta en este
-Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por
-Pandoc), que pueden ser de utilidad en la escritura de un libro. Por
-ejemplo, se pueden añadir sub\textsubscript{índices} y
-super\textsuperscript{índices} con
-\texttt{sub\textasciitilde{}índices\textasciitilde{}} y
-\texttt{super\^{}índices\^{}}, notas al pie con
-\texttt{\^{}{[}texto{]}}, ecuaciones y referencias bibliográficas.
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-48-1.pdf}
+** a) Servicio de Cajas**
 
-El paquete \texttt{bookdown} proporciona extensiones adicionales de la
-sistaxis de RMarkdown especialmente diseñadas para la escritura de
-libros (ver p.e. la
-\href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}{Sección
-2.2} del libro de bookdown), además el comportamiento de algunos
-resultados cambia al renderizar con este paquete.
+Respecto del servicio de Caja por sede, se aprecia que en todas las
+sedes hay una caída en el segundo año de medición. Sin embargo, desde
+esa caída hay un repunte que se ha mantenido constante hasta la medición
+actual.Los repuntes más altos, considerando de referencia la medición
+actual, se registran en sede de \emph{Rancagua} y \emph{Temuco}. Más
+leves son los repuntes registrados en las sedes de \emph{Concepción} y
+\emph{Santiago}.
 
-El las siguientes secciones se mostrarán algunas de estas extensiones de
-RMarkdown y de \texttt{bookdown} (en el
-\href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}{Capítulo
-2} del libro de bookdown se detallan todas las extensiones
-\texttt{bookdown}, incluyendo referencias de texto, bloques
-personalizados, HTML widgets, páginas web y aplicaciones Shiny).
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-50-1.pdf}
 
-\section{Secciones y cabeceras}\label{secciones-y-cabeceras}
+** B) Servicio de Solicitudes**
 
-Como ya se comentó, en el fichero de RMarkdown \texttt{.Rmd} de cada
-capítulo, este está definido por el título de primer nivel (e.g.
-\texttt{\#\ Título}; ver Sección \ref{markdown} para la sintaxis de los
-distintos niveles de cabeceras), por lo que sólo debería haber uno.
-Además, al renderizar con \texttt{bookdown} los capítulos y secciones se
-numeran automáticamente, siguiendo el orden alfabético de los ficheros.
+El servicio de solicitudes tiene un comportamiento fluctuante en
+términos de la satisfacción neta. Si se toma como referencia la última
+medición (2018-2), se aprecia que todas la sedes mejoran respecto del
+2018-1, destacándose la mejora en las sedes de \emph{Rancagua} y
+\emph{Temuco}. Le siguen las sedes de \emph{Concepción} y \emph{Viña del
+Mar}, por el contrario, se aprecia que la sede \emph{Santiago} un
+ascenso leve que sólo alcanza un 44\% de satisfacción neta.
 
-Si no se desea numerar algún capítulo o sección, habrá que anádir
-\texttt{\{-\}} a continuación del correspondiente título (por ejemplo,
-en el archivo \emph{index.Rmd} se incluyó \texttt{\#\ Prólogo\ \{-\}}).
+\includegraphics{bookdown_intro_files/figure-latex/unnamed-chunk-52-1.pdf}
 
-Para referenciar un capítulo o sección, se puede añadir una etiqueta de
-la forma \texttt{\{\#etiqueta\}} a continuación del correspondiente
-título, después se podrá referenciar en el texto empleando
-\texttt{\textbackslash{}@ref(etiqueta)}, que al renderizar producirá un
-enlace con la correspondiente numeración (más detalles en la
-\href{https://bookdown.org/yihui/bookdown/cross-references.html}{Sección
-2.6} del libro de bookdown).
+\chapter{Análisis Multivariable}\label{analisis-multivariable}
 
-Adicionalmente hay dos tipos especiales de cabeceras de primer nivel que
-pueden ser empleadas en \texttt{bookdown}:
+\section{Regresión Logística}\label{regresion-logistica}
 
-\begin{itemize}
+Con la finalidad de profundizar en los resultados obtenidos en la
+encuesta de servicio 2018-2, se ha formulado dos modelos, uno donde la
+variable dependiente corresponda a averiguar qué variables hacen más
+probable el hecho de recomendar -o No- el instituto a algún familiar o
+amigo; por otro lado, se formula un segundo modelo para detectar qué
+variables son significativas en cuanto hacer probable evaluar
+positivamente (nota 6 ó 7) el servicio entregado por el Instituto.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
 \item
-  \texttt{\#\ (PARTE)\ Titulo\ de\ la\ Parte\ \{-\}}: para separar
-  capítulos en partes.
-\item
-  \texttt{\#\ (APPENDIX)\ Apéndices\ \{-\}}: para crear apéndices. Los
-  capítulos posteriores se tratarán como apéndices y se numerarán
-  alfabeticamente (A, B, C, \ldots{}).,
-\end{itemize}
+  Modelo Nº1: Probabilidad de recomendar el Instituto
+\end{enumerate}
 
-\section{Figuras y tablas}\label{figuras-y-tablas}
+La disposición a recomendar el Instituto representa, en su base, es una
+actitud condicionada por la experiencia que el estudiante ha tenido en
+su rol de tal en un ciclo determinado. Por ende, se hace necesario
+conocer cuáles, de las variables observadas, son factores que aumentan o
+reducen la probabilidad de que el evento ocurra: el evento aquí es el
+hecho de recomendar el Instituto.
 
-En la Sección \ref{opcodigo} se comentan algunas opciones de los bloques
-de código que pueden ser de utilidad para las figuras (algunas se pueden
-establecer en \emph{\_output.yml}, ver Sección \ref{yaml}). Por ejemplo,
-se puede establecer la opción \texttt{fig.cap} para incluir una leyenda
-(sin incluir sintaxis Markdown, salvo que se utilicen referencias de
-texto). En ese caso la gráfica se colocará en un entorno de figura
-(flotante en PDF/LaTeX\footnote{Se puede ajustar las posición empleando
-  la opción de \texttt{fig.pos} (por ejemplo,
-  \texttt{fig.pos\ =\ \textquotesingle{}!htb\textquotesingle{}}).}), que
-se etiquetará y numerará automáticamente.
+Para responder al objetivo anterior, se ha hecho uso de la técnica
+estadística de regresión logistica multivariable. En el cuadro siguiente
+se muestran algunos coeficientes que permiten aludir a la validez del
+modelo.
 
-Para referenciar una figura, habrá que añadir el prefijo \texttt{fig:}
-al nombre del bloque de código. Por ejemplo, la referencia a una figura
-en un bloque con nombre \texttt{foo} será
-\texttt{\textbackslash{}@ref(fig:foo)}.
+Resumen del Modelo Nº1
 
-Para incluir imágenes estáticas, en lugar de emplear la sintaxis
-habitual de markdown (e.g. \texttt{!{[}{]}(rmarkdown.png)}), se puede
-llamar a la función \texttt{knitr::include\_graphics()} en un bloque de
-código para poder emplear las extensiones \texttt{bookdown}. Por
-ejemplo, la figura \ref{fig:rmarkdown} se incluyó con el siguiente
-código:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{```\{r rmarkdown, echo=FALSE, out.width='30%', fig.align='center', fig.cap='Logo de rmarkdown (desde archivo PNG).'\}}
-\NormalTok{knitr::include_graphics("images/rmarkdown.png")}
-\NormalTok{```}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.3\linewidth]{images/rmarkdown} 
-
-}
-
-\caption{Logo de rmarkdown (desde archivo PNG).}\label{fig:rmarkdown}
-\end{figure}
-
-Además puede ser recomendable guardar estas imágenes en un subdirectorio
-(\emph{images} en el caso de este libro). En la
-\href{https://bookdown.org/yihui/bookdown/figures.html}{Sección 2.4} del
-libro de bookdown se tienen más detalles sobre las Figuras.
-
-Las tablas se comportan de forma similar. Si se emplea la función
-\texttt{knitr::ktable()} para incluir tablas, como se describe en la
-Sección \ref{tablas}, estas se colocarán en un entorno de tabla
-(flotante en PDF/LaTeX), y se etiquetarán y numerarán automáticamente.
-Para referenciarlas, habrá que añadir el prefijo \texttt{tab:} al nombre
-del bloque de código (e.g. \texttt{\textbackslash{}@ref(tab:foo)}). Más
-detalles en la
-\href{https://bookdown.org/yihui/bookdown/tables.html}{Sección 2.5} del
-libro de bookdown.
-
-\section{Ecuaciones}\label{ecuaciones}
-
-RMarkdown permite incluir expresiones matemáticas en formato LateX:
-
-\begin{itemize}
-\item
-  En linea escribiendo la expresión latex entre dos símbolos de dolar,
-  por ejemplo
-  \texttt{\$\textbackslash{}alpha,\ \textbackslash{}beta,\ \textbackslash{}gamma,\ \textbackslash{}delta\$}
-  resultaría en \(\alpha, \beta, \gamma, \delta\).
-\item
-  En formato ecuación empleando dos pares de símbolos de dolar. Por
-  ejemplo:
-
-\begin{verbatim}
-$$\Theta = \begin{pmatrix}\alpha & \beta\\
-\gamma & \delta
-\end{pmatrix}$$
-\end{verbatim}
-
-  resultaría en: \[\Theta = \begin{pmatrix}\alpha & \beta\\
-  \gamma & \delta
-  \end{pmatrix}\]
-\end{itemize}
-
-Adicionalmente en \texttt{bookdown} se pueden incluir ecuaciones
-numeradas (empleando directamente sintaxis LaTeX), que pueden ser
-referenciadas posteriormente. Por ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{equation}\NormalTok{\}}\SpecialStringTok{ }
-\SpecialStringTok{  f}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(k}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{) = }\SpecialCharTok{\textbackslash{}binom}\SpecialStringTok{\{n\}\{k\} p^k}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(1-p}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{)^\{n-k\}}
-\SpecialStringTok{  (}\SpecialCharTok{\textbackslash{}#}\SpecialStringTok{eq:ecuacion1)}
-\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{equation}\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-produce la siguiente ecuación \eqref{eq:ecuacion1}:
-
-\begin{equation}
-f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \label{eq:ecuacion1}
-\end{equation}
-
-que puede ser referenciada con
-\texttt{\textbackslash{}@ref(eq:ecuacion1)} (más detalles
-\href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html\#equations}{aquí}).
-
-\section{Referencias bibliográficas}\label{biblio}
-
-RMarkdown también admite bibliografía en distintos formatos, ver p.e.
-\url{https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html}.
-Por defecto \texttt{bookdown} emplea referencias bibliográficas en
-formato BibTeX (lo que se describe con detalle
-\href{https://bookdown.org/yihui/bookdown/citations.html}{aquí}). Para
-especificar uno o más archivos de bibliografía \emph{.bib}, se usa el
-campo \texttt{bibliography} en el fichero \emph{Index.Rmd}. Por defecto
-es de la forma:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{bibliography:}\AttributeTok{ }\KeywordTok{[}\StringTok{"book.bib"}\KeywordTok{,} \StringTok{"packages.bib"}\KeywordTok{]}
-\FunctionTok{biblio-style:}\AttributeTok{ }\StringTok{"apalike"}
-\FunctionTok{link-citations:}\AttributeTok{ true}
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
-
-Por ejemplo, una entrada de BibTeX sería:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\VariableTok{@book}\NormalTok{\{}\OtherTok{xie2016bookdown}\NormalTok{,}
-  \DataTypeTok{title}\NormalTok{=\{Bookdown: Authoring Books and Technical Documents with R Markdown\},}
-  \DataTypeTok{author}\NormalTok{=\{Xie, Yihui\},}
-  \DataTypeTok{year}\NormalTok{=\{2016\},}
-  \DataTypeTok{publisher}\NormalTok{=\{Chapman and Hall/CRC\}}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-Si se añade al fichero \emph{book.bib} podemos referenciarla en el texto
-empleando\footnote{En RStudio se puede instalar el
-  ``\href{https://rstudio.github.io/rstudioaddins/}{Addin}''
-  \href{https://github.com/crsh/citr}{\texttt{citr}} para insertar citas
-  a referencias bibliográficas en formato BibTeX.}
-\texttt{@xie2016bookdown} o \texttt{{[}@xie2016bookdown{]}}, resultando
-\citet{xie2016bookdown} o \citep{xie2016bookdown}.
-
-Además, en el fichero \emph{index.Rmd} se incluye por defecto el
-siguiente código:
-
-\begin{verbatim}
-# automatically create a bib database for R packages
-knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
-\end{verbatim}
-
-que genera automáticamente el archivo \emph{packages.bib} con las
-referencias bibliográficas de los paquetes especificados (puede
-interesar añadir los paquetes empleados). En el texto RMarkdown estas
-referencias se incluyen con \texttt{@R-paquete} (o
-\texttt{{[}@R-paquete{]}}), y la referencia a R \citep{R-base} con
-\texttt{{[}@R-base{]}}.
-
-Pandoc generará el listado de referencias al final del documento, por lo
-que habría que insertar una última sección
-\texttt{\#\ Bibliografía\ \{-\}} al generar el libro en dormato HTML (en
-PDF se hará automáticamente al emplear LaTeX). Si además de HTML se
-empleán otros formatos, se puede añadir el código:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\BaseNTok{`r if (knitr:::is_html_output()) '# Bibliografía \{-\}'`}
-\end{Highlighting}
-\end{Shaded}
-
-al final del documento.
-
-\section{Entornos}\label{entornos}
-
-El paquete \texttt{bookdown} proporciona entornos adicionales (numerados
-y no numerados) que pueden ser de utilidad en la escritura de un libro.
-En la Tabla \ref{tab:theorem-envs} se muestran los tipos de entorno
-soportados (aunque el nombre mostrado puede variar si se cambió esta
-opción en el fichero \emph{\_bookdown.yml}).
-
-
-
-\begin{table}[t]
-
-\caption{\label{tab:theorem-envs}Entornos en \texttt{bookdown}.}
-\centering
-\begin{tabular}{lll}
+\begin{longtable}[]{@{}lcc@{}}
 \toprule
-Entorno & Nombre mostrado & Prefijo referencia\\
+Log.de la verosimilitud -2 & R\textsuperscript{2} de Cox y Snell &
+R\textsuperscript{2} de Negelkerke\tabularnewline
 \midrule
-theorem & Theorem & thm\\
-lemma & Lemma & lem\\
-corollary & Corollary & cor\\
-proposition & Proposition & prp\\
-conjecture & Conjecture & cnj\\
-\addlinespace
-definition & Definition & def\\
-example & Example & exm\\
-exercise & Exercise & exr\\
+\endhead
+342,305 & 0,191 & 0,345\tabularnewline
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
 
-Para usar uno de estos entornos hay que emplear:
+\begin{itemize}
+\item
+  \textbf{-2 log de la verosimilitud (-2LL)} mide hasta qué punto un
+  modelo se ajusta bien a los datos. El resultado de esta medición
+  recibe también el nombre de ``desviación''. El valor es moderado, lo
+  ideal es que sea lo más bajo posible, por ello sólo se alude a un
+  ajuste sólo aceptable.
+\item
+  \textbf{La R cuadradro de Cox y Snell} se utiliza para estimar la
+  proporción de varianza de la variable dependiente explicada por las
+  variables predictoras (independientes). La R cuadrado de Cox y Snell
+  se basa en la comparación del log de la verosimilitud (LL) para el
+  modelo respecto al log de la verosimilitud (LL) para un modelo de
+  línea base. Sus valores oscilan entre 0 y 1. En nuestro caso es un
+  valor moderado (0,191) que indica que sólo el 19\% de la variación de
+  la variable dependiente es explicada por las variables incluidas en el
+  modelo.
+\item
+  \textbf{La R cuadrado de Nagelkerke} es una versión corregida de la R
+  cuadrado de Cox y Snell. La R cuadrado de Cox y Snell tiene un valor
+  máximo inferior a 1, incluso para un modelo ``perfecto''. La R
+  cuadrado de Nagelkerke corrige la escala del estadístico para cubrir
+  el rango completo de 0 a 1. Aquí el valor alude a un modelo aceptable.
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{```\{example, label="foo", name="Entornos de bookdown"\}}
-\NormalTok{Esto es un ejemplo.}
-\NormalTok{```}
-\end{Highlighting}
-\end{Shaded}
+El siguiente cuadro muestra las variables significativas que son parte
+del modelo.
 
-obteniéndose el Ejemplo \ref{exm:foo}, que se puede referenciar con
-\texttt{\textbackslash{}@ref(exm:foo)} (más detalles en la
-\href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html\#theorems}{Sección
-2.2.2} del libro de bookdown).
+\begin{center}\includegraphics{images/Modelo1} \end{center}
 
-\BeginKnitrBlock{example}[Entornos de bookdown]
-\protect\hypertarget{exm:foo}{}{\label{exm:foo} \iffalse (Entornos de
-bookdown) \fi{} }Esto es un ejemplo.
-\EndKnitrBlock{example}
+La información del cuadro anterior, permite esbozar lo siguiente:
 
-\chapter{Publicación}\label{publicacion}
+\begin{itemize}
+\item
+  Cada una de las variables contenidas en el cuadro han resultado ser
+  significativas en términos estadístico, por ende, desempeñan un rol en
+  relación a la ocurrencia del evento (recomendar).
+\item
+  Los valores de la columna b son positivos, lo que indica que cada unas
+  de las variables, al incrementarse en una unidad (en este caso de
+  notas de 1 a 7), aumentan la probabilidad de ocurrencia del evento. Si
+  el signo fuese negativo, indicaría que dicha variable desempeña un
+  \emph{rol protector}, osea, evita que ocurra el evento (recomendar el
+  IGS).
+\item
+  El valor de la columna Exp(b) indica cuál de las variable
+  seleccionadas tiene un mayor poder para explicar el evento de
+  recomendar. En este contexto, este rol lo posee la variable nota a los
+  docentes puesto que el valor de Exp(b) es el que más se aleja de 1,
+  llegando a 2,314.
+\item
+  Si bien, como deja en claro el punto anterior, la evaluación de los
+  docentes resulta ser clave en el hecho de recomendar o no el
+  Instituto, están las otras variables las cuales aluden a espacios
+  físicos de uso cotidiano para los alumnos, especialmente el área de
+  servicios higiénicos y laboratorios. A su vez, aparece la evaluación
+  de servicios de pago o cajas.
+\end{itemize}
 
-La ``publicación'' del libro web puede ser tan simple como subirlo a
-\href{https://help.github.com}{GitHub} (estableciendo antes las opciones
-que se describen a continuación), aunque también bastaría con subir el
-contenido de la carpeta de salida \emph{\_book} a cualquier servidor
-web.
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Modelo Nº2: Probabilidad de Evaluar Servicios con Nota 6 o 7
+\end{enumerate}
 
-\section{GitHub Pages}\label{github}
+El Instituto define como satisfacción global las respuesta a la pregunta
+``\emph{evalúe la calidad de los servicios entregados por el
+Instituto}''. En este aspecto, junto al modelo anterior, es necesario
+conocer cuál de las variables observadas resulta ser factor en cuanto a
+evaluar positiva o negativamente los servicios entregados por el
+Instituto, o en otras palabras, que ocurra el evento de calificar con
+nota 6 o 7 este tópico.
 
-Para poder emplear \href{https://pages.github.com}{GitHub Pages} habría
-que cambiar el directorio de salida en el archivo \emph{\_bookdown.yml}:
+Al igual que en el modelo Nº1, se ha hecho uso de la técnica estadística
+de regresión logistica multivariable. En el cuadro siguiente se muestran
+algunos coeficientes que permiten dar cuenta de la calidad estadística
+del modelo.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{output_dir:}\AttributeTok{ }\StringTok{"docs"}
-\end{Highlighting}
-\end{Shaded}
+Resumen del Modelo Nº2
 
-Después de generar el libro, crear un fichero \emph{.nojekyll} (vacio)
-en el nuevo directorio \emph{docs} (GitHub procesa los sitios web con
-Jekyll; e.g.
-\href{https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages}{enlace}
-), para lo que bastaría con ejecutar en la consola
-\texttt{file.create(\textquotesingle{}docs/.nojekyll\textquotesingle{})}.
-Finalmente crear el correspondiente repositorio en GitHub, estableciendo
-en la configuración de ``GitHub Pages'' la opción de ``Source'' como
-``master branch /docs folder'' (p.e. siguiendo estos
-\href{https://help.github.com/articles/configuring-a-publishing-source-for-github-pages}{pasos}).
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+Log.de la verosimilitud -2 & R\textsuperscript{2} de Cox y Snell &
+R\textsuperscript{2} de Negelkerke\tabularnewline
+\midrule
+\endhead
+494,305 & 0,350 & 0,483\tabularnewline
+\bottomrule
+\end{longtable}
 
-Para ir añadiendo contenido a un sitio en GitHub, se puede emplear por
-ejemplo RStudio (e.g. \href{http://r-pkgs.had.co.nz/git.html}{R
-packages} by \href{http://hadley.nz/\#code}{Hadley Wickham}) o instalar
-\href{https://desktop.github.com}{GitHub Desktop} (lo que recomendaría
-en Windows\ldots{}).
+\begin{itemize}
+\item
+  \textbf{-2 log de la verosimilitud (-2LL)}. El valor de este
+  coeficiente es moderado, lo ideal es que sea lo más bajo posible, por
+  ello sólo se alude a una calidad del modelo aceptable.
+\item
+  \textbf{La R cuadradro de Cox y Snell}. Los valores de este
+  coeficiente oscilan entre 0 y 1. En este caso el valor es moderado
+  (0,350), lo que indica que el 35\% de la variación de la variable
+  dependiente es explicada por las variables incluidas en el modelo.
+\item
+  \textbf{La R cuadrado de Nagelkerke}. El valor de este coeficiente da
+  cuenta de un modelo aceptable.
+\end{itemize}
 
-Más información y alternativas en el
-\href{https://bookdown.org/yihui/bookdown/publishing.html}{libro de
-bookdown}.
+El siguiente cuadro muestra las variables significativas que son parte
+del modelo.
 
-\section{Licencia}\label{licencia}
+\begin{center}\includegraphics{images/Modelo2} \end{center}
 
-Es recomendable incluir una licencia, por ejemplo, este libro está bajo
-una licencia de
-\href{https://creativecommons.org/licenses/by-sa/4.0/deed.es}{Creative
-Commons Reconocimiento-CompartirIgual 4.0 Internacional}. Sin embargo en
-el libro de \href{https://rubenfcasal.github.io/simbook}{Prácticas de
-Simulación} se consideró una licencia
-\href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es_ES}{Creative
-Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional},
-de forma preliminar.
+La información del cuadro anterior, permite esbozar lo siguiente:
 
-Se puede incluir la licencia en formato texto en un archivo
-\emph{LICENSE} en la raíz del proyecto.
+\begin{itemize}
+\item
+  Cada una de las variables contenidas en el cuadro desempeñan un rol
+  estadístico en relación a la ocurrencia del evento (recomendar).
+\item
+  Los valores de la columna b son positivos, lo que indica que al
+  aumentar cada unas de las variables independientes aumenta también la
+  probabilidad de ocurrencia del evento (calificar con nota 6 y 7 el
+  servicio prestado por el Instituto). Si el signo fuese negativo,
+  indicaría que dicha variable desempeña un \emph{rol protector}, osea,
+  evita que ocurra el evento.
+\item
+  El valor de la columna Exp(b) indica cuál de las variable
+  seleccionadas tiene un mayor poder para explicar el evento de
+  recomendar. En este contexto, al igual como ocurre en el modelo nº1,
+  este rol lo posee la variable ``NotaDocentes'', donde el valor de
+  Exp(b) es el más alto, llegando a 2,190.
+\item
+  En este modelo, aparecen relevantes 3 variables relacionadas con el
+  aspecto material-espacial del Instituto (Infraestructura, Biblioteca y
+  Cafetería), una de espacio virtual (IEB-Virtual). Estas variables
+  indican que a medida que aumenta en una unidad la calificación (de
+  nota 1 a 7), aumenta la probabilidad que el estudiante evalúe con nota
+  6 ó 7 el servicio entregado por el Instituto. Una última variable se
+  relaciona con el perfil del estudiante (técnico versus profesional);
+  en este caso cuando el estudiante pasa de técnico a profesional
+  aumenta la probabilidad de evaluar con nota 6 ó 7 al Instituto en
+  cuanto al servico que entrega.
+\end{itemize}
+
+\section{Análisis Factorial}\label{analisis-factorial}
+
+Este análisis busca identificar nuevas lógicas subyacentes para
+re-estructurar las variables o indicadores de los instrumentos,
+conformando así nuevas dimensiones más relevantes para ahondar en la
+interpretación de los resultados de las encuestas.
+
+\chapter{Conclusiones}\label{conclusiones}
+
+PENDIENTE
 
 \appendix
 
 
-\chapter{R Markdown}\label{rmarkdown}
+\chapter{Anexo 2}\label{rmarkdown}
 
-\section{Introducción}\label{introduccion-1}
-
-Este documento se ha generado empleando Markdown y R. RMarkdown es
-recomendable para difundir análisis realizados con R en formato HTML,
-PDF y DOCX (Word), entre otros.
-
-Markdown se diseñó inicialmente para la creación de páginas web a partir
-de documentos de texto de forma sencilla y rápida. Es lo que se conoce
-como un lenguaje de marcado ligero, tiene unas reglas sintácticas muy
-simples y se busca principalmente la facilidad de lectura.
-Posteriormente se fueron añadiendo funcionalidades, por ejemplo para
-incluir opciones de publicación en muchos otros formatos. La
-implementación original de Markdown es de
-\href{http://daringfireball.net/projects/markdown/}{John Gruber}, pero
-actualmente están disponibles múltiples dialectos (sobre todo para
-publicar en gestores de contenido). RMarkdown utiliza las extensiones de
-la sintaxis proporcionada por \emph{Pandoc} (ver Apendice \ref{pandoc}),
-y adicionalmente permite la inclusión de código R.
-
-Al renderizar un fichero RMarkdown se generará un documento que incluye
-el código R y los resultados incrustados en el documento\footnote{Se
-  llama al paquete \texttt{knitr} para ``tejer'' el código de R y los
-  resultados en un fichero Markdown, que posteriormente es procesado con
-  \emph{pandoc}}. En \emph{RStudio} basta con hacer clic en el botón
-\emph{Knit}. En R se puede emplear la funcion \texttt{render} del
-paquete \texttt{rmarkdown} (por ejemplo \texttt{render("Informe.Rmd")}).
-También se puede abrir directamente el informe generado:
-
-\begin{verbatim}
-library(rmarkdown)
-browseURL(url = render("Informe.Rmd"))
-\end{verbatim}
-
-A continuación se darán algunos detalles sobre RMarkdown (y las
-extensiones Markdown de Pandoc que admite: notas al pie de página,
-tablas, citas, ecuaciones LaTeX, \ldots{}). Para más información
-(incluyendo introducciones a Markdown y RMarkdown), se recomienda
-consultar alguna de las numerosas fuentes disponibles, comenzando por la
-web oficial \url{http://rmarkdown.rstudio.com/}.
-
-También se dispone de información en la ayuda de \emph{RStudio}:
-
-\begin{itemize}
-\item
-  \emph{Help \textgreater{} Markdown Quick Reference}
-\item
-  \emph{Help \textgreater{} Cheatsheets \textgreater{}
-  \href{https://www.rstudio.org/links/r_markdown_cheat_sheet}{R Markdown
-  Cheat Sheet}}
-\item
-  \emph{Help \textgreater{} Cheatsheets \textgreater{}
-  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R
-  Markdown Reference Guide}}
-\end{itemize}
-
-Otras fuentes permiten obtener documentación más detallada, como por
-ejemplo:
-
-\begin{itemize}
-\item
-  Web del paquete \texttt{knitr} \citep{R-knitr}:
-  \url{https://yihui.name/knitr}.
-\item
-  \citet{xie2018r} : R Markdown: The Definitive Guide,
-  \url{https://bookdown.org/yihui/rmarkdown/}.
-\item
-  Extensiones RMarkdown de Pandoc:
-  \url{https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html\%23raw-tex}.
-\end{itemize}
-
-\section{Sintaxis de Markdown}\label{markdown}
-
-Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no
-marcado se renderiza como texto normal aunque es necesario dejar una
-línea en blanco para insertar un salto de línea. Las principales reglas
-de Markdown se sumarizan en la siguiente tabla:
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
-Escribir\strut
-\end{minipage} & \begin{minipage}[b]{0.33\columnwidth}\raggedright\strut
-o alternativamente\strut
-\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
-para obtener \ldots{}\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-# Título 1
- 
-## Título 2
- 
-### Título 3
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-Título 1
-========
-Título 2
---------
-### Título 3
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Los distintos niveles de encabezados\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-*Cursiva*
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-_Cursiva_
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\emph{Cursiva}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-**Negrita**
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-__Negrita__
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\textbf{Negrita}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-[Enlace](http://url.gz)
- 
- 
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-[Enlace][1]
-Más adelante...
-[1]: http://url.gz
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\href{http://rmark\%20down.rstudio.com}{Enlace}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-![Imagen](rmarkdown.png)
- 
- 
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-![Imagen][1]
-Más adelante...
-[1]:http://url/b.jpg
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\includegraphics{images/rmd.png}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-> Blockquote
->
-> --- El Autor
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{quote}
-Blockquote
-
---- El Autor
-\end{quote}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-* Lista
-* Lista
-   + Sub-lista
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
--  Lista
--  Lista
-   - Sub-lista
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{itemize}
-\tightlist
-\item
-  Lista
-\item
-  Lista
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Sub-lista
-  \end{itemize}
-\end{itemize}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-1. Uno
-2. Dos
-   a. A
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-1) Uno
-2) Dos
-   a) A
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Uno
-\item
-  Dos
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    A
-  \end{enumerate}
-\end{enumerate}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-Regla horizontal
-
----
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-Regla horizontal
-
-***
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Regla horizontal
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-`código en línea` entre
-comillas invertidas
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\texttt{código\ en\ línea} entre comillas invertidas\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-```
-# bloque de código
-3 comillas invertidas
-o sangría de 4 espacios
-```
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-[····]# bloque de código
-[····]3 comillas invertidas
-[····]o sangría de 4 espaci
-os
-\end{verbatim}
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\begin{verbatim}
-# bloque de código
-3 comillas invertidas
-o sangría de 4 espacios
-\end{verbatim}
-\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-Es muy recomendable dejar siempre una linea de separación entre
-elementos distintos consecutivos.
-
-\section{Inclusión de código R}\label{codigormd}
-
-Se puede incluir código R entre los delimitadores
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}} y
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}}. Por
-defecto, se mostrará el código, se evaluará y se mostrarán los
-resultados justo a continuación. Por ejemplo el siguiente código:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{```\{r\}}
-\NormalTok{head(mtcars[1:3])}
-\NormalTok{summary(mtcars[1:3])}
-\NormalTok{```}
-\end{Highlighting}
-\end{Shaded}
-
-produce:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{head}\NormalTok{(mtcars[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{])}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##                    mpg cyl disp
-## Mazda RX4         21.0   6  160
-## Mazda RX4 Wag     21.0   6  160
-## Datsun 710        22.8   4  108
-## Hornet 4 Drive    21.4   6  258
-## Hornet Sportabout 18.7   8  360
-## Valiant           18.1   6  225
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(mtcars[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{])}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##       mpg             cyl             disp      
-##  Min.   :10.40   Min.   :4.000   Min.   : 71.1  
-##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8  
-##  Median :19.20   Median :6.000   Median :196.3  
-##  Mean   :20.09   Mean   :6.188   Mean   :230.7  
-##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0  
-##  Max.   :33.90   Max.   :8.000   Max.   :472.0
-\end{verbatim}
-
-En \emph{RStudio} pulsando ``Ctrl + Alt + I'' o en el icono
-correspondiente se incluye un trozo de código.
-
-También se puede incluir código en línea empleando
-\texttt{\textasciigrave{}r\ código\textasciigrave{}}, por ejemplo
-\texttt{\textasciigrave{}r\ 2\ +\ 2\textasciigrave{}} produce 4.
-
-\subsection{Gráficos}\label{graficos}
-
-Si el código genera un gráfico, este se incluirá en el documento justo
-después de donde fué generado (por defecto). Por ejemplo el siguiente
-gráfico:
-
-\includegraphics{bookdown_intro_files/figure-latex/figura1-1.pdf}
-
-se generó empleando:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{```\{r figura1, echo=FALSE\}}
-\NormalTok{hist(mtcars$mpg)}
-\NormalTok{```}
-\end{Highlighting}
-\end{Shaded}
-
-aunque no se mostró previamente el código al haber establecido la opción
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r,\ echo=FALSE\}}.
-
-\subsection{Opciones de bloques de código}\label{opcodigo}
-
-Los trozos de código pueden tener nombre y opciones, se establecen en la
-cabecera de la forma
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ nombre,\ op1,\ op2\}}.
-Para un listado de las opciones disponibles ver
-\url{http://yihui.name/knitr/options} (en la
-\href{https://bookdown.org/yihui/rmarkdown/r-code.html}{Sección 2.6} del
-libro de RMarkdown se incluye un resumen). En \emph{RStudio} se puede
-pulsar en los iconos en la parte superior derecha del bloque de código
-para establecer opciones, ejecutar todo el código anterior o sólo el
-correspondiente trozo.
-
-Algunas opciones sobre evaluación y resultados:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{eval}: si \texttt{=FALSE} no se evalúa el código.
-\item
-  \texttt{echo}: si \texttt{=FALSE} no se muestra el código.
-\item
-  \texttt{include}: si \texttt{=FALSE} no se muestra el código ni ningún
-  resultado.
-\item
-  \texttt{message,\ warning,\ error}: oculta el correspondiente tipo de
-  mensaje de R (los errores o warnings se mostrarán en la consola).
-\item
-  \texttt{cache}: si se activa, guarda los resultados de la última
-  evaluación y se reutilizan si no cambió el bloque de código (más
-  detalles \href{https://yihui.name/knitr/options/\#cache}{aquí}). Puede
-  ser de utilidad durante la redacción del documento para reducir el
-  tiempo de renderizado (usándolo con cuidado y desactivándolo al
-  terminar).
-\end{itemize}
-
-Algunas opciones sobre resultados gráficos:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{fig.width,\ fig.height,\ fig.dim}: dimensiones del dispositivo
-  gráfico de R (no confundir con el tamaño del resultado), e.g.
-  \texttt{fig.width\ =\ 5}.
-\item
-  \texttt{out.width,\ out.heigh}: tamaño del gráfico, e.g.
-  \texttt{=\textquotesingle{}80\%\textquotesingle{}}.
-\item
-  \texttt{fig.align}:
-  \texttt{=\textquotesingle{}left\textquotesingle{},\ \textquotesingle{}center\textquotesingle{},\ \textquotesingle{}right\textquotesingle{}},
-  establece la alineación.
-\item
-  \texttt{fig.cap}: leyenda de la figura\footnote{Si se genera un
-    documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante
-    y se puede ajustar la posición empleando la opción \texttt{fig.pos}
-    (por ejemplo,
-    \texttt{fig.pos\ =\ \textquotesingle{}!htb\textquotesingle{}}).}.
-\item
-  \texttt{dev}: dispositivo gráfico de R, por defecto
-  \texttt{=\textquotesingle{}pdf\textquotesingle{}} para LaTeX y
-  \texttt{\textquotesingle{}png\textquotesingle{}} para HTML. Otras
-  opciones son \texttt{\textquotesingle{}svg\textquotesingle{}} o
-  \texttt{\textquotesingle{}jpeg\textquotesingle{}}.
-\end{itemize}
-
-Para establecer valores por defecto para todos los bloques de código se
-suele incluir uno de configuración al principio del documento, por
-ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{```\{r, setup, include=FALSE\}}
-\NormalTok{knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev='svg', fig.dim=c(5, 7), collapse=TRUE)}
-\NormalTok{```}
-\end{Highlighting}
-\end{Shaded}
-
-\section{Tablas}\label{tablas}
-
-Las tablas en Markdown son de la forma:
-
-\begin{verbatim}
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Row1 Cell1    | Row1 Cell2    |
-| Row2 Cell1    | Row2 Cell2    |
-\end{verbatim}
-
-Por ejemplo:
-
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-Variable & Descripción\tabularnewline
-\midrule
-\endhead
-mpg & Millas / galón (EE.UU.)\tabularnewline
-cyl & Número de cilindros\tabularnewline
-disp & Desplazamiento (pulgadas cúbicas)\tabularnewline
-hp & Caballos de fuerza bruta\tabularnewline
-drat & Relación del eje trasero\tabularnewline
-wt & Peso (miles de libras)\tabularnewline
-qsec & Tiempo de 1/4 de milla\tabularnewline
-vs & Cilindros en V/Straight (0 = cilindros en V, 1 = cilindros en
-línea)\tabularnewline
-am & Tipo de transmisión (0 = automático, 1 = manual)\tabularnewline
-gear & Número de marchas (hacia adelante)\tabularnewline
-carb & Número de carburadores\tabularnewline
-\bottomrule
-\end{longtable}
-
-Para convertir resultados de R en tablas de una forma simple se puede
-emplear la función \texttt{ktable} del paquete \emph{knitr}. Por ejemplo
-la Tabla \ref{tab:kable} se obtuvo mediante el siguiente código:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(mtcars), }
-  \DataTypeTok{caption =} \StringTok{"Una kable knitr"}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}[t]
-
-\caption{\label{tab:kable}Una kable knitr}
-\centering
-\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r|r}
-\hline
-  & mpg & cyl & disp & hp & drat & wt & qsec & vs & am & gear & carb\\
-\hline
-Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 & 16.46 & 0 & 1 & 4 & 4\\
-\hline
-Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 & 17.02 & 0 & 1 & 4 & 4\\
-\hline
-Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 & 18.61 & 1 & 1 & 4 & 1\\
-\hline
-Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 & 19.44 & 1 & 0 & 3 & 1\\
-\hline
-Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 & 17.02 & 0 & 0 & 3 & 2\\
-\hline
-Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22 & 1 & 0 & 3 & 1\\
-\hline
-\end{tabular}
-\end{table}
-
-Otros paquetes proporcionan opciones adicionales: \emph{xtable},
-\emph{stargazer}, \emph{pander}, \emph{tables} y \emph{ascii}.
-
-\section{Cabecera YAML}\label{yaml}
-
-En un fichero RMarkdown se puede incluir metadatos en una cabecera en
-formato YAML (YAML Ain't Markup Language,
-\url{https://en.wikipedia.org/wiki/YAML}), comenzando y terminando con
-tres guiones \texttt{-\/-\/-}. Los metadatos de YAML son típicamente
-opciones de renderizado consitentes en pares de etiquetas y valores
-separados por dos puntos. Por ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{title:}\AttributeTok{ }\StringTok{"Creación de contenidos con RMarkdown"}
-\FunctionTok{author:}\AttributeTok{ }\StringTok{"Fernández-Casal, R. y Cotos-Yáñez, T.R."}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"`r Sys.Date()`"}
-\FunctionTok{output:}\AttributeTok{ html_document}
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
-
-Aunque no siempre es necesario, se recomienda que los valores de texto
-se introduzcan entre comillas (se puede incluir código R en línea, como
-por ejemplo \texttt{\textasciigrave{}r\ Sys.Date()\textasciigrave{}}
-para obtener la fecha actual). Para valores lógicos se puede emplear
-\texttt{yes/true} y \texttt{no/false} para verdadero y falso,
-respectivamente.
-
-Los valores pueden ser vectores, por ejemplo las siguientes opciones son
-equivalentes:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{bibliography:}\AttributeTok{ }\KeywordTok{[}\NormalTok{book.bib}\KeywordTok{,}\NormalTok{ packages.bib}\KeywordTok{]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{bibliography:}
-\KeywordTok{-}\NormalTok{ book.bib}
-\KeywordTok{-}\NormalTok{ packages.bib}
-\end{Highlighting}
-\end{Shaded}
-
-También pueden ser listas, añadiendo una sangría de dos espacios
-(importante):
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{output:}
-  \FunctionTok{html_document:}
-    \FunctionTok{toc:}\AttributeTok{ yes}
-    \FunctionTok{toc_float:}\AttributeTok{ yes}
-  \FunctionTok{pdf_document:}
-    \FunctionTok{toc:}\AttributeTok{ yes}
-\end{Highlighting}
-\end{Shaded}
-
-El campo \texttt{output} permite especificar el formato y las opciones
-de salida (por defecto se empleará la primera). Empleando este campo
-también se pueden especificar opciones gráficas para los bloques de
-código, por ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{output:}
-  \FunctionTok{html_document:}
-    \FunctionTok{fig_width:}\AttributeTok{ 7}
-    \FunctionTok{fig_height:}\AttributeTok{ 6}
-    \FunctionTok{fig_caption:}\AttributeTok{ true}
-\end{Highlighting}
-\end{Shaded}
-
-La mayoría de los campos YAML son opciones que el paquete
-\texttt{rmarkdown} le pasa a Pandoc (ver documentación en el Apéndice
-\ref{pandoc}).
-
-Un ejemplo adicional\footnote{Puede ser interesante ejecutar
-  \texttt{str(rmarkdown::html\_document())} para ver un listado de todas
-  las opciones disponibles de \texttt{html\_document}}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{title:}\AttributeTok{ }\StringTok{"Creación de contenidos con RMarkdown"}
-\FunctionTok{subtitle:}\AttributeTok{ }\StringTok{"Curso de introducción a R"}
-\FunctionTok{author:}
-\KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Rubén Fernández Casal (ruben.fcasal@udc.es)"}
-  \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade da Coruña"}
-\KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Tomás R. Cotos Yáñez (tcotos@uvigo.es)"}
-  \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade de Vigo"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2019-02-06"}
-\FunctionTok{logo:}\AttributeTok{ rmarkdown.png}
-\FunctionTok{output:}
-  \FunctionTok{html_document:}
-    \FunctionTok{toc:}\AttributeTok{ yes                  }\CommentTok{# incluir tabla de contenido}
-    \FunctionTok{toc_float:}\AttributeTok{ yes            }\CommentTok{# toc flotante a la izquierda}
-    \FunctionTok{number_sections:}\AttributeTok{ yes      }\CommentTok{# numerar secciones y subsecciones}
-    \FunctionTok{code_folding:}\AttributeTok{ hide        }\CommentTok{# por defecto el código aparecerá oculto}
-    \FunctionTok{mathjax:}\AttributeTok{ local            }\CommentTok{# emplea una copia local de MathJax, hay que establecer:}
-    \FunctionTok{self_contained:}\AttributeTok{ false     }\CommentTok{# las dependencias se guardan en ficheros externos}
-    \FunctionTok{lib_dir:}\AttributeTok{ libs             }\CommentTok{# directorio para librerías (Bootstrap, MathJax, ...)}
-  \FunctionTok{pdf_document:}
-    \FunctionTok{toc:}\AttributeTok{ yes}
-    \FunctionTok{toc_depth:}\AttributeTok{ 2}
-    \FunctionTok{keep_tex:}\AttributeTok{ yes             }\CommentTok{# conservar fichero latex}
-    
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
-
-Como se puede deducir del ejemplo anterior, en el formato YAML podemos
-incluir comentarios con el carácter \texttt{\#} (por ejemplo para no
-emplear alguna de las opciones sin borrarla del encabezado).
-
-En el
-\href{https://bookdown.org/yihui/rmarkdown/documents.html}{Capítulo 3}
-del libro de RMarkdown se tiene información detallada sobre las opciones
-de los distintos formatos de salida (sobre ficheros HTML
-\href{https://bookdown.org/yihui/rmarkdown/html-document.html}{aquí} y
-sobre PDF/LaTeX
-\href{https://bookdown.org/yihui/rmarkdown/pdf-document.html}{aquí}).
-
-\section{Extracción del código R}\label{extraccion-del-codigo-r}
-
-Para generar un fichero con el código R se puede emplear la función
-\texttt{purl} del paquete \emph{knitr}. Por ejemplo:
-
-\begin{verbatim}
-purl("Informe.Rmd")
-\end{verbatim}
-
-Si se quiere además el texto RMarkdown como comentarios tipo
-\texttt{spin}, se puede emplear:
-
-\begin{verbatim}
-purl("Informe.Rmd", documentation = 2)
-\end{verbatim}
-
-\section{Spin}\label{spin}
-
-Una forma rápida de crear este tipo de informes a partir de un fichero
-de código R es emplear la funcion \texttt{spin} del paquete \emph{knitr}
-(ver p.e. \url{http://yihui.name/knitr/demo/stitch}).
-
-Para ello se debe comentar todo lo que no sea código R de una forma
-especial:
-
-\begin{itemize}
-\item
-  El texto RMarkdown se comenta con \texttt{\#\textquotesingle{}}. Por
-  ejemplo:
-
-\begin{verbatim}
-#' # Este es un título de primer nivel
-#' ## Este es un título de segundo nivel
-\end{verbatim}
-\item
-  Las opciones de un trozo de código se comentan con \texttt{\#+}. Por
-  ejemplo:
-
-\begin{verbatim}
-#+ setup, include=FALSE
-opts_chunk$set(comment=NA, prompt=TRUE, dev='svg', fig.height=6, fig.width=6)
-\end{verbatim}
-\end{itemize}
-
-Para generar el informe se puede emplear la funcion \texttt{spin} del
-paquete \emph{knitr}. Por ejemplo: \texttt{spin("Ridge\_Lasso.R")}.
-También se podría abrir directamente el informe generado:
-
-\begin{verbatim}
-browseURL(url = knitr::spin("Ridge_Lasso.R"))
-\end{verbatim}
-
-Pero puede ser recomendable renderizarlo con rmarkdown:
-
-\begin{verbatim}
-library(rmarkdown)
-browseURL(url = render(knitr::spin("Ridge_Lasso.R", knit = FALSE)))
-\end{verbatim}
-
-En \emph{RStudio} basta con pulsar ``Ctrl + Shift + K'' o seleccionar
-\emph{File \textgreater{} Knit Document} (en las últimas versiones
-también \emph{File \textgreater{} Compile Notebook} o hacer clic en el
-icono correspondiente).
-
-Por ejemplo, si se quiere convertir la salidas de un fichero de código
-de R a formato LaTeX (para añadirlas fácilmente a un documento en este
-formato), bastaría con incluir una cabecera de la forma:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{#' ---}
-\NormalTok{#' title: "Título"}
-\NormalTok{#' author: "Autor"}
-\NormalTok{#' date: "Fecha"}
-\NormalTok{#' output:}
-\NormalTok{#'   pdf_document:}
-\NormalTok{#'      keep_tex: true}
-\NormalTok{#' ---}
-\end{Highlighting}
-\end{Shaded}
-
-\section{Extensiones RMarkdown de
-pandoc}\label{extensiones-rmarkdown-de-pandoc}
-
-Como ya se comentó, RMarkdown utiliza la sintaxis extendida
-proporcionada por Pandoc. Por ejemplo, se pueden añadir
-sub\textsubscript{índices} y super\textsuperscript{índices} con
-\texttt{sub\textasciitilde{}índices\textasciitilde{}} y
-\texttt{super\^{}índices\^{}},\\
-y notas al pie con \texttt{\^{}{[}texto{]}}.
-
-Podemos incluir expresiones matemáticas en formato LateX:
-
-\begin{itemize}
-\item
-  En linea escribiendo la expresión latex entre dos símbolos de dolar,
-  por ejemplo
-  \texttt{\$\textbackslash{}alpha,\ \textbackslash{}beta,\ \textbackslash{}gamma,\ \textbackslash{}delta\$}
-  resultaría en \(\alpha, \beta, \gamma, \delta\).
-\item
-  En formato ecuación empleando dos pares de símbolos de dolar. Por
-  ejemplo:
-
-\begin{verbatim}
-$$\Theta = \begin{pmatrix}\alpha & \beta\\
-\gamma & \delta
-\end{pmatrix}$$
-\end{verbatim}
-
-  resultaría en: \[\Theta = \begin{pmatrix}\alpha & \beta\\
-  \gamma & \delta
-  \end{pmatrix}\]
-\end{itemize}
-
-También admite bibliografía, ver p.e.
-\url{https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html}.
-Lo más cómodo puede ser emplear un archivo de bibliografía en formato
-BibTeX, lo que se describe con detalle
-\href{https://bookdown.org/yihui/bookdown/citations.html}{aquí}. Será
-necesario añadir un campo \texttt{bibliography} en la cabezera YAML, por
-ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{bibliography:}\AttributeTok{ bibliografia.bib}
-\FunctionTok{csl:}\AttributeTok{ apa.csl  }\CommentTok{# opcional}
-\end{Highlighting}
-\end{Shaded}
-
-Suponiendo que en el directorio de trabajo están los ficheros de
-bibliografía \emph{bibliografia.bib} y de estilo \emph{apa.csl} (ver
-\url{http://citationstyles.org/}, desde donde se pueden descargar
-distintos archivos de estilo).
-
-Las referencias en el texto RMarkdown se incluyen con
-\texttt{@referencia} o \texttt{{[}@referencia{]}}. Pandoc generará el
-listado de referencias al final del documento, por lo que nos puede
-interesar insertar una última sección \texttt{\#\ Bibliografía\ \{-\}}
-al generar documentos HTML (en PDF se hará automáticamente al emplear
-LaTeX). En RStudio se puede instalar el
-``\href{https://rstudio.github.io/rstudioaddins/}{Addin}''
-\href{https://github.com/crsh/citr}{\texttt{citr}} para insertar citas a
-referencias bibliográficas en formato BibTeX.
-
-Para más detalles de las extensiones de Pandoc ver por ejemplo
-\url{https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html\%23raw-tex}
-o el manual de Pandoc \url{https://pandoc.org/MANUAL.html}.
-
-\chapter{Pandoc}\label{pandoc}
-
-\section{Introducción}\label{introduccion-2}
-
-Pandoc es un conversor de documentos libre y de código abierto, Pandoc
-puede leer archivos en distintos formatos, incluyendo:
-
-\begin{itemize}
-\item
-  Distintos dialectos de
-  \href{http://daringfireball.net/projects/markdown/}{Markdown}
-\item
-  \href{http://www.w3.org/TR/html40/}{HTML}
-\item
-  \href{http://www.latex-project.org/}{LaTeX}
-\item
-  Microsoft Word
-  \href{https://en.wikipedia.org/wiki/Office_Open_XML}{docx}
-\item
-  LibreOffice \href{http://en.wikipedia.org/wiki/OpenDocument}{ODT}
-\item
-  \href{http://en.wikipedia.org/wiki/EPUB}{EPUB}
-\end{itemize}
-
-Puede convertir los documentos de entrada a muchos otros formatos,
-incluyendo Office Open XML, OpenDocument, HTML, Wiki markup, InDesign
-ICML, ebooks, OPML, y varios formatos basados en TeX (desde donde se
-puede producir un PDF). En la web oficial \url{https://pandoc.org} hay
-un listado completo de los formatos soportados. Pandoc también
-proporciona distintas extensiones de Markdown para que admita resultados
-más complejos.
-
-Pandoc es una herramienta independiente de línea de comandos (sin
-interfaz gráfica), que se instala automáticamente con RStudio porque el
-paquete \texttt{rmarkdown} la emplea para generar los documentos de
-salida a partir de documentos Markdown (por ejemplo, en Windows en
-\emph{C:\textbackslash{}Program
-Files\textbackslash{}RStudio\textbackslash{}bin\textbackslash{}pandoc\textbackslash{}pandoc.exe}).
-
-\section{Conversión de documentos con Pandoc}\label{conversion}
-
-La sintaxis del comando es
-\texttt{pandoc\ {[}opciones{]}\ {[}ficheros{]}}. Si se ejecuta
-\texttt{pandoc\ -\/-help}, en la ventana de comandos o en la pestaña
-\emph{Terminal} de RStudio, se obtiene un listado detallado de las
-opciones. También se puede consultar el manual de Pandoc
-\url{https://pandoc.org/MANUAL.html}.
-
-Si Pandoc no está configurado en la ruta de búsqueda, habrá que
-reemplazar \texttt{pandoc} por la ruta completa al ejecutable. Por
-ejemplo, para emplear la versión instalada con RStudio en Windows habra
-que introducir
-\texttt{"C:\textbackslash{}Program\ Files\textbackslash{}RStudio\textbackslash{}bin\textbackslash{}pandoc\textbackslash{}pandoc"}.
-
-Podemos emplear Pandoc para convertir contenido escrito en otros
-formatos a Markdown, por ejemplo:
-
-\begin{itemize}
-\item
-  Un fichero word a markdown
-
-\begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.docx -f docx -t markdown 
---extract-media . -o fichero.Rmd 
-\end{verbatim}
-\item
-  Un fichero LaTeX a markdown
-
-\begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.tex -f latex -t markdown 
--o fichero.Rmd 
-\end{verbatim}
-\item
-  Una web a markdown
-
-\begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" http://url.org -f html -t markdown 
--o fichero.Rmd
-\end{verbatim}
-\end{itemize}
-
-Por defecto \emph{pandoc} produce en algunos casos un fragmento de
-documento (cuando el formato de salida no es markdown). Para obtener un
-documento independiente (e.g.~un fichero HTML válido incluyendo
-\texttt{\textless{}head\textgreater{}} y
-\texttt{\textless{}body\textgreater{}}), habrá que emplear la opción
-\texttt{-s} o \texttt{-\/-standalone}.
-
-\section{Pandoc y RMarkdown}\label{pandoc-y-rmarkdown}
-
-Como ya se comentó, el paquete \texttt{rmarkdown} llama a \emph{pandoc}
-para renderizar un documento RMarkdown\footnote{Desde la
-  \href{https://blog.rstudio.org/2014/06/18/r-markdown-v2/}{versión 2},
-  antes se utilizaba \texttt{knitr} y \texttt{markdown}.}, y esta
-llamada se muestra en la consola (o en la correspondiente pestaña de
-RStudio):
-
-\begin{verbatim}
-"C:/Program Files/RStudio/bin/pandoc/pandoc" +RTS -K512m -RTS Informes.utf8.md --to html4 
---from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash 
---output Informes.html --smart --email-obfuscation none --self-contained --standalone 
---section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 
---variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 
---variable toc_print=1 --template "C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM"
---no-highlight --variable highlightjs=1 --variable "theme:bootstrap" --include-in-header
-"C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html" --mathjax 
---variable "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-
-Output created: Informes.html
-\end{verbatim}
-
-La mayoría de los campos de la cabecera YAML de un fichero RMarkdown se
-traducen en las opciones de Pandoc. Por ejemplo, la cabezera:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{output:}
-  \FunctionTok{html_document:}
-    \FunctionTok{number_sections:}\AttributeTok{ yes      }
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
-
-(que produce la numeración de secciones y subsecciones), se corresponde
-con la opción \texttt{-\/-number-sections} de \emph{pandoc}. También se
-puede establecer cualquier opción de Pandoc en la cabecera YAML mediante
-el campo \texttt{pandoc\_args}, por ejemplo:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{output:}
-  \FunctionTok{html_document:}\AttributeTok{ }
-    \FunctionTok{pandoc_args:}\AttributeTok{ }\KeywordTok{[}\StringTok{"--number-offset"}\KeywordTok{,} \StringTok{"4,0"}\KeywordTok{,} \StringTok{"--number-sections"}\KeywordTok{]}\AttributeTok{      }
-\OtherTok{---}
-\end{Highlighting}
-\end{Shaded}
-
-(en este caso la numeración comenzaría en 4).
+Anexo 1 \{\#pandoc\}
 
 \bibliography{book.bib,packages.bib}
 

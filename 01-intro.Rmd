@@ -4,7 +4,7 @@ En este acápite, se detalla la metodología utilizada y que soporta la validez 
 
 ## Diseño de la Muestra {#requisitos}
 
-En este estudio, el universo válido  corresponderá a los estudiantes de todas las carreras del Instituto, sean vespertinos y diurnos y sean de educación presencial y/o virtual; además deben poseer los siguientes atributos:
+En este estudio, el universo válido corresponderá a los estudiantes de todas las carreras del Instituto, sean estos vespertinos o diurnos y sean de educación en una modalidad presencial y/o virtual. Los resultados de esto últimos estudiantes se analizan en un documento diferente dado que el instrumento es distinto. Otros atributos que poseen los sujetos para ser parte de la muestra son los siguientes:
 
 +	Deben tener matrícula vigente hasta la fecha de aplicación.
 +	Su estado como alumnos debe ser *regular*.
@@ -21,11 +21,11 @@ Para el cálculo del tamaño de la muestra se ha hecho uso de la fórmula de mue
 | Temuco   | 418     |  213  |
 | **Total**   | **3.191**  | **1.243**|
 
-La base de datos utilizada para el cálculo de las muestras incorpora, como datos de contacto, el correo electrónico de los alumnos. Mediante este correo se hará el contacto con ellos(as) para que accedan al formulario online y así entreguen la información solicitada. Además, y para asegurar la eficacia de la estrategia, se considera la colaboración de las direcciones de las sedes del IGS que participen del estudio. 
+La base de datos utilizada para el cálculo de las muestras incorpora, como datos de contacto, el correo electrónico de los alumnos. Mediante este correo se hará el contacto con ellos(as) para que accedan al formulario online y así entreguen la información solicitada. Además, y para asegurar la eficacia de la estrategia, se considera la colaboración de las direcciones de las sedes del IGS que participen en el estudio. 
 
 ## Diseño del Instrumento
 
-El instrumento utilizado para medir la satisfacción del estudiante considera tanto preguntas cerradas (con opciones de respuestas), además, y para ampliar el espectro de observación del fenómeno, se añaden en el instrumento preguntas abiertas que permiten -a los encuestados- describir mejor su experiencia en relación con los servicios.
+El instrumento utilizado para medir la satisfacción del estudiante considera tanto preguntas cerradas (con opciones de respuestas), además, -y para ampliar el espectro de observación del fenómeno-, se añaden preguntas abiertas que permiten registrar la percepción y experiencia de los estudiantes en relación con los actores, espacios y servicios.
 
-En esta oportunidad, la aplicación del instrumento se efectuó mediante la plataforma web SurveyMonkey. El proceso implica hacer una invitación a la muestra seleccinada via correo electrónico, el palzo para responder fue desde el 10 de Noviembre hasta el 23 de octubre de 2018. 
+En esta oportunidad, la aplicación del instrumento se efectuó mediante la plataforma web SurveyMonkey. El proceso implica hacer una invitación a la muestra seleccionada vía correo electrónico, el plazo para responder fue desde el 10 de Noviembre hasta el 23 de octubre de 2018. 
 
