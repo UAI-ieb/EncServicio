@@ -27,8 +27,8 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
   labs(
     x = "% de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.1: Satisfacción con Calidad del Servicio",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.1.1",
+    subtitle = "Satisfacción con Servicio Entregado",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf2aa + facet_grid(. ~ TipoSat)
@@ -52,8 +52,8 @@ GrafGlobal=ggplot(DataSedeGlobal, aes(x=medicion, y=Valor, group = Sede, colour=
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.1.2: Satisfacción Neta con Calidad del Servicio por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.1.2",
+    subtitle = "Satisfacción Neta con servicio enregado por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafGlobal + facet_grid(. ~ Sede )
@@ -74,8 +74,8 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
   labs(
     x = "% de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.3:Satisfacción con la Atención, tanto Neta como Total",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.1.3",
+    subtitle = "Satisfacción con la Atención, tanto Neta como Total",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf2ab + facet_grid(. ~ TipoSat)
@@ -98,8 +98,8 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
   labs(
     x = "Sede-Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.1.4: Satisfacción Neta con la Atención Recibida por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.1.4",
+    subtitle = "Satisfacción Neta con la Atención Recibida por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafAtencion + facet_grid(. ~ Sede )
@@ -126,8 +126,8 @@ GrafRecom1=ggplot(DataRecom1, aes(Valor, Var1, color = DataRecom1$colores, label
     labs(
     x = "Valores",
     y = "Grupos",
-    title = "Gráfico 2.1.5:Disposición a Recomendar el Instituto por Medición",
-    subtitle = "Encuesta de Servicio",
+    title = "Gráfico 2.1.5",
+    subtitle = "Disposición a Recomendar el Instituto por Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafRecom1 + facet_grid(. ~ Var2 )
@@ -151,8 +151,8 @@ GrafRecom2= ggplot(DataRecom2, aes(Valor, medicion, label = paste(round(Valor*10
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.1.6: Disposición a Recomendar el Instituto por Sede",
-    subtitle = "Suma de Definitivamente y Probablemente Sí recomendaría",
+    title = "Gráfico 2.1.6",
+    subtitle = "Disposición a Recomendar el Instituto por Sede",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafRecom2 + facet_grid(.~  DataRecom2$Sede )
@@ -172,8 +172,8 @@ graf2ba= ggplot(DataSatis, aes(DataSatis$PorDocente, medicion, label = paste(rou
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.2.1: Satisfacción con Docentes del IGS, tanto Neta como Total",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.2.1",
+    subtitle = "Satisfacción con Docentes del IGS, tanto Neta como Total",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf2ba + facet_grid(. ~ TipoSat)
@@ -197,8 +197,8 @@ GrafDocente=ggplot(DataSedeDocente, aes(x=medicion, y=Valor, group = Sede, colou
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.2.2: Satisfacción Neta con Docentes por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.2.2",
+    subtitle = "Satisfacción Neta con Docentes por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafDocente + facet_grid(. ~ Sede )
@@ -224,8 +224,8 @@ GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, labe
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.2.3: Mejoras sugeridas en desempeño docente",
-    subtitle = "% de Sí según cada Aspecto",
+    title = "Gráfico 2.2.3",
+    subtitle = "Mejoras sugeridas en desempeño docente",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejDoc + facet_grid( .~ MejDocente4$Sede )
@@ -247,8 +247,8 @@ graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.3.1a:Satisfacción con Infraestructura del IGS, tanto Neta como Total",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.1a",
+    subtitle = "Satisfacción con Infraestructura del IGS, tanto Neta como Total",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf2bb + facet_grid(. ~ TipoSat)
@@ -272,8 +272,8 @@ ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, 
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.1b: Satisfacción Neta de Espacios Físicos",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.1b",
+    subtitle = "Satisfacción Neta de Espacios Físicos",
     caption = "\nUnidad de Análisis Institucional"
   )
 ```
@@ -295,8 +295,8 @@ GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.1c: Satisfacción Neta con Infraestructura por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.1c",
+    subtitle = "Satisfacción Neta con Infraestructura por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafInfra + facet_grid(. ~ Sede )
@@ -320,8 +320,8 @@ GrafMejInfra= ggplot(MejInfra4, aes(MejInfra4$Valor, MejInfra4$Aspecto, label = 
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.3.1d: Mejoras sugeridas en Infraestructura",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.1d",
+    subtitle = "Mejoras sugeridas en Infraestructura",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejInfra + facet_grid( .~ MejInfra4$Sede )
@@ -347,8 +347,8 @@ GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.2: Satisfacción Neta con Sala de Clases por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.2",
+    subtitle = "Satisfacción Neta con Sala de Clases por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafSClases + facet_grid(. ~ Sede )
@@ -375,8 +375,8 @@ GrafBanos=ggplot(DataSedeBanos, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.3: Satisfacción Neta con Baños por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.3",
+    subtitle = "Satisfacción Neta con Baños por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafBanos + facet_grid(. ~ Sede )
@@ -402,8 +402,8 @@ GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.4: Satisfacción Neta con Laboratorio por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.4",
+    subtitle = "Satisfacción Neta con Laboratorio por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafLab + facet_grid(. ~ Sede )
@@ -430,8 +430,8 @@ GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, l
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.3.5: Satisfacción Neta con Cafetería por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.3.5",
+    subtitle = "Satisfacción Neta con Cafetería por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCaf + facet_grid(. ~ Sede )
@@ -457,8 +457,8 @@ GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=S
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.4.1: Satisfacción Neta con Biblioteca por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.4.1",
+    subtitle = "Satisfacción Neta con Biblioteca por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafBiblio + facet_grid(. ~ Sede )
@@ -482,8 +482,8 @@ GrafMejBiblio= ggplot(MejBiblio4, aes(MejBiblio4$Valor, MejBiblio4$Aspecto, labe
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.4.2: Mejoras sugeridas en Biblioteca",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.4.2",
+    subtitle = "Mejoras sugeridas en Biblioteca",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafMejBiblio + facet_grid( .~ MejBiblio4$Sede )
@@ -508,8 +508,8 @@ graf5=ggplot(GrafDigit, aes(x=GrafDigit$medicion, y=GrafDigit$Valor, group = Tip
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.1: Satisfacción Neta con Espacios y Servicios Digitales",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.1",
+    subtitle = "Satisfacción Neta con Espacios y Servicios Digitales",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf5 + facet_grid(. ~ Tipo )
@@ -536,8 +536,8 @@ GrafEbook=ggplot(DataSedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.2: Satisfacción Neta con Ebook por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.2",
+    subtitle = "Satisfacción Neta con Ebook por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafEbook + facet_grid(. ~ Sede )
@@ -563,8 +563,8 @@ GrafWifi=ggplot(DataSedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.3: Satisfacción con Wifi por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.3",
+    subtitle = "Satisfacción con Wifi por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafWifi + facet_grid(. ~ Sede )
@@ -589,8 +589,8 @@ GrafIEBV=ggplot(DataSedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.4: Satisfacción con IEB Virtual por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.4",
+    subtitle = "Satisfacción con IEB Virtual por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafIEBV + facet_grid(. ~ Sede )
@@ -616,8 +616,8 @@ graf5=ggplot(GrafOtros, aes(x=medicion, y=Valor, group = Tipo, colour=Tipo, labe
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.5: Satisfacción Neta con Otros Servicios",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.5",
+    subtitle = "Satisfacción Neta con otros Servicios",
     caption = "\nUnidad de Análisis Institucional"
   )
 graf5 + facet_grid(. ~ Tipo )
@@ -642,8 +642,8 @@ GrafCajas=ggplot(DataSedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.6: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.6",
+    subtitle = "Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafCajas + facet_grid(. ~ Sede )
@@ -668,8 +668,8 @@ GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfaccion Neta",
-    title = "Gráfico 2.5.7: Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
-    subtitle = "Encuesta de Servicios IGS",
+    title = "Gráfico 2.5.7",
+    subtitle = "Satisfacción Neta con Serv.Solicitudes por Sede y Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafSolicit + facet_grid(. ~ Sede )
