@@ -1,12 +1,12 @@
 # Resultados
 
-A continuación, se muestran los resultados más relevantes de la encuesta. Existen dos indicadores claves para dar cuenta del grado de satisfacción/insatisfacción de los estudiantes; la **Satisfacción total** y la **Satisfacción neta**. La primera alude al porcentaje de alumnos que evalúan a cada servicio, área o espacio con nota 6 ó 7, en cambios, la satisfacción neta corresponde a la diferencia del porcentaje de estudiantes que evalúan con nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5; ambos indicadores se expresan en porcentaje. A nivel tranversal dentro del informe, será este último el valor-indicador que dará cuenta de la percepción evaluativa de los estudiantes.
+A continuación, se muestran los resultados más relevantes de la encuesta. Existen dos indicadores claves para dar cuenta del grado de satisfacción/insatisfacción de los estudiantes; la **Satisfacción total** y la **Satisfacción neta**. La primera alude al porcentaje de alumnos que evalúan a cada servicio, área o espacio con nota 6 ó 7. En tanto, la satisfacción neta corresponde a la diferencia del porcentaje de estudiantes que evalúan con nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5; ambos indicadores se expresan en formato de valor porcentual. A nivel transversal, el informe será vertebrado por este último valor-indicador, dando cuenta a través de él de la percepción evaluativa de los estudiantes.
 
 ## Evaluación Global Instituto Guillermo Subercaseaux
 
 **2.1.1) Evaluación  Global del Servicio entregado por IGS**
 
-El siguiente gráfico, señala los resultados histórico del ítem que alude a la *calidad de los servicios entregados por el Instituto*. Los datos permiten visualizar una tendencia, en ambas satisfacciones, al alza. De esta manera, la *satisfacción neta* en la medición actual (2018-2), alcanza un 51%, en tanto la *satifacción total* alcanza un 63%. Estos valores, al compararse con las mediciones anteriores son altos, evidenciándose un retorno a valores registrados en la medición de 2014-2. 
+En el siguiente gráfico, se registran los resultados históricos del ítem que alude a la *calidad de los servicios entregados por el Instituto*. Los datos permiten visualizar una tendencia al alza, en ambos tipos de satisfacciones. De esta manera, la *satisfacción neta* en la medición actual (2018-2), alcanza un 51%, en tanto la *satisfacción total* alcanza un 63%. Estos valores, al compararse con las mediciones anteriores son altos, evidenciándose un retorno a valores registrados en la medición de 2014-2. 
 
 ```{r echo=FALSE, include = FALSE}
 library(readxl)
@@ -34,7 +34,7 @@ graf2aa= ggplot(DataSatis, aes(DataSatis$PorSerGen, medicion, label = paste(roun
 graf2aa + facet_grid(. ~ TipoSat)
 ```
 
-En el siguiente gráfico, se evalúa sólo el valor de la *satisfacción neta* a nivel de cada una de las sede del Instituto. Este dato permite apreciar las fluctuaciones que expresa la satisfacción neta, una fluctuación cuyos valles y peak son más acentuados en la sede de **Concepción** y **Viña del Mar**. Por el contrario, estos valores fluctúan con menos intensidad y dentro de un espectro de valores más altos en la sedes de **Temuco** y **Rancagua**. Se puede apreciar que **Santiago** manifiesta valores históricamente más bajos, alcanzando en la medición 2018-2 tan sólo 36%.
+En el siguiente gráfico, se evalúa sólo el valor de la *satisfacción neta* a nivel de cada una de las sedes del Instituto. Este dato permite apreciar las fluctuaciones que expresa la satisfacción neta, una fluctuación cuyos valles y peak son más acentuados en la sede de **Concepción** y **Viña del Mar**. Por el contrario, estos valores fluctúan con menos intensidad y dentro de un espectro de valores más altos en las sedes de **Temuco** y **Rancagua**. Se puede apreciar que **Santiago** manifiesta valores históricamente más bajos, alcanzando en la medición 2018-2 tan sólo 36%.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
@@ -81,12 +81,11 @@ graf2ab= ggplot(DataSatis, aes(DataSatis$PorAtencion, medicion, label = paste(ro
 graf2ab + facet_grid(. ~ TipoSat)
 ```
 
-Al inspeccionar el comportamiento de la variable por sede, se aprecia un comportamiento de alza-descenso-alza en las sedes de *Rancagua* y *Viña del Mar*, aunque en la primera de ellas es más estable en torno a un rango de valores más altos. Se puede apreciar que las sedes de *Concepción* y *Temuco* registran un repunte significativo respecto de la medición anterior, en este mismo aspecto se debe incluir a *Viña del Mar*. Por último, *Santiago* refleja una tendencia al alza, aunque sus valores son más bajos respecto de las otras sedes.
+Al inspeccionar el comportamiento de la variable por sede, se aprecia un comportamiento de alza-descenso-alza en las sedes de *Rancagua* y *Viña del Mar*, aunque en la primera de ellas es más estable en torno a un rango de valores más altos. Se puede apreciar que las sedes de *Concepción* y *Temuco* registran un repunte significativo respecto de la medición anterior; en este mismo aspecto se debe incluir a *Viña del Mar*. Por último, *Santiago* refleja una tendencia al alza, aunque sus valores son -en general- más bajos respecto de las otras sedes.
 
 ```{r echo=FALSE, message=FALSE}
-DataSedeAtencion <- read_delim("Data/SedeAtencion.csv", ";", escape_double = FALSE, 
-    locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
-    trim_ws = TRUE)
+DataSedeAtencion <- read_delim("Data/SedeAtencion.csv", ";", escape_double = FALSE,locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"),trim_ws = TRUE)
+
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -107,7 +106,7 @@ GrafAtencion + facet_grid(. ~ Sede )
 
 **2.2.3) Disposición a Recomendar el IGS**
 
-La disposición a recomendar un servicio determinado, especialmente si esta persona es un familiar o amigo(a), expresa en sí mismo una experiencia positiva del uso de dicho servicio. Al observar las cifras en este ámbito, se aprecia que la disposición a recomendar el Instituto Subercaseaux alcanza un 86%, sumando aquellos estudiantes que dicen que con toda claridad lo harían ("Definitivamente = 40%"), junto con aquellos que lo indican como una probabilidad cierta ("Probablemente = 46%"). Esta cifra expresa un alza de 6 puntos respecto del dato registrado en la medición anterior (2018-1).
+La disposición a recomendar un servicio determinado, especialmente si esta persona es un familiar o amigo(a), expresa en sí mismo una experiencia positiva del uso de dicho servicio. Al observar las cifras en este ámbito, se aprecia que la disposición a recomendar el Instituto Subercaseaux alcanza un 86%, sumando aquellos estudiantes que dicen que con toda claridad lo harían ("Definitivamente: 40%"), junto con aquellos que lo indican como una probabilidad cierta ("Probablemente:46%"). Esta cifra expresa un alza de 6 puntos respecto del dato registrado en la medición anterior (2018-1).
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataRecom1 <- read_delim("Data/t.Recom1.csv", ";", escape_double = FALSE, 
@@ -127,13 +126,13 @@ GrafRecom1=ggplot(DataRecom1, aes(Valor, Var1, color = DataRecom1$colores, label
     x = "Valores",
     y = "Grupos",
     title = "Gráfico 2.1.5",
-    subtitle = "Disposición a Recomendar el Instituto por Medición",
+    subtitle = "Disposición a Recomendar el Instituto según Medición",
     caption = "\nUnidad de Análisis Institucional"
   )
 GrafRecom1 + facet_grid(. ~ Var2 )
 ```
 
-El gráfico siguiente muestra el porcentaje de estudiantes que tienen una disposición positiva frente a la posibilidad de recomendar el Instituto. Los valores en este dato son más altos, tanto en la actual medición como en las anteriores, tendencia que se repite en cada una de la sedes. En este sentido, se constata un desacoplamiento del dato respecto de las últimas dos variables generales revisadas anteriormente. Al parecer, el dato y su tendencia expresan una satisfacción de base donde convergen otros elementos y aspectos conectados con la trayectoria como estudiantes.
+El gráfico siguiente muestra el porcentaje de estudiantes que tienen una disposición positiva frente a la posibilidad de recomendar el Instituto. Los valores en este dato son más altos, tanto en la actual medición como en las anteriores; esta tendencia se repite en cada una de las sedes. En este sentido, se constata un desacoplamiento del dato respecto de las últimas dos variables generales revisadas anteriormente. Al parecer, el dato y su tendencia expresan una satisfacción *de base* donde convergen otros elementos y aspectos conectados con la trayectoria de los estudiantes.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataRecom2 <- read_delim("Data/t.Recom2.csv", ";", escape_double = FALSE, 
@@ -180,7 +179,7 @@ graf2ba + facet_grid(. ~ TipoSat)
 
 ```
 
-A nivel de cada una de las sedes, la satisfacción neta de los estudiantes con los docentes muestra diferencias relevantes. La satisfacción neta es más alta (en las últimas 3 mediciones), en las sedes de *Rancagua* y *Temuco*; esto más allá de que en ambas se registre un descenso en la medición 2018-1. La sede de *Concepción* tiene un descenso en la medición de 2018-1, pero se recupera en la medición (2018-2). La sede de *Viña del Mar* es bastante estable en las tres mediciónes, en torno al 68% de satisfacción neta. Por último, en la sede de *Santiago* la satisfacción neta es baja, y aunque ha venido al alza, aún no supera el umbral del 50%.
+A nivel de cada una de las sedes, la satisfacción neta de los estudiantes con los docentes muestra diferencias relevantes. La satisfacción neta es más alta (en las últimas 3 mediciones), en las sedes de *Rancagua* y *Temuco*; esto más allá de que en ambas se registre un descenso en la medición 2018-1. La sede de *Concepción* tiene un descenso en la medición de 2018-1, pero se recupera en la medición (2018-2). La sede de *Viña del Mar* es bastante estable en las tres mediciones, en torno al 68% de satisfacción neta. Por último, en la sede de *Santiago* la satisfacción neta es baja, y aunque ha venido al alza, aún no supera el umbral del 50%.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeDocente <- read_delim("Data/SedeDocente.csv", ";", escape_double = FALSE, 
@@ -205,8 +204,7 @@ GrafDocente + facet_grid(. ~ Sede )
 
 ```
 
-Aquellos estudiantes que evalúan con nota inferior a 7 a los docentes, se les consulta cuáles -desde su perspectiva- son las mejoras que debiesen ocurrir para lograr un óptimo de satisfacción con respecto al desempeño docente. En el siguiente gráfico se ha desglosado el dato por cada sede para acercarnos a fenómenos más localizados. Es poisble apreciar que en cada una de las sedes lo que se sugiere es mejorar la "metodología" de enseñanza, junto con ello aparece como sugerencia el hecho de mejorar la "comunicación o claridad expositiva en clases". 
-
+En este ámbito, dentro del cuestionario se consulta a aquellos estudiantes que evalúan con una nota inferior a 7 a los docentes, sobre cuáles -desde su perspectiva- son las mejoras (cambios) que debiesen suceder para lograr un óptimo de satisfacción con el desempeño docente. En el siguiente gráfico, se ha desglosado el dato por cada sede para acercarnos a fenómenos más localizados. Es posible apreciar que en cada una de las sedes lo que se sugiere es mejorar la *"metodología"* de enseñanza, junto con ello aparece como sugerencia el hecho de mejorar la *"comunicación o claridad expositiva en clases"*. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 MejDocente4 <- read_delim("Data/MejDocente4.csv", ";", escape_double = FALSE, 
@@ -231,7 +229,7 @@ GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, labe
 GrafMejDoc + facet_grid( .~ MejDocente4$Sede )
 ```
 
-## Satisfacción con Infraestructura y Otros Espacios Físicos del IGS
+## Satisfacción con la Infraestructura y Otros Espacios Físicos del IGS
 
 **2.3.1. Satisfacción con la Infraestructura**
 
@@ -254,7 +252,7 @@ graf2bb= ggplot(DataSatis, aes(DataSatis$PorInfra, medicion, label = paste(round
 graf2bb + facet_grid(. ~ TipoSat)
 ```
 
-El siguiente gráfico permite analizar la satisfacción con la infraestructura, pero a su vez aquellos espacios que específican de mejor forma, aunque no completamente, su ámbito. Revisando el gráfico siguiente, es posible apreciar que el espacio de *Cafetería/Casino*, corresponde a aquél que genera un menor grado de satisfacción neta.Por otro lado, ya desde 2017-2, el espacio de *Biblioteca* registra un alza en la satisfacción neta que alcanza en la medición actual un 78%. Otro servicio que ha tenido un repunte consistente corresponde a *Baños*, alcanzando un 61% en la última medición. Partiendo de un piso algo más alto, el espacio de *salas de clases* también registra un alza sostenida. Por último, laboratorios es el espacio que manifiesta mayor estabilidad en la diferentes mediciones. 
+El siguiente gráfico permite analizar la satisfacción con la infraestructura, pero a su vez aquellos espacios que especifican de mejor forma, aunque no completamente, su ámbito. Revisando el gráfico siguiente, es posible apreciar que el espacio de *Cafetería/Casino*, corresponde a aquél que genera un menor grado de satisfacción neta. Por otro lado, ya desde 2017-2, el espacio de *Biblioteca* registra un alza en la satisfacción neta que alcanza en la medición actual un 78%. Otro servicio que ha tenido un repunte consistente corresponde a *Baños*, alcanzando un 61% en la última medición. Partiendo de un piso algo más alto, el espacio de *salas de clases* también registra un alza sostenida. Por último, laboratorios es el espacio que manifiesta mayor estabilidad en las diferentes mediciones.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -278,7 +276,7 @@ ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, 
   )
 ```
 
-La satisfacción con la infraestructura a nivel de sede se registra en el siguiente gráfico. Es posible apreciar que *Rancagua* registró en la medición 2017-2 el valor más alto de satisfacción neta, aunque después descendió en torno al 60%. Se les asimila la dinámica que muestran las sedes de *Temuco* y *Viña del Mar*. La sede de *Santiago* registra una satisfacción neta históricamente baja, no superando el 50%. No obstante, aún más bajo es la satisfacción en la sede de *Concepción*, donde el valor es incluso negativo (-16%). Además, en esta última sede, el valor más alto se registró en 2017-2, pero sólo alcanzó 11%, luego bajo al 7% y llegó -en esta última medición- a la cifra antes indicada.
+La satisfacción con la infraestructura a nivel de cada sede se plasma en el siguiente gráfico. Es posible apreciar que *Rancagua* registró en la medición 2017-2 el valor más alto de satisfacción neta, aunque después descendió en torno al 60%. Se les asimila la dinámica que muestran las sedes de *Temuco* y *Viña del Mar*. La sede de *Santiago* registra una satisfacción neta históricamente baja, no superando el 50%. No obstante, aún más bajo es la satisfacción en la sede de *Concepción*, donde el valor es incluso negativo (-16%). Además, en esta última sede, el valor más alto se registró en 2017-2, pero sólo alcanzó 11%, luego bajo al 7% y llegó -en esta última medición- a la cifra antes indicada.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 DataSedeInfra <- read_delim("Data/SedeInfra.csv", ";", escape_double = FALSE, 
@@ -302,7 +300,7 @@ GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sed
 GrafInfra + facet_grid(. ~ Sede )
 ```
 
-Se les preguntó a los estudiantes que evaluaron con nota inferior a 7 a la infraestructura de la sede, *¿qué mejoras debiesen ocurrir para lograr un óptimo de satisfacción en este ámbito?*. En infraestructura, lo que se sugiere es diferente según la realidad de cada sede. Por ejemplo, en *Rancagua* y *Viña del Mar* se solicita de forma clara mejorar la **Cafetería**. En tanto en *Concepción* y *Temuco* hay una petición clara por mejorar los **Espacios comunes**. 
+Se les preguntó a aquellos estudiantes que evaluaron con una nota inferior a 7 la infraestructura de la sede, *¿qué mejoras debiesen ocurrir para lograr un óptimo de satisfacción en este ámbito?*. En infraestructura, lo que se sugiere es diferente según la realidad de cada sede. Por ejemplo, en *Rancagua* y *Viña del Mar* se solicita de forma clara mejorar la **Cafetería**. En tanto en *Concepción* y *Temuco* hay una petición clara por mejorar los **Espacios comunes**. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 MejInfra4 <- read_delim("Data/MejInfra4.csv", ";", escape_double = FALSE, 
@@ -329,7 +327,7 @@ GrafMejInfra + facet_grid( .~ MejInfra4$Sede )
 
 ** 2.3.2. Salas de Clases**
 
-La satisfacción neta relacionada con la *Sala de Clases* registra en 2018-2 un 61%, 11 puntos más respecto de la medición anterior (2017-2). Al observar cómo se comporta este valor por sede, la tendencia indica que la satisfacción neta en este ámbito ha aumentado desde una caída importante en el año 2015, estabilizándose en tres sedes (*Rancagua*, *Temuco* y *Viña del Mar*). En el caso de esta última, llegó a registrar valores negativos en los años 2015 y 2016, mejorando de forma significativa los últmos dos años. Por otra parte, tanto *Concepción* como *Santiago*, registran valores comparativamente más bajos en este ámbito.
+La satisfacción neta relacionada con la *Sala de Clases* registra en 2018-2 un 61%, 11 puntos más respecto de la medición anterior (2017-2). Al observar cómo se comporta este valor por sede, la tendencia indica que la satisfacción neta en este ámbito ha aumentado desde una caída importante en el año 2015, estabilizándose en tres sedes (*Rancagua*, *Temuco* y *Viña del Mar*). En el caso de esta última, llegó a registrar valores negativos en los años 2015 y 2016, mejorando de forma significativa los últimos dos años. Por otra parte, tanto *Concepción* como *Santiago*, registran valores comparativamente más bajos en este ámbito.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -384,7 +382,7 @@ GrafBanos + facet_grid(. ~ Sede )
 
 ** 2.3.4. Laboratorios**
 
-En relación con los laboratorios, se aprecia tendencias a la baja hasta el año 2017-2 en los casos de *Concepción* y *Santiago*, después de dicho año existe un repunte en la medición actual (2018-2). En el caso de la primera sede este repunte alcanza al 44%, en cuanto a la segunda sede, llega al 52%. En el caso de *Rancagua* y *Viña del Mar*, estas caídas ocurren en los años 2015-2 y 2016-2, respectivamente. No obstante, ambas sedes hoy (2018-2) alcanzan valores de satisfacción neta en torno al 73%. Es muy relevante poner atención al descenso sistemático que experimenta la satisfacción neta la sede de *Temuco*, como es posible ver en el gráfico, estos valores tienen una tendencia negativa sostenida.
+En relación con los laboratorios, se aprecia tendencias a la baja hasta el año 2017-2 en los casos de *Concepción* y *Santiago*, después de dicho año existe un repunte en la medición actual (2018-2). En el caso de la primera sede este repunte alcanza al 44%, en cuanto a la segunda sede, llega al 52%. En el caso de *Rancagua* y *Viña del Mar*, estas caídas ocurren en los años 2015-2 y 2016-2, respectivamente. No obstante, ambas sedes hoy (2018-2) alcanzan valores de satisfacción neta en torno al 73%. Es muy relevante poner atención al descenso sistemático que experimenta la satisfacción neta la sede de *Temuco*, como es posible ver en el gráfico; estos valores tienen una tendencia negativa sostenida.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -439,7 +437,7 @@ GrafCaf + facet_grid(. ~ Sede )
 
 ## Satisfacción Neta con Biblioteca
 
-Anteriormente, se apreció que la *Biblioteca* registra una alta satisfacción neta en la presente medición (2018-2), en el gráfico siguiente es posible apreciar cómo es esta tendencia en cada una de las sedes. Se puede visualizar que existen caídas muy importantes en la satisfación neta en años puntuales según cada sede, exceptuando la sede de *Santiago* y *Viña del Mar*. Más allá de estas caídas, ya desde las mediciones del año 2017 existen incrementos que se han mantenido en el tiempo, alcanzando en el caso de las sedes de *Rancagua*, *Santiago* y *Temuco*, valores en torno al 80%.
+Anteriormente, se apreció que la *Biblioteca* registra una alta satisfacción neta en la presente medición (2018-2), en el gráfico siguiente es posible apreciar cómo es esta tendencia en cada una de las sedes. Se puede visualizar que existen caídas muy importantes en la satisfacción neta en años puntuales según cada sede, exceptuando la sede de *Santiago* y *Viña del Mar*. Más allá de estas caídas, ya desde las mediciones del año 2017 existen incrementos que se han mantenido en el tiempo, alcanzando en el caso de las sedes de *Rancagua*, *Santiago* y *Temuco*, valores en torno al 80%.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -518,7 +516,7 @@ graf5 + facet_grid(. ~ Tipo )
 
 ** a) Ebook o Biblioteca Digital**
 
-En la medición actual (2018-2), un **64%** de los estudiantes entrevistados indica haber utilizado el servicio de E-Books. A nivel de cada sede, se visualiza que en *Viña del Mar* y *Concepción* se regisra una satisfacción menor. Por el contrario, la satisfacción, al menos en 2018-2, es mayor en la sede de *Rancagua* (83%).
+En la medición actual (2018-2), un **64%** de los estudiantes entrevistados indica haber utilizado el servicio de E-Books. A nivel de cada sede, se visualiza que en *Viña del Mar* y *Concepción* se registra una satisfacción menor. Por el contrario, la satisfacción, al menos en 2018-2, es mayor en la sede de *Rancagua* (83%).
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -545,7 +543,7 @@ GrafEbook + facet_grid(. ~ Sede )
 
 ** b) Servicio de Wifi**
 
-EL servicio se Wifi, o sea la posibilidad de los alumnos de acceder a internet desde su laptop o celular en el mismo espacio físico de las sedes, refleja una alta valoración en sus usarios en la sede de *Temuco* (80%), no obtante en el resto de las sedes esta satisfacción no supera el 55%. 
+El servicio se Wifi, o sea la posibilidad de los alumnos de acceder a internet desde su laptop o celular en el mismo espacio físico de las sedes, refleja una alta valoración en sus usuarios en la sede de *Temuco* (80%), no obstante, en el resto de las sedes esta satisfacción no supera el 55%. 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -572,7 +570,7 @@ GrafWifi + facet_grid(. ~ Sede )
 
 ** c) Plataforma IEB Virtual**
 
-La satisfacción neta del IEB Virtual presenta la mejor evaluación dentro de los servicios digitales evaluados. A nivel de cada sede, 4 de las 5 sedes alcanzan una satisfacción neta cercana al 80%, mientras que en *santiago* la satisfacción neta alcanza un 74%.  
+La satisfacción neta del IEB Virtual presenta la mejor evaluación dentro de los servicios digitales evaluados. A nivel de cada sede, 4 de las 5 sedes alcanzan una satisfacción neta cercana al 80%, mientras que en *Santiago* la satisfacción neta alcanza un 74%.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeIEBV <- read_delim("Data/SedeIEBV.csv", ";", escape_double = FALSE, 
@@ -625,7 +623,7 @@ graf5 + facet_grid(. ~ Tipo )
 
 ** a) Servicio de Cajas**
 
-Respecto del servicio de Caja por sede, se aprecia que en todas las sedes hay una caída en el segundo año de medición. Sin embargo, desde esa caída hay un repunte que se ha mantenido constante hasta la medición actual.Los repuntes más altos, considerando de referencia la medición actual, se registran en sede de *Rancagua* y *Temuco*. Más leves son los repuntes registrados en las sedes de *Concepción* y *Santiago*.
+Respecto del servicio de Caja por sede, se aprecia que en todas las sedes hay una caída en el segundo año de medición. Sin embargo, desde esa caída hay un repunte que se ha mantenido constante hasta la medición actual. Los repuntes más altos, considerando de referencia la medición actual, se registran en sede de *Rancagua* y *Temuco*. Más leves son los repuntes registrados en las sedes de *Concepción* y *Santiago*.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeCajas<- read_delim("Data/SedeCajas.csv", ";", escape_double = FALSE, 
@@ -651,7 +649,7 @@ GrafCajas + facet_grid(. ~ Sede )
 
 ** B) Servicio de Solicitudes**
 
-El servicio de solicitudes tiene un comportamiento fluctuante en términos de la satisfacción neta. Si se toma como referencia la última medición (2018-2), se aprecia que todas la sedes mejoran respecto del 2018-1, destacándose la mejora en las sedes de *Rancagua* y *Temuco*. Le siguen las sedes de *Concepción* y *Viña del Mar*, por el contrario, se aprecia en la sede *Santiago* un ascenso leve de un 44% de satisfacción neta.
+El servicio de solicitudes tiene un comportamiento fluctuante en términos de la satisfacción neta. Si se toma como referencia la última medición (2018-2), se aprecia que todas las sedes mejoran respecto del 2018-1, destacándose la mejora en las sedes de *Rancagua* y *Temuco*. Le siguen las sedes de *Concepción* y *Viña del Mar*, por el contrario, se aprecia en la sede *Santiago* un ascenso leve de un 44% de satisfacción neta.
 
 ```{r error=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
 DataSedeServSol <- read_delim("Data/SedeServSol.csv", ";", escape_double = FALSE, 
@@ -674,7 +672,4 @@ GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour
   )
 GrafSolicit + facet_grid(. ~ Sede )
 ```
-
-
-
 

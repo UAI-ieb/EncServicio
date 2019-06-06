@@ -4,7 +4,9 @@ library(ggplot2)
 library(tidyr)
 Data1 <- read_excel("Data/DataServicio.xlsx")
 Data = data.frame (Data1)
-
+Data1$Jornada <- gsub("DIURNO", "Diurno", Data1$Jornada)
+Data1$Jornada <- gsub("VESPERTINA", "Vespertina", Data1$Jornada)
+names(Data1$Jornada)
 attach(Data)
 
 
@@ -572,8 +574,7 @@ GrafMejDoc= ggplot(MejDocente4, aes(MejDocente4$Valor, MejDocente4$Aspecto, labe
   )
 GrafMejDoc + facet_grid( .~ MejDocente4$Sede )
 
-
-#Mejora INARESTRUCTURA 2018-2
+#Mejora INFRAESTRUCTURA 2018-2
 
 MejInfra=select(Data, medicion, Sede, MejInfra_Banos,MejInfra_AseoBanos,MejInfra_SalaClases,MejInfra_Ascensores,MejInfra_Cafeteria, MejInfra_EspComunes)
 colnames(MejInfra)<-c("medicion","Sede", "Baños","AseoBaños","SalaClases","Ascensores","Cafetería", "EspaciosComunes")

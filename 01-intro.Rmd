@@ -1,6 +1,6 @@
 # Marco Metodológico {#intro}
 
-En este acápite, se detalla la metodología utilizada y que soporta la validez del estudio y sus resultados. Se especifica el tipo de muestra con sus parámetros propios y el tipo de instrumento aplicado. 
+En este acápite, se detalla la metodología utilizada y que soporta la validez del estudio y sus resultados. Se especifica el tipo de muestra con sus parámetros propios y el tipo de instrumento aplicado.
 
 ## Diseño de la Muestra {#requisitos}
 
@@ -9,7 +9,7 @@ En este estudio, el universo válido corresponderá a los estudiantes de todas l
 +	Deben tener matrícula vigente hasta la fecha de aplicación.
 +	Su estado como alumnos debe ser *regular*.
 
-Para el cálculo del tamaño de la muestra se ha hecho uso de la fórmula de muestreo aleatorio simple para proporciones, operando con un 95% de confianza, con una varianza -de proporciones- también máxima (p=0,5 y q=0,5). El error muestral del 4,5% para cada una de las sedes. Esto da como resultado una muestra de 1.243 casos a nivel instituto, y un error muestral a nivel del mismo de un 2,1%.
+Para el cálculo del tamaño de la muestra se ha hecho uso de la fórmula de muestreo aleatorio simple para proporciones, operando con un 95% de confianza, usando una varianza máxima de proporciones (p=0,5 y q=0,5). El error muestral asciende al 4,5% para cada una de las sedes. Esto da como resultado una muestra de 1.243 estudiantes a nivel del Instituto, y un error muestral de un 2,1% a nivel del mismo.
 
 
 | Sedes | Matrícula 2018 |  Muestra 2018-2 |
@@ -21,11 +21,11 @@ Para el cálculo del tamaño de la muestra se ha hecho uso de la fórmula de mue
 | Temuco   | 418     |  213  |
 | **Total**   | **3.191**  | **1.243**|
 
-La base de datos utilizada para el cálculo de las muestras incorpora, como datos de contacto, el correo electrónico de los alumnos. Mediante este correo se hará el contacto con ellos(as) para que accedan al formulario online y así entreguen la información solicitada. Además, y para asegurar la eficacia de la estrategia, se considera la colaboración de las direcciones de las sedes del IGS que participen en el estudio. 
+La base de datos utilizada para el cálculo de las muestras incorpora, como datos de contacto, el correo electrónico de los alumnos. Mediante este correo se hará el contacto con ellos(as) para que accedan al formulario online (cuestionario) y así entreguen la información solicitada. Además, y para asegurar la eficacia de la estrategia, se considera la colaboración de las direcciones de las sedes del IGS que participan del estudio.
 
 ## Diseño del Instrumento
 
-El instrumento utilizado para medir la satisfacción del estudiante considera tanto preguntas cerradas (con opciones de respuestas), además, -y para ampliar el espectro de observación del fenómeno-, se añaden preguntas abiertas que permiten registrar la percepción y experiencia de los estudiantes en relación con los actores, espacios y servicios.
+El instrumento utilizado para medir la satisfacción del estudiante considera tanto preguntas cerradas (con opciones de respuestas), como además de preguntas abiertas que permiten registrar la percepción y experiencia de los estudiantes. Todo ello en búsqueda de conocer, describir y medir la percpecion de los estudiantes frente a actores, espacios y servicios varios.
 
-En esta oportunidad, la aplicación del instrumento se efectuó mediante la plataforma web SurveyMonkey. El proceso implica hacer una invitación a la muestra seleccionada vía correo electrónico, el plazo para responder fue desde el 10 de Noviembre hasta el 23 de octubre de 2018. 
+En esta oportunidad, la aplicación del cuestionario se efectuó mediante la plataforma web SurveyMonkey. El proceso implica hacer una invitación a la muestra seleccionada vía correo electrónico, el plazo para responder fue desde el 10 de noviembre hasta el 23 de octubre de 2018.
 
