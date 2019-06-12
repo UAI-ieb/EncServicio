@@ -8,7 +8,7 @@ library(plyr)
 load("Data/DataSatis.RData")
 ```
 
-# Resultados
+# Resultados Presencial
 
 A continuación, se muestran los resultados más relevantes de la encuesta. Existen dos indicadores claves para dar cuenta del grado de satisfacción/insatisfacción de los estudiantes; la **Satisfacción total** y la **Satisfacción neta**. La primera alude al porcentaje de alumnos que evalúan a cada servicio, área o espacio con nota 6 ó 7. En tanto, la satisfacción neta corresponde a la diferencia del porcentaje de estudiantes que evalúan con nota 6 ó 7, menos aquellos que evalúan con nota inferior a 5; ambos indicadores se expresan en formato de valor porcentual. A nivel transversal, el informe será vertebrado por este último valor-indicador, dando cuenta a través de él de la percepción evaluativa de los estudiantes.
 
@@ -61,14 +61,13 @@ GrafGlobal + facet_grid(. ~ Sede )
 
 ```
 
-** Jornada **
+En el siguiente gráfico, se añade al contraste al contraste del valor de *Satisfacción Neta* según sede, el contraste según jornada (Diurno versus Vespertino). Se puede apreciar una tendencia -salvo poquísimas excepciones- donde los grados de satisfacción neta de los estudiantes de jornada vespertina es menor respecto de los estudiantes en jornada diurna. Se puede apreciar que inclusive en las sedes donde la satisfacción neta diurna es bastante alta a nivel histórica (Rancagua y Temuco), que la misma satisfaccion neta desciende de manera significativa en los estudiantes de jornada vespertina.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 DataJorGlobal <- read_delim("Data/JorGlobal.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
-
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -76,7 +75,8 @@ GrafGlobal2=ggplot(DataJorGlobal, aes(x=medicion, y=Valor, group = Jornada, colo
   geom_line(size=0.5)  + 
   geom_text(nudge_x = 0.5,nudge_y = 0.08 , color= "black", size=2) +
   geom_point( size=0.5, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+         axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -122,7 +122,8 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
   geom_line(size=1.0)  + 
   geom_text(nudge_x = 0,nudge_y = 0.04, color= "black" ,size=3) +
   geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+    axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -133,8 +134,6 @@ GrafAtencion=ggplot(DataSedeAtencion, aes(x=medicion, y=Valor, group = Sede, col
 GrafAtencion + facet_grid(. ~ Sede )
 ```
 
-** jornada **
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 DataJorAtencion <- read_delim("Data/JorAtencion.csv", ";", escape_double = FALSE,     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
@@ -142,14 +141,15 @@ DataJorAtencion <- read_delim("Data/JorAtencion.csv", ";", escape_double = FALSE
 
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable "Calidad de la atención" en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar una tendencia similar al caso anterior donde se analizó el peso de la jornada en las tendencias. Existe una excepción interesante de relevar que ocurre en Sede de **Viña del Mar**, donde -en cada medición- la distancia de satisfaccion neta en jornada vespertina respecto de la diurna es de menor magnitud. Lo mismo ocurre, pero sólo en la última medición, en la sede de **Concepción**. Por último, en sede de **Santiago**, cuyos valores son bajos históricamente, en la medición última (2018-2) el valor entre ambas jornadas es matemáticamente mayor en jornada vespertina, aunque dicha diferencia no es estadísticamente significativa.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafGlobal2=ggplot(DataJorAtencion, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=0.5)  + 
   geom_text(nudge_x = 0,nudge_y = 0.05 , color= "black", size=2.4) +
   geom_point( size=0.5, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+        axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -250,7 +250,8 @@ GrafDocente=ggplot(DataSedeDocente, aes(x=medicion, y=Valor, group = Sede, colou
   geom_line(size=1.0)  + 
   geom_text(nudge_x = 0, nudge_y = 0.03 , color= "black" ,size=2.9) +
   geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+    axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -268,14 +269,15 @@ JorDocente <- read_delim("Data/JorDocente.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Evaluacion Docente"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar una tendencia similar al caso anterior donde se analizó el peso de la jornada en las tendencias. Sin embargo, existen excepciones interesante y que conviene mostrarlas para no generar que lo anterior es una tendencia inexorable. En este sentido, se aprecia que en la sede de **Concepción**, en la última medición la satisfacción neta es mayor en la jornada vespertina respecto de la jornada diurna. Otro dato interesante ocurre en sede de **Viña del Mar**, donde en dos mediciones (2017-2 y 2018-1), la satisfacción neta es superior en estudiantes vespertinos versus diurnos.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafDocentes2=ggplot(JorDocente, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=0.5)  + 
   geom_text(nudge_x = 0,nudge_y = 0.05 , color= "black", size=2.7) +
   geom_point( size=0.5, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+    axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -374,7 +376,8 @@ GrafInfra=ggplot(DataSedeInfra, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   geom_line(size=1)  + 
   geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeInfra$colores, size=3) +
   geom_point( size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+         axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -445,7 +448,7 @@ DataJorSClases <- read_delim("Data/JorSClases.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Salas de Clases"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar una tendencia similar al caso anterior donde se analizó el peso de la jornada en las tendencias. 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafSClases2=ggplot(DataJorSClases, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
@@ -501,12 +504,12 @@ DataJorBanos <- read_delim("Data/JorBanos.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Espacio de Baños"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar una tendencia similar al caso anterior donde se analizó el peso de la jornada en las tendencias. Sin embargo, en esta situación, más allá de las distancias de las jornadas, las tendencias en cuanto alzas y bajas son similares entre ambos tipos de jornada en cada sede.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafBanos2=ggplot(DataJorBanos, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=0.5)  + 
-  geom_text(nudge_x =0.3,nudge_y =0.145 , color=DataJorBanos$colores, size=2.4) +
+  geom_text(nudge_x =0.1,nudge_y =0.145 , color=DataJorBanos$colores, size=2.4) +
   geom_point( size=0.5, shape=21, fill="white") + 
   theme (legend.position = "none",
          axis.text.x = element_text (angle = 90, vjust = 0.5))+
@@ -587,7 +590,7 @@ DataJorCaf <- read_delim("Data/JorCaf.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Espacio de Casino"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar, como quedó en claro antes, que la satisfacción con este espacio es menor respecto de todas las observadas. Sin embargo, en esta situación, se aprecian tendencias distintas -en algunas sedes- entre ambas jornadas. De esta forma,en sede **Rancagua** se aprecia que la tendencia vesperina sostenida a la baja, llegando en 2018-2 a -4%. Lo mismo, pero de forma inversa, ocurre en sede **Santiago**, donde se registra un ascenso tímido desde medición 2014-2 hasta 2018-1 (27%), luego desciende levemente a 23% en 2018-2.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafCaf2=ggplot(DataJorCaf, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
@@ -606,7 +609,6 @@ GrafCaf2=ggplot(DataJorCaf, aes(x=medicion, y=Valor, group = Jornada, colour=Sed
 theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
 
 GrafCaf2 + facet_grid(factor(Jornada)~factor(Sede))
-
 ```
 
 ## Satisfacción Neta con Biblioteca
@@ -643,7 +645,7 @@ DataJorBiblio <- read_delim("Data/JorBiblio.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Espacio de Biblioteca"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar, como quedó en claro antes, que la satisfacción con este espacio es menor respecto de todas las observadas.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafBiblio2=ggplot(DataJorBiblio, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
@@ -732,7 +734,8 @@ GrafEbook=ggplot(DataSedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   geom_line(size=1)  + 
   geom_text(nudge_x = 0, nudge_y = 0.01 , color= DataSedeEbook$colores, size=3) +
   geom_point(size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+         axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
@@ -749,6 +752,8 @@ DataJorEbook <- read_delim("Data/JorEbook.csv", ";", escape_double = FALSE,
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
 ```
+
+En el siguiente gráfico, se analiza la variable **"Espacio de Biblioteca Virtual o E-Book"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar, como ya ha quedado claro antes, que la satisfacción es menor en estudiantes de jornada vespertina versus aquellos de jornada diurna. Lo relevante aquí, es hacer notar que pese a que este servicio es entregado de forma virtual, persiste la tendencia observada en los ámbitos anteriores. En este sentido, la respuesta puede estar en el hecho de cómo esas mismas experiencias ya revisadas, impactan en ámbitos donde la jornada no tiene un impacto operativo de fondo.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafEbook2=ggplot(DataJorEbook, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
@@ -783,7 +788,7 @@ DataSedeWifi <- read_delim("Data/SedeWifi.csv",";", escape_double = FALSE,
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafWifi=ggplot(DataSedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),sep="","%"))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0.2, nudge_y = 0.1 , color= DataSedeWifi$colores, size=3) +
+  geom_text(nudge_x = 0.2, nudge_y = 0.1 , color= DataSedeWifi$colores, size=2.7) +
   geom_point(size=2, shape=21, fill="white") + 
   theme (legend.position = "none",
          axis.text.x = element_text (angle = 90, vjust = 0.5))+
@@ -804,7 +809,7 @@ DataJorWifi <- read_delim("Data/JorWifi.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Servicio de Wifi"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar, a diferencia de lo que ocurre con servicio de **E-Book**, que en este ámbito no es claro que prime una tendencia donde la satisfacción sea menor en los estudiantes de jornada vespertina. Aquí las percepeciones, es probable, no están siendo condicionadas por las experiencias en otros ámbitos donde sí opera como un factor. Además, el servicio en cuanto tal opera de mejor gracias a actualizaciones hechas en las sedes, y por su modo de funcionamiento, es más fluido cuando hay una menor demanda (cosa que ocurre en horario vespertino).
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafWifi2=ggplot(DataJorWifi, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%"))) +
@@ -852,33 +857,10 @@ GrafIEBV=ggplot(DataSedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
 GrafIEBV + facet_grid(. ~ Sede )
 ```
 
-
-
 ```{r warning=FALSE, echo=FALSE, message=FALSE}
 DataJorIEBV <- read_delim("Data/JorIEBV.csv", ";", escape_double = FALSE, 
     locale = locale(decimal_mark = ",", encoding = "ISO-8859-1"), 
     trim_ws = TRUE)
-```
-
-** Jornada **
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafIEB2=ggplot(DataJorWifi, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
-  geom_line(size=0.5)  + 
-  geom_text(nudge_x = 0,nudge_y = 0.05 , color= "black", size=2) +
-  geom_point( size=0.5, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle= 90, vjust= 0.5),legend.position = "none")+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.9b",
-    subtitle = "Satisfacción Neta con IEB por Sede y Jornada",
-    caption = "\nUnidad de Análisis Institucional"
-  )  +
-theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
-
-GrafIEB2 + facet_grid(factor(Jornada)~factor(Sede))
-
 ```
 
 ## Satisfacción con Otros Servicios del IGS
@@ -941,7 +923,7 @@ DataJorCajas <- read_delim("Data/JorCajas.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+En el siguiente gráfico, se analiza la variable **"Espacio de Cajas"** en relación con el valor de *Satisfacción Neta*, tanto según sede como jornada. Se puede apreciar la tendencia donde la jornada vespertina es más crítica respecto del servicio. A nivel de sedes, se aprecia como en **Concepción** ocurre una inflexión en jornada vespertina en medicion de 2015-2 (5%), alcanzando en 2018-2 un 74%, superando en 18 puntos a la satisfacción regitrada en jornada diurna.   Esta tendencia, en su fisomonía, es similar a lo que ocurre en **Santiago**.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafCajas2=ggplot(DataJorCajas, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
@@ -956,7 +938,7 @@ GrafCajas2=ggplot(DataJorCajas, aes(x=medicion, y=Valor, group = Jornada, colour
     subtitle = "Satisfacción Neta con Cajas por Sede y Jornada",
     caption = "\nUnidad de Análisis Institucional"
   )  +
-theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
+     theme (axis.text.x = element_text(face="plain", colour="black",                  size=rel(0.8)),axis.text.y = element_text(face="plain",                          colour="black", size=rel(0.7), angle=90, hjust=0.5))
 
 GrafCajas2 + facet_grid(factor(Jornada)~factor(Sede))
 
@@ -995,23 +977,149 @@ DataJorServSol <- read_delim("Data/JorServSol.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-** Jornada **
+# Resultados Carreras No Presenciales
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-GrafServSol2=ggplot(DataJorServSol, aes(x=medicion, y=Valor, group = Jornada, colour=Sede,label = paste(round(Valor*100, 0),"%", sep=""))) +
-  geom_line(size=0.5)  + 
-  geom_text(nudge_x = 0,nudge_y = 0.05 , color= "black", size=2) +
-  geom_point( size=0.5, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5),legend.position = "none")+
-  labs(
-    x = "Mediciones",
-    y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.11b",
-    subtitle = "Satisfacción Neta con Serv.Solicitudes por Sede y Jornada",
-    caption = "\nUnidad de Análisis Institucional"
-  )  +
-theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
+A continuación se muestran los resultados 2018-2 de encuesta de servicios aplicados a estudiantes en modalidad *no presencial* del Instituto. En primer lugar, se muestran los resultados globales en aquellas variables que sintetizan de mejor forma la percepción de los estudiantes y, en segundo lugar, los resultados de dimensiones específicas de la modalidad, mostrando los resultados en cuanto atributos varios.
 
-GrafServSol2 + facet_grid(factor(Jornada)~factor(Sede))
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+df_virtual1 <- read_excel("Data/Encuesta de Satisfaccion (E-Learning).xlsx",sheet = "Df1")
+df_virtual2 <- read_excel("Data/Encuesta de Satisfaccion (E-Learning).xlsx",sheet = "Df2")
 
 ```
+
+En el siguiente gráfico, se muestran los resultados 2018-2 de indicadores de E-Learning. Se muestran los dos tipos de satisfacción con los cuales opera el Instituto; total y neta. Se puede apreciar que dos de los 4 aspectos donde el jor desempeño es más alto, corresponden a ámbitos ligados directamente con el proceso educativo: *"Satisfacción con proceso educativo"* y *"Satisfacción con cosejero virtual"*. Más atrás se encuentran dos ámbitos auxiliares al proceso educativo, por un lado *"el conocimiento/domino de plataforma Moodle"* (sat.neta; 67%), y  por otro, y claramente más rezagado, se encuentra el grado de *"cumplimiento de las promesas hechas por admisión al momento de matricularse"* (sat.neta: 50%).
+
+```{r echo=FALSE}
+# GRAFICO INDICADORES
+graf_Ind=ggplot(data=df_virtual2[df_virtual2$Interfaz =="Total",], aes(x=Indicador, y=Valor,fill=Preguntas))+
+  geom_bar(stat = "identity", fill="Orange")+
+  geom_text(aes(label=paste0(round(Valor*100,digits = 0),"%",sep=""))
+          ,position=position_stack(vjust=.5),vjust=0.03, color="white", size=3)+
+          labs(
+    x = "Tipo de Satisfacciones",
+    y = "%",
+    title = "Gráfico 3.1",
+    subtitle = "Evaluación de Modalidad No Presencial",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+
+graf_Ind + facet_grid(. ~ Preguntas) +
+          theme(
+          axis.text.y=element_blank(),
+          strip.text.x = element_text(
+          size = 6, color = "#af4605", face = "bold"),
+          strip.background = element_rect(
+          color="white", fill="#f2b84f", size=0.2, linetype="solid"
+          )
+            )
+```
+
+En relación a las gestión de los docentes, se evaluaron los siguientes atributos correspondientes al servicio de tutorías. Si se considera la magnitud de la nota más alta (nota 7), se aprecia que dos de los atributos mejor evaluados, corresponden a *"Atención del tutor"* y *"Disponibilidad del tutor"*, 49% y 48%, respectivamente. Por el contrario, dos aspectos bajos corresponden a *"Claridad de las respuestas"* y *"Rapidez de las respuestas"*; 33% y 32%, respectivamente. En estos últimos aspectos, aparece un porcentaje más alto en notas intermedias, como 4 y 5.
+
+```{r echo= FALSE}
+# GRAFICO P2
+graf_P2=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P2",], aes(x=as.factor(Nota), y=Porc2))+
+  geom_bar(stat = "identity", fill="Orange")+
+  geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
+            ,position=position_stack(vjust=0.7),vjust=0.03, color="#66625f", size=3)+
+  labs(
+    x = "Notas (1 a 7)",
+    y = "%",
+    title = "Gráfico 3.2",
+    subtitle = "Evaluación de Gestión Docente No Presenciales",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+
+graf_P2 + facet_wrap(. ~  Preguntas, ncol=2) + 
+   theme(
+     axis.text.y=element_blank(),
+     strip.text.x = element_text(
+          size = 6.64, color = "#af4605", face = "bold"),
+     strip.background = element_rect(
+     color="white", fill="#f2b84f", size=0.2, linetype="solid"
+     )
+   )
+
+```
+
+En relación a la gestión realizada por tu consejero virtual, se evaluaron los siguientes atributos correspondientes al servicio entregado. Se puede apreciar una satisfacción alta (sobre el 85% de estudiantes optan por nota 6 ó 7) en los tres atributos consultados: *"Apoyo entregado en el proceso académico"*, *"Rapidez de respuesta"* y *"Claridad de respuesta"*. 
+
+```{r echo=FALSE}
+# GRAFICO P5
+graf_P5=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P5",], aes(x=as.factor(Nota), y=Porc2))+
+  geom_bar(stat = "identity", fill="Orange")+
+  geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
+            ,position=position_stack(vjust=0.8),vjust=0.03, color="black",size=2.5) + 
+    labs(
+    x = "Notas (1 a 7)",
+    y = "%",
+    title = "Gráfico 3.3",
+    subtitle = "Evaluación de Gestión de Consejero Virtual",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+
+graf_P5 + facet_grid(. ~Preguntas) +
+          theme(
+          axis.text.y=element_blank(),
+          strip.text.x = element_text(
+          size = 6.64, color = "#af4605", face = "bold"),
+          strip.background = element_rect(
+          color="white", fill="#f2b84f", size=0.2, linetype="solid"
+         )
+            )
+```
+
+En relación al proceso educativo, se evaluó a continuación los siguientes atributos: *"Motivación para estudiar cada día", "Actividades complementarias", "Actividades Prácticas" y "Colaboración de mis Compañeros"*. En cada uno de ellos se registra un valor donde -al menos- el 85% de estudiantes optan por nota 6 ó 7. Como elemento diferencial, hay un 10% de estudiantes que ponen una nota entre 1 a 3 en el aspecto de *"colaboración de mis compañeros"*.
+
+```{r echo=FALSE, message=FALSE}
+graf_P6=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P6",], aes(x=as.factor(Nota), y=Porc2))+
+  geom_bar(stat = "identity", fill="Orange")+
+  geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
+            ,position=position_stack(vjust=1.02),vjust=0.03, color="black", size=2.7) + 
+    labs(
+    x = "Notas (1 a 7)",
+    y = "%",
+    title = "Gráfico 3.4",
+    subtitle = "Evaluación de proceso educativo",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+graf_P6 + facet_grid(. ~Preguntas) +
+          theme(
+          axis.text.y=element_blank(),
+          strip.text.x = element_text(
+          size = 6.37, color = "#af4605", face = "bold"),
+          strip.background = element_rect(
+         color="white", fill="#f2b84f", size=0.2, linetype="solid"
+           )
+            )
+```
+
+En relación a la plataforma, se evaluaron los siguientes atributos: *"Funcionamiento General", "Facilitad para estudiar", "Accesibilidad", "Contenidos Académicos Disponibles", "Utilidad de Video Clases", "Utilidad de Foros" y "Acceso E-books"*. Si se suma el porcentaje de estudiantes que ponen nota 6 o 7, el valor sobrepasa el 70% en cada atributo medido.
+
+
+```{r echo=FALSE}
+# GRAFICO P7
+graf_P7=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P7" & df_virtual1$Interfaz =="Virtual" ,], aes(x=as.factor(Nota), y=Porc2))+
+  geom_bar(stat = "identity", fill="Orange")+
+  geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
+            ,position=position_stack(vjust=0.7),vjust=0.03, color="black", size=2.7) + 
+      labs(
+    x = "Notas (1 a 7)",
+    y = "%",
+    title = "Gráfico 3.5",
+    subtitle = "Evaluación de Plataforma Utilizada",
+    caption = "\nUnidad de Análisis Institucional"
+  )
+
+graf_P7 + facet_wrap(. ~  Preguntas, ncol=2) +
+  theme(
+          axis.text.y=element_blank(),
+          strip.text.x = element_text(
+          size = 7, color = "#af4605", face = "bold"),
+          strip.background = element_rect(
+          color="white", fill="#f2b84f", size=0.2, linetype="solid"
+          )
+            )
+
+```
+
