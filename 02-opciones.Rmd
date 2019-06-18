@@ -87,7 +87,6 @@ GrafGlobal2=ggplot(DataJorGlobal, aes(x=medicion, y=Valor, group = Jornada, colo
 theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
 
 GrafGlobal2 + facet_grid(factor(Jornada)~factor(Sede))
-
 ```
 
 **2.1.2) Percepción de la Calidad de la Atención del IGS**
@@ -348,10 +347,10 @@ GrafInfra1 <- read_delim("Data/Infra1.csv", ";", escape_double = FALSE,
     trim_ws = TRUE)
 ```
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 ggplot(GrafInfra1, aes(x=GrafInfra1$medicion, y=GrafInfra1$Valor, group = Tipo, colour=Tipo, label = paste(round(GrafInfra1$Valor, 0),"%", sep=""))) + 
   geom_line(size=0.9)  + 
-  geom_text(nudge_x = 0.3 , color= "black",size=3) +
+  geom_text(nudge_x = 0.3 , color= "black",size=2.7) +
   geom_point( size=2, shape=21, fill="white") + 
   theme_minimal()+
   labs(
@@ -427,7 +426,7 @@ DataSedeSClases <- read_delim("Data/SedeSClases.csv", ";", escape_double = FALSE
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafSClases=ggplot(DataSedeSClases, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100,0),"%",sep = ""))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0.1, nudge_y = 0.05 , color= DataSedeSClases$colores, size=3) +
+  geom_text(nudge_x = 0.1, nudge_y = 0.05 , color= DataSedeSClases$colores, size=2.7) +
   geom_point( size=2, shape=21, fill="white") + 
   theme (legend.position = "none",
          axis.text.x = element_text (angle = 90, hjust=5,vjust = 1))+
@@ -540,7 +539,7 @@ DataSedeLab <- read_delim("Data/SedeLab.csv", ";", escape_double = FALSE,
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafLab=ggplot(DataSedeLab, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeLab$colores, size=3) +
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeLab$colores, size=2.7) +
   geom_point( size=2, shape=21, fill="white") + 
   theme (legend.position = "none",
          axis.text.x = element_text (angle = 90, vjust = 0.5))+
@@ -569,14 +568,14 @@ DataSedeCaf <- read_delim("Data/SedeCaf.csv",";", escape_double = FALSE,
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafCaf=ggplot(DataSedeCaf, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeCaf$colores, size=3) +
+  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeCaf$colores, size=2.7) +
   geom_point(size=2, shape=21, fill="white") + 
   theme (legend.position = "none",
          axis.text.x = element_text (angle = 90, hjust = 0.5,vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.4b",
+    title = "Gráfico 2.3.5a",
     subtitle = "Satisfacción Neta con Casino por Sede",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -602,7 +601,7 @@ GrafCaf2=ggplot(DataJorCaf, aes(x=medicion, y=Valor, group = Jornada, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.4c",
+    title = "Gráfico 2.3.5b",
     subtitle = "Satisfacción Neta con Casino según Sede y Jornada",
     caption = "\nUnidad de Análisis Institucional"
   )  +
@@ -625,13 +624,13 @@ DataSedeBiblio <- read_delim("Data/SedeBiblio.csv", ";", escape_double = FALSE,
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 GrafBiblio=ggplot(DataSedeBiblio, aes(x=medicion, y=Valor,group = Sede, colour=Sede, label = paste(round(Valor*100, 0),"%", sep=""))) +
   geom_line(size=1)  + 
-  geom_text(nudge_x = 0, nudge_y = 0.03 , color= DataSedeBiblio$colores, size=3) +
+  geom_text(nudge_x = 0.4, nudge_y = 0.08 , color= DataSedeBiblio$colores, size=2.4) +
   geom_point( size=2, shape=21, fill="white") + 
   theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.5a",
+    title = "Gráfico 2.3.6a",
     subtitle = "Satisfacción Neta con Biblioteca por Sede",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -656,7 +655,7 @@ GrafBiblio2=ggplot(DataJorBiblio, aes(x=medicion, y=Valor, group = Jornada, colo
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.5b",
+    title = "Gráfico 2.3.6b",
     subtitle = "Satisfacción Neta con Biblioteca según Sede y Jornada",
     caption = "\nUnidad de Análisis Institucional"
   )  +
@@ -684,7 +683,7 @@ GrafMejBiblio= ggplot(MejBiblio4, aes(MejBiblio4$Valor, MejBiblio4$Aspecto, labe
   labs(
     x = "Porcentaje de Satisfacción",
     y = "Mediciones",
-    title = "Gráfico 2.3.5c",
+    title = "Gráfico 2.3.6c",
     subtitle = "Mejoras sugeridas en Biblioteca por Sede",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -710,7 +709,7 @@ graf5=ggplot(GrafDigit, aes(x=GrafDigit$medicion, y=GrafDigit$Valor, group = Tip
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.6",
+    title = "Gráfico 2.4.1",
     subtitle = "Satisfacción Neta con Espacios y Servicios Digitales",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -739,7 +738,7 @@ GrafEbook=ggplot(DataSedeEbook, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.7a",
+    title = "Gráfico 2.4.1a",
     subtitle = "Satisfacción Neta con Ebook por Sede",
     caption = "\nUnidad de Análisis Institucional"
   )
@@ -764,7 +763,7 @@ GrafEbook2=ggplot(DataJorEbook, aes(x=medicion, y=Valor, group = Jornada, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.7b",
+    title = "Gráfico 2.4.1b",
     subtitle = "Satisfacción Neta con E-Book por Sede y Jornada",
     caption = "\nUnidad de Análisis Institucional"
   )  +
@@ -795,9 +794,8 @@ GrafWifi=ggplot(DataSedeWifi, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.8a",
-    subtitle = "Satisfacción con Wifi por Sede",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.4.2a",
+    subtitle = "Satisfacción con Wifi por Sede"
   )
 GrafWifi + facet_grid(. ~ Sede )
 ```
@@ -820,9 +818,8 @@ GrafWifi2=ggplot(DataJorWifi, aes(x=medicion, y=Valor, group = Jornada, colour=S
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.8b",
-    subtitle = "Satisfacción Neta con Wifi por Sede y Jornada",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.4.2b",
+    subtitle = "Satisfacción Neta con Wifi por Sede y Jornada"
   )  +
 theme (axis.text.x = element_text(face="plain", colour="black",                     size=rel(0.8)),axis.text.y = element_text(face="plain",                             colour="black", size=rel(0.7), angle=90, hjust=0.5))
 
@@ -850,9 +847,8 @@ GrafIEBV=ggplot(DataSedeIEBV, aes(x=medicion, y=Valor,group = Sede, colour=Sede,
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.9a",
-    subtitle = "Satisfacción con IEB Virtual por Sede",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.4.3a",
+    subtitle = "Satisfacción con IEB Virtual por Sede"
   )
 GrafIEBV + facet_grid(. ~ Sede )
 ```
@@ -883,14 +879,13 @@ graf5=ggplot(GrafOtros, aes(x=medicion, y=Valor, group = Tipo, colour=Tipo, labe
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.10",
-    subtitle = "Satisfacción Neta con otros Servicios",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.5.1",
+    subtitle = "Satisfacción Neta con otros Servicios"
   )
 graf5 + facet_grid(. ~ Tipo )
 ```
 
-** a) Servicio de Cajas**
+** 2.5.1. Servicio de Cajas**
 
 Respecto del servicio de Caja por sede, se aprecia que en todas las sedes hay una caída en el segundo año de medición. Sin embargo, desde esa caída hay un repunte que se ha mantenido constante hasta la medición actual. Los repuntes más altos, considerando de referencia la medición actual, se registran en sede de *Rancagua* y *Temuco*. Más leves son los repuntes registrados en las sedes de *Concepción* y *Santiago*.
 
@@ -905,13 +900,13 @@ GrafCajas=ggplot(DataSedeCajas, aes(x=medicion, y=Valor,group = Sede, colour=Sed
   geom_line(size=1)  + 
   geom_text(nudge_x = 0.1, nudge_y = 0.04 , color= DataSedeCajas$colores, size=3) +
   geom_point(size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+         axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.10a",
-    subtitle = "Satisfacción Neta con Serv.Cajas por Sede",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.5.1a",
+    subtitle = "Satisfacción Neta con Serv.Cajas por Sede"
   )
 GrafCajas + facet_grid(. ~ Sede )
 ```
@@ -934,9 +929,8 @@ GrafCajas2=ggplot(DataJorCajas, aes(x=medicion, y=Valor, group = Jornada, colour
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.10b",
-    subtitle = "Satisfacción Neta con Cajas por Sede y Jornada",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.5.1b",
+    subtitle = "Satisfacción Neta con Cajas por Sede y Jornada"
   )  +
      theme (axis.text.x = element_text(face="plain", colour="black",                  size=rel(0.8)),axis.text.y = element_text(face="plain",                          colour="black", size=rel(0.7), angle=90, hjust=0.5))
 
@@ -944,7 +938,7 @@ GrafCajas2 + facet_grid(factor(Jornada)~factor(Sede))
 
 ```
 
-** B) Servicio de Solicitudes**
+** 2.5.2. Servicio de Solicitudes**
 
 El servicio de solicitudes tiene un comportamiento fluctuante en términos de la satisfacción neta. Si se toma como referencia la última medición (2018-2), se aprecia que todas las sedes mejoran respecto del 2018-1, destacándose la mejora en las sedes de *Rancagua* y *Temuco*. Le siguen las sedes de *Concepción* y *Viña del Mar*, por el contrario, se aprecia en la sede *Santiago* un ascenso leve de un 44% de satisfacción neta.
 
@@ -959,13 +953,13 @@ GrafSolicit=ggplot(DataSedeServSol, aes(x=medicion, y=Valor,group = Sede, colour
   geom_line(size=1)  + 
   geom_text(nudge_x = 0, nudge_y = 0.01 , color= DataSedeServSol$colores, size=3) +
   geom_point(size=2, shape=21, fill="white") + 
-  theme (axis.text.x = element_text (angle = 90, vjust = 0.5))+
+  theme (legend.position = "none",
+         axis.text.x = element_text (angle = 90, vjust = 0.5))+
   labs(
     x = "Mediciones",
     y = "% de Satisfacción Neta",
-    title = "Gráfico 2.3.11a",
-    subtitle = "Satisfacción Neta con Serv.Solicitudes por Sede",
-    caption = "\nUnidad de Análisis Institucional"
+    title = "Gráfico 2.5.2a",
+    subtitle = "Satisfacción Neta con Serv.Solicitudes por Sede"
   )
 GrafSolicit + facet_grid(. ~ Sede )
 ```
@@ -1007,21 +1001,21 @@ graf_Ind + facet_grid(. ~ Preguntas) +
           theme(
           axis.text.y=element_blank(),
           strip.text.x = element_text(
-          size = 6, color = "#af4605", face = "bold"),
+          size = 5.8, color = "#af4605", face = "bold"),
           strip.background = element_rect(
           color="white", fill="#f2b84f", size=0.2, linetype="solid"
           )
             )
 ```
 
-En relación a las gestión de los docentes, se evaluaron los siguientes atributos correspondientes al servicio de tutorías. Si se considera la magnitud de la nota más alta (nota 7), se aprecia que dos de los atributos mejor evaluados, corresponden a *"Atención del tutor"* y *"Disponibilidad del tutor"*, 49% y 48%, respectivamente. Por el contrario, dos aspectos bajos corresponden a *"Claridad de las respuestas"* y *"Rapidez de las respuestas"*; 33% y 32%, respectivamente. En estos últimos aspectos, aparece un porcentaje más alto en notas intermedias, como 4 y 5.
+En relación a la gestión de los docentes, se evaluaron los siguientes atributos correspondientes al servicio de tutorías. Si se considera la magnitud de la nota más alta (nota 7), se aprecia que dos de los atributos mejor evaluados, corresponden a *"Atención del tutor"* y *"Disponibilidad del tutor"*, 49% y 48%, respectivamente. Por el contrario, dos aspectos bajos corresponden a *"Claridad de las respuestas"* y *"Rapidez de las respuestas"*; 33% y 32%, respectivamente. En estos últimos aspectos, aparece un porcentaje más alto en notas intermedias, como 4 y 5.
 
 ```{r echo= FALSE}
 # GRAFICO P2
 graf_P2=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P2",], aes(x=as.factor(Nota), y=Porc2))+
   geom_bar(stat = "identity", fill="Orange")+
   geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
-            ,position=position_stack(vjust=0.7),vjust=0.03, color="#66625f", size=3)+
+            ,position=position_stack(vjust=0.7),vjust=0.03, color="#66625f", size=2.7)+
   labs(
     x = "Notas (1 a 7)",
     y = "%",
@@ -1102,7 +1096,7 @@ En relación a la plataforma, se evaluaron los siguientes atributos: *"Funcionam
 graf_P7=ggplot(data=df_virtual1[df_virtual1$N_Preg =="P7" & df_virtual1$Interfaz =="Virtual" ,], aes(x=as.factor(Nota), y=Porc2))+
   geom_bar(stat = "identity", fill="Orange")+
   geom_text(aes(label=paste0(round(Porc2*100,digits = 0),"%",sep=""))
-            ,position=position_stack(vjust=0.7),vjust=0.03, color="black", size=2.7) + 
+            ,position=position_stack(vjust=0.7),vjust=0.03, color="black", size=2.5) + 
       labs(
     x = "Notas (1 a 7)",
     y = "%",

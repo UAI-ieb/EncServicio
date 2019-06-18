@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
 # Marco Metodológico {#intro}
 
 En este acápite, se detalla la metodología utilizada y que soporta la validez del estudio y sus resultados. Se especifica el tipo de muestra con sus parámetros propios y el tipo de instrumento aplicado.
